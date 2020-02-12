@@ -11,20 +11,32 @@
 </ion-header>
 
 <ion-content padding>
+
+  <!--<ion-grid>
+     <ion-row>
+      <ion-item>
+        <ion-label>Cours courrants seulement</ion-label>
+        <ion-toggle slot="end" [(ngModel)]="onlyCurrent"></ion-toggle>
+      </ion-item>
+    </ion-row>
+
+  </ion-grid> -->
+
   <ion-list>
-    <div
+    <ion-item
       menuClose
-      ion-item
+      
       *ngFor="let grp of (groups | async)"
       (click)="openPage(grp)"
       class="list-item"
     >
     
-    <ion-label>
-      <h1>{{grp.Number}}</h1>
-      <h1>{{grp.Time.substr(0,5) + "  " + this.day[grp.day-1]}}</h1>
-      <h1>{{grp.TeacherName}}</h1>
+    <ion-label
+    *ngIf="onlyCurrent && currentClass(grp.Time)"
+    >      
+      <h2><ion-badge color="primary" slot="end">{{grp.Number}}</ion-badge> {{grp.Time.substr(0,5) + "  " + this.day[grp.day-1]}}</h2>
+      <h2>{{grp.TeacherName}} Matei</h2>
     </ion-label>
-  </div>
+  </ion-item>
   </ion-list>
 </ion-content>

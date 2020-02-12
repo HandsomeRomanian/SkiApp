@@ -14,17 +14,15 @@ export class SkiProvider {
   public static apiUrl = "https://api.mateimartin.ca:8081/"
 
   constructor(public http: HttpClient) {
-    
   }
 
   getLevels(){
-    return this.http.get(SkiProvider.apiUrl +"levels");
+    return this.http.get(SkiProvider.apiUrl +"levels")
   }
 
   getGroups(id: number){
     return this.http.get(SkiProvider.apiUrl +"groups/"+id);
   }
-
 
 
 }

@@ -2,12 +2,10 @@
   "cordova-plugin-advanced-http": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-advanced-http"
+      "id": "cordova-plugin-advanced-http@^2.4.0"
     },
     "is_top_level": true,
-    "variables": {
-      "OKHTTP_VERSION": "3.10.0"
-    }
+    "variables": {}
   },
   "cordova-plugin-file": {
     "source": {
