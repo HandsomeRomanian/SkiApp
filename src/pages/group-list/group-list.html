@@ -26,7 +26,7 @@
     <ion-item
       menuClose
       
-      *ngFor="let grp of (groups | async)"
+      *ngFor="let grp of (groups | async | orderBy:'Time,day')"
       (click)="openPage(grp)"
       class="list-item"
     >

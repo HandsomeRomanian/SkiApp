@@ -3,6 +3,7 @@ import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Observable } from 'rxjs';
 import { SkiProvider } from '../../providers/ski/ski';
 import { finalize } from 'rxjs/operators';
+import { StudentListPage } from '../student-list/student-list';
 
 /**
  * Generated class for the GroupListPage page.
@@ -26,6 +27,7 @@ export class GroupListPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private skiService: SkiProvider, public loadingCtrl: LoadingController) {
     this.levelID = navParams.get("levelID");
     this.action = navParams.get("action");
+    this.title = SkiProvider.levels[this.levelID]
 
     this.groups = this.skiService.getGroups(this.levelID).pipe(
       finalize(() => loading.dismiss())
@@ -38,18 +40,12 @@ export class GroupListPage {
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GroupListPage');
-  }
-
-
   currentClass(inTime) {
     var temp = new Date();
     var timeAr = inTime.split(":");
     temp.setHours(timeAr[0],timeAr[1],timeAr[2]) 
     
     return !(temp.getTime() > new Date().getTime() && new Date().getTime() < temp.setHours(temp.getHours()+1));
-
   }
 
   getTime() {
@@ -57,8 +53,8 @@ export class GroupListPage {
     return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
   }
 
-  openPage(grp) {
-    console.log(grp.day);
+  openPage(grp){
+    this.navCtrl.push(StudentListPage,{"groupID":grp.id,"action":this.action});
   }
 
 }
