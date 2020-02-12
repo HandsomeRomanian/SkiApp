@@ -32,6 +32,11 @@ export class SkiProvider {
     return tmp;
   }
 
+  getExercices(levelID: number) {
+    var tmp = this.http.get(SkiProvider.apiUrl + "levels/" + levelID + "/exercices");
+    return tmp;
+  }
+
   setStatus(student: any) {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
@@ -40,5 +45,7 @@ export class SkiProvider {
     return this.http.post<any>(SkiProvider.apiUrl + "status/", student, { headers });
     
   }
+
+  
 
 }

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { SkiProvider } from '../../providers/ski/ski';
 import { GroupListPage } from '../group-list/group-list';
 import { finalize } from 'rxjs/operators';
+import { ExercicesListPage } from '../exercices-list/exercices-list';
 
 @Component({
   selector: 'page-level-list',
@@ -15,7 +16,8 @@ export class LevelListPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public skiService: SkiProvider,public loadingCtrl: LoadingController) {
     // If we navigated to this page, we will have an item available as a nav param
-    
+    this.action = navParams.get("action");
+    console.log(this.action);
     this.levels = skiService.getLevels().pipe(
       finalize(()=>loading.dismiss())
       );
@@ -28,7 +30,14 @@ export class LevelListPage {
 
 
   openPage(id: number){
-    this.navCtrl.push(GroupListPage,{"levelID":id,"action":this.action});
+    console.log(this.action+"-"+id);
+    if (this.action == 1){
+      console.log(id)
+        this.navCtrl.push(ExercicesListPage,{"levelID":id})
+    }
+    else if (this.action == 2){
+      this.navCtrl.push(GroupListPage,{"levelID":id,"action":this.action});
+    }
   }
 
 }
