@@ -33,10 +33,10 @@ export class LevelListPage {
     console.log(this.action+"-"+id);
     if (this.action == 1){
       console.log(id)
-        this.navCtrl.push(ExercicesListPage,{"levelID":id})
+        this.navCtrl.setRoot(ExercicesListPage,{"levelID":id})
     }
     else if (this.action == 2){
-      this.navCtrl.push(GroupListPage,{"levelID":id,"action":this.action});
+      this.navCtrl.setRoot(GroupListPage,{"levelID":id,"action":this.action});
     }
   }
 

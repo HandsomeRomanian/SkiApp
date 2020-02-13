@@ -46,6 +46,15 @@ export class SkiProvider {
     
   }
 
+  search(input){
+    input = input.trim().replace(" ","_");
+    console.log(SkiProvider.apiUrl+"search/"+input);
+
+    var tmp = this.http.get(SkiProvider.apiUrl + "search/" + input);
+    console.log(tmp)
+    return tmp;
+  }
+
   
 
 }

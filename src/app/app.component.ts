@@ -6,7 +6,7 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { HomePage } from "../pages/home/home";
 import { SkiProvider } from "../providers/ski/ski";
 import { LevelListPage } from "../pages/level-list/level-list";
-import { ExercicesListPage } from "../pages/exercices-list/exercices-list";
+import { SearchPage } from "../pages/search/search";
 
 @Component({
   templateUrl: "app.html"
@@ -30,7 +30,8 @@ export class MyApp {
     this.pages = [
       { title: "Home", component: HomePage },
       { title: "Exercices", component: LevelListPage },
-      { title: "Gestion", component: LevelListPage }
+      { title: "Gestion", component: LevelListPage },
+      { title: "Recherche", component: SearchPage }
     ];
   }
 
@@ -50,6 +51,9 @@ export class MyApp {
       this.nav.setRoot(page.component,{action:1});
     } else if (page.title == "Gestion") {
       this.nav.setRoot(page.component,{action:2});
+    } else{
+      
+      this.nav.setRoot(page.component);
     }
   }
 }

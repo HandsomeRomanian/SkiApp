@@ -10,6 +10,7 @@ import { GroupListPage } from '../pages/group-list/group-list';
 import { LevelListPage } from "../pages/level-list/level-list";
 import { StudentListPage } from "../pages/student-list/student-list";
 import { ExercicesListPage } from "../pages/exercices-list/exercices-list";
+import { SearchPage } from "../pages/search/search";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +24,8 @@ import { HttpClientModule } from "@angular/common/http";
     LevelListPage,
     GroupListPage,
     StudentListPage,
-    ExercicesListPage
+    ExercicesListPage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { HttpClientModule } from "@angular/common/http";
     LevelListPage,
     GroupListPage,
     StudentListPage,
-    ExercicesListPage
+    ExercicesListPage,
+    SearchPage
   ],
   providers: [
     StatusBar,

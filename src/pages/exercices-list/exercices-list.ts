@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { SkiProvider } from '../../providers/ski/ski';
 import { Observable } from 'rxjs';
 
@@ -21,14 +21,14 @@ export class ExercicesListPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private skiService: SkiProvider, public loadingCtrl: LoadingController) {
-    console.log(navParams.get("levelID"))
     this.levelID = navParams.get("levelID");
     this.exercices = this.skiService.getExercices(this.levelID);
-
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ExercicesListPage');
+  openPage(id) {
+    alert(id);
   }
+
+  
 
 }
