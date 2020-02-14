@@ -58,7 +58,7 @@ var HomePage = /** @class */ (function () {
     }
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>SkiApp</ion-title>\n    \n    <ion-buttons end>\n      <button ion-button icon-only>\n        <ion-icon name="person"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n  \n</ion-header>\n\n<ion-content  padding>\n<h1>Home</h1>\n  \n\n\n\n\n\n  \n</ion-content>\n  '/*ion-inline-end:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title text-center>SkiApp</ion-title>\n    \n    <ion-buttons end>\n      <button ion-button icon-only color="primary">\n        <ion-icon name="person"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n  \n</ion-header>\n\n<ion-content  padding>\n<h1 text-center >Home</h1>\n    \n</ion-content>\n  '/*ion-inline-end:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], HomePage);
@@ -123,12 +123,11 @@ var LevelListPage = /** @class */ (function () {
     };
     LevelListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-level-list',template:/*ion-inline-start:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\level-list\level-list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  \n  <ion-list>\n    <button menuClose ion-item *ngFor="let lvl of (levels | async)" (click)="openPage(lvl.id)">\n      {{lvl.name}}\n    </button>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\level-list\level-list.html"*/,
+            selector: 'page-level-list',template:/*ion-inline-start:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\level-list\level-list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  \n  <ion-list>\n    <ion-item  text-center ion-item *ngFor="let lvl of (levels | async)" (click)="openPage(lvl.id)">\n      <ion-label color="primary" >\n        {{lvl.name}}\n\n      </ion-label>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\level-list\level-list.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_ski_ski__["a" /* SkiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_ski_ski__["a" /* SkiProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* LoadingController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_ski_ski__["a" /* SkiProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* LoadingController */]])
     ], LevelListPage);
     return LevelListPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=level-list.js.map
@@ -201,7 +200,7 @@ var GroupListPage = /** @class */ (function () {
     };
     GroupListPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-group-list',template:/*ion-inline-start:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\group-list\group-list.html"*/'<!--\n\n  Generated template for the GroupListPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>{{title}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <!--<ion-grid>\n\n     <ion-row>\n\n      <ion-item>\n\n        <ion-label>Cours courrants seulement</ion-label>\n\n        <ion-toggle slot="end" [(ngModel)]="onlyCurrent"></ion-toggle>\n\n      </ion-item>\n\n    </ion-row>\n\n\n\n  </ion-grid> -->\n\n\n\n  <ion-list>\n\n    <ion-item\n\n      menuClose\n\n      \n\n      *ngFor="let grp of (groups | async)"\n\n      (click)="openPage(grp)"\n\n      class="list-item"\n\n    >\n\n    \n\n    <ion-label\n\n    *ngIf="onlyCurrent && currentClass(grp.Time)"\n\n    >      \n\n      <h2><ion-badge color="primary" slot="end">{{grp.Number}}</ion-badge> {{grp.Time.substr(0,5) + "  " + this.day[grp.day-1]}}</h2>\n\n      <h2>{{grp.TeacherName}} Matei</h2>\n\n    </ion-label>\n\n  </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\group-list\group-list.html"*/,
+            selector: 'page-group-list',template:/*ion-inline-start:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\group-list\group-list.html"*/'<!--\n\n  Generated template for the GroupListPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>{{title}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <!--<ion-grid>\n\n     <ion-row>\n\n      <ion-item>\n\n        <ion-label>Cours courrants seulement</ion-label>\n\n        <ion-toggle slot="end" [(ngModel)]="onlyCurrent"></ion-toggle>\n\n      </ion-item>\n\n    </ion-row>\n\n\n\n  </ion-grid> -->\n\n\n\n  <ion-list>\n\n    <ion-item\n\n      text-center\n\n      *ngFor="let grp of (groups | async)"\n\n      (click)="openPage(grp)"\n\n      class="list-item"\n\n    >\n\n    \n\n    <ion-label\n\n    *ngIf="onlyCurrent && currentClass(grp.Time)"\n\n    >      \n\n      <h2><ion-badge color="primary" slot="end">{{grp.Number}}</ion-badge> {{grp.Time.substr(0,5) + "  " + this.day[grp.day-1]}}</h2>\n\n      <h2>{{grp.TeacherName}} Matei</h2>\n\n    </ion-label>\n\n  </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\group-list\group-list.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_ski_ski__["a" /* SkiProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* LoadingController */]])
     ], GroupListPage);
@@ -289,10 +288,10 @@ var StudentListPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-student-list',template:/*ion-inline-start:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\student-list\student-list.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">\n\n    <ion-refresher-content></ion-refresher-content>\n\n  </ion-refresher>\n\n\n\n  <ion-list>\n\n    <ion-item menuClose *ngFor="let sdnt of students" class="list-item">\n\n      <ion-label>\n\n        <h2>\n\n          {{sdnt.Name}}\n\n        </h2>\n\n        <h3>{{sdnt.Special}} Special student comment.</h3>\n\n      </ion-label>\n\n      <ion-select slot="end" [(ngModel)]="sdnt.Status" cancel-text="Annuler" interface="popover" placeholder="test"\n\n        (ionChange)="statusChange(sdnt)">\n\n        <ion-option *ngFor="let status of getStatusList();" value="{{status}}">{{status}}</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\student-list\student-list.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_ski_ski__["a" /* SkiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_ski_ski__["a" /* SkiProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* LoadingController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_ski_ski__["a" /* SkiProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* LoadingController */]])
     ], StudentListPage);
     return StudentListPage;
-    var StudentListPage_1, _a, _b, _c, _d;
+    var StudentListPage_1;
 }());
 
 //# sourceMappingURL=student-list.js.map
@@ -397,10 +396,9 @@ var SearchPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: "page-search",template:/*ion-inline-start:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\search\search.html"*/'<!--\n  Generated template for the SearchPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Recherche</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-searchbar\n    placeholder="Nom de l\'élève"\n    [ngModel]="search"\n    inputmode="text"\n    type="text"\n    (ionChange)="onSearchChange($event)"\n    [debounce]="100"\n  ></ion-searchbar>\n  <ion-list>\n    <ion-item menuClose *ngFor="let sdnt of (students|async)" class="list-item">\n      <ion-label>\n        <h2>\n          {{sdnt.student.Name}}\n        </h2>\n      </ion-label>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Matei\Documents\Projects\SkiApp\src\pages\search\search.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_ski_ski__["a" /* SkiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_ski_ski__["a" /* SkiProvider */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_ski_ski__["a" /* SkiProvider */]])
     ], SearchPage);
     return SearchPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=search.js.map
@@ -579,15 +577,17 @@ var MyApp = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */]) === "function" && _a || Object)
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Matei\Documents\Projects\SkiApp\src\app\app.html"*/'<ion-menu [content]="content" type="overlay">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Users\Matei\Documents\Projects\SkiApp\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__providers_ski_ski__["a" /* SkiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_ski_ski__["a" /* SkiProvider */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_ski_ski__["a" /* SkiProvider */]])
     ], MyApp);
     return MyApp;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=app.component.js.map
@@ -657,10 +657,10 @@ var SkiProvider = /** @class */ (function () {
     SkiProvider.apiUrl = "https://api.mateimartin.ca:8081/";
     SkiProvider = SkiProvider_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], SkiProvider);
     return SkiProvider;
-    var SkiProvider_1, _a;
+    var SkiProvider_1;
 }());
 
 //# sourceMappingURL=ski.js.map
