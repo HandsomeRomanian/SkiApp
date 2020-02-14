@@ -67,3 +67,6 @@ angular/build/
 
 
 /platforms
+/www
+/.sourcemaps
+/plugins
