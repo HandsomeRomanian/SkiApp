@@ -7,6 +7,7 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  title = "SkiApp";
   constructor(public navCtrl: NavController) {
 
   }

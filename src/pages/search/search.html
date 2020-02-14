@@ -1,27 +1,20 @@
-<!--
-  Generated template for the SearchPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Recherche</ion-title>
+    <ion-title text-center>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="primary">
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-searchbar
-    placeholder="Nom de l'élève"
-    [ngModel]="search"
-    inputmode="text"
-    type="text"
-    (ionChange)="onSearchChange($event)"
-    [debounce]="100"
-  ></ion-searchbar>
+  <ion-searchbar placeholder="Nom de l'élève" [ngModel]="search" inputmode="text" type="text"
+    (ionChange)="onSearchChange($event)" [debounce]="100"></ion-searchbar>
   <ion-list>
     <ion-item menuClose *ngFor="let sdnt of (students|async)" class="list-item">
       <ion-label>

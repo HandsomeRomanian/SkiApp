@@ -12,7 +12,7 @@ export class SkiProvider {
 
   public static levels = ["Test", "Ourson", " Kangourou", " Prélude", " Tigre", " Lion", " Christiania", " Parallèle I", " Parallèle II", " Compétence I", " Compétence II", " Élite I", " Élite II", " Excellence"]
   public static status = ["Non évalué", "Normal", "En retard", "Absent", "Fort"];
-  public static apiUrl = "https://api.mateimartin.ca:8081/"
+  public static apiUrl = "http://api.mateimartin.ca:8082/"
 
   constructor(public http: HttpClient) {
   }

@@ -15,9 +15,11 @@ import { Observable } from "rxjs";
   templateUrl: "search.html"
 })
 export class SearchPage {
+
+  title = "Recherche";
   search: string = "";
   students: Observable<any>;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private skiAPI: SkiProvider) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private skiAPI: SkiProvider) { }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad SearchPage");
@@ -25,8 +27,8 @@ export class SearchPage {
 
   onSearchChange($event) {
     this.search = $event.value.trim();
-    if (this.search && this.search != ""){
-      this.search.replace(" ","_");
+    if (this.search && this.search != "") {
+      this.search.replace(" ", "_");
       this.students = this.skiAPI.search(this.search);
 
     }

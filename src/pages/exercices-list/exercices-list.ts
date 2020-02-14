@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
   templateUrl: 'exercices-list.html',
 })
 export class ExercicesListPage {
-
+  title = "Exerices";
   levelID: number;
   exercices: Observable<any>;
 
@@ -23,6 +23,7 @@ export class ExercicesListPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private skiService: SkiProvider, public loadingCtrl: LoadingController) {
     this.levelID = navParams.get("levelID");
     this.exercices = this.skiService.getExercices(this.levelID);
+    this.title = SkiProvider.levels[this.levelID];
   }
 
   openPage(id) {

@@ -11,6 +11,7 @@ import { ExercicesListPage } from '../exercices-list/exercices-list';
   templateUrl: 'level-list.html',
 })
 export class LevelListPage {
+  title = "Niveaux";
   levels: Observable<any>;
   action: number;
 

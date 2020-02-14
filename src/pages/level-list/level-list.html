@@ -3,15 +3,20 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title text-center>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="primary">
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  
+
   <ion-list>
-    <ion-item  text-center ion-item *ngFor="let lvl of (levels | async)" (click)="openPage(lvl.id)">
-      <ion-label color="primary" >
+    <ion-item text-center ion-item *ngFor="let lvl of (levels | async)" (click)="openPage(lvl.id)">
+      <ion-label color="primary">
         {{lvl.name}}
 
       </ion-label>
