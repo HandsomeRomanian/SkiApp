@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar
+    placeholder="Nom de l'élève"
+    [ngModel]="search"
+    inputmode="text"
+    type="text"
+    (ionChange)="onSearchChange($event)"
+    [debounce]="100"
+  ></ion-searchbar>
+  <ion-list>
+    <ion-item menuClose *ngFor="let sdnt of (students|async)" class="list-item">
+      <ion-label>
+        <h2>
+          {{sdnt.student.Name}}
+        </h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

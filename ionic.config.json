@@ -1,8 +1,7 @@
 {
   "name": "SkiApp",
   "integrations": {
-    "capacitor": {},
-    "cordova": {}
+    "capacitor": {}
   },
-  "type": "ionic-angular"
+  "type": "angular"
 }

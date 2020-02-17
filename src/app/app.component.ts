@@ -1,59 +1,58 @@
-import { Component, ViewChild } from "@angular/core";
-import { Nav, Platform } from "ionic-angular";
-import { StatusBar } from "@ionic-native/status-bar";
-import { SplashScreen } from "@ionic-native/splash-screen";
+import { Component, OnInit } from '@angular/core';
 
-import { HomePage } from "../pages/home/home";
-import { SkiProvider } from "../providers/ski/ski";
-import { LevelListPage } from "../pages/level-list/level-list";
-import { SearchPage } from "../pages/search/search";
+import { Platform } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
-  templateUrl: "app.html"
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss']
 })
-export class MyApp {
-  @ViewChild(Nav) nav: Nav;
-
-  rootPage: any = HomePage;
-
-  pages: Array<{ title: string; component: any }>;
+export class AppComponent implements OnInit {
+  public selectedIndex = 0;
+  public appPages = [
+    {
+      title: 'Home',
+      url: '/',
+      icon: 'home'
+    },
+    {
+      title: 'Exercices',
+      url: '/exercices/',
+      icon: 'paper-plane'
+    },
+    {
+      title: 'Gestion',
+      url: '/management/',
+      icon: 'clipboard'
+    },
+    {
+      title: 'Recherche',
+      url: '/search/',
+      icon: 'search'
+    }
+  ];
 
   constructor(
-    public platform: Platform,
-    public statusBar: StatusBar,
-    public splashScreen: SplashScreen,
-    public skiAPI: SkiProvider
+    private platform: Platform,
+    private splashScreen: SplashScreen,
+    private statusBar: StatusBar
   ) {
     this.initializeApp();
-
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: "Home", component: HomePage },
-      { title: "Exercices", component: LevelListPage },
-      { title: "Gestion", component: LevelListPage },
-      { title: "Recherche", component: SearchPage }
-    ];
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
   }
 
-  openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    if (page.title == "Exercices") {
-      this.nav.setRoot(page.component,{action:1});
-    } else if (page.title == "Gestion") {
-      this.nav.setRoot(page.component,{action:2});
-    } else{
-      
-      this.nav.setRoot(page.component);
+  ngOnInit() {
+    const path = window.location.pathname.split('folder/')[1];
+    if (path !== undefined) {
+      this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
   }
 }
