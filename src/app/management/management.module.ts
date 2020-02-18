@@ -9,6 +9,7 @@ import { ManagementPageRoutingModule } from "./management-routing.module";
 import { ManagementPage } from "./management.page";
 import { GroupsListComponent } from "./groups-list/groups-list.component";
 import { ComponentsModule } from '../components/components.module';
+import { StudentListComponent } from './student-list/student-list.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { ComponentsModule } from '../components/components.module';
   declarations: [
     ManagementPage, 
     GroupsListComponent,
+    StudentListComponent
   ]
 })
 export class ManagementPageModule {}

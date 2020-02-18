@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ManagementPage } from './management.page';
 import { GroupsListComponent } from './groups-list/groups-list.component';
+import { StudentListComponent } from './student-list/student-list.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: ':id',
     component : GroupsListComponent
+  },
+  {
+    path: 'group/:id',
+    component : StudentListComponent
   }
 ];
 

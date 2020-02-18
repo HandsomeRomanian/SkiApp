@@ -1,3 +1,25 @@
-<p>
-  exercice-list works! fml
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item
+      menuClose
+      ion-item
+      *ngFor="let ex of exercices | async"
+      routerLink="info"
+      routerLinkActive="active"
+    >
+      <ion-label text-wrap>
+        <ion-badge color="primary" slot="end">H</ion-badge>
+        {{ ex.description }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
