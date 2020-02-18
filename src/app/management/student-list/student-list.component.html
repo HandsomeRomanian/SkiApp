@@ -34,6 +34,7 @@
       </ion-select> -->
 
       <ion-select value="brown" ok-text="Ok" cancel-text="Dismiss">
+        <ion-select-option value="test">Test</ion-select-option>
         <ion-select-option
           *ngFor="let status of getStatusList()"
           value="{{ status.id }}"
@@ -41,5 +42,23 @@
         >
       </ion-select>
     </ion-item>
+    <ion-item>
+      <ion-label>Notifications</ion-label>
+      <ion-select value="notifications" interface="action-sheet">
+        <ion-select-option value="enable">Enable</ion-select-option>
+        <ion-select-option value="mute">Mute</ion-select-option>
+        <ion-select-option value="mute_week">Mute for a week</ion-select-option>
+        <ion-select-option value="mute_year">Mute for a year</ion-select-option>
+      </ion-select>
+    </ion-item>
   </ion-list>
+  <ion-item>
+    <ion-label>Notifications</ion-label>
+    <ion-select value="notifications" interface="action-sheet">
+      <ion-select-option value="enable">Enable</ion-select-option>
+      <ion-select-option value="mute">Mute</ion-select-option>
+      <ion-select-option value="mute_week">Mute for a week</ion-select-option>
+      <ion-select-option value="mute_year">Mute for a year</ion-select-option>
+    </ion-select>
+  </ion-item>
 </ion-content>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Groupe } from './DTO';
+import { Storage } from '@ionic/Storage';
 
 @Injectable({
   providedIn: 'root'
@@ -29,12 +30,35 @@ export class SkiService {
     "Absent",
     "Fort"
   ];
-  public static apiUrl = "http://api.mateimartin.ca:8082/";
 
-  constructor(public http: HttpClient) {}
+  private static tokenName = "UserToken";
+  public static apiUrl = "http://localhost:8100/api/";
+
+  constructor(public http: HttpClient, private storage: Storage) {
+
+  }
+
+  getTest(){
+    this.storage.set("UserID","Test")
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Token": '114627',
+        "test":"placeholder"
+      })
+    };
+    this.storage.get("UserID").then(val=>console.log(val))
+    return this.http.get(SkiService.apiUrl,httpOptions);
+
+  }
 
   getLevels() {
-    return this.http.get(SkiService.apiUrl + "levels");
+    const httpOptions = {
+      headers: new HttpHeaders({
+        UserToken: '114627'
+      })
+    };
+    return this.http.get(SkiService.apiUrl + "levels",httpOptions);
   }
 
   getGroups(id: number) {

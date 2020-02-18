@@ -17,3 +17,14 @@ export class Groupe{
     Students: Student[];
 
 }
+
+export class LoginRequest{
+
+    code: number;
+    ip: string;
+
+    public LoginRequest(code:number){
+        this.code = code;
+    }
+
+}

@@ -1,0 +1,9 @@
+{
+  "/api/*": {
+    "target": "https://api.mateimartin.ca:8081/",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": { "^/api": "" }, 
+    "changeOrigin": true
+  }
+}

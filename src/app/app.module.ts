@@ -1,11 +1,10 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouteReuseStrategy } from "@angular/router";
-
+import { IonicStorageModule } from '@ionic/Storage';
 import { IonicModule, IonicRouteStrategy } from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
-
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
@@ -14,6 +13,7 @@ import { HomePageModule } from "./home/home.module";
 import { SearchPageModule } from "./search/search.module";
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { ManagementPageModule } from "./management/management.module";
+;
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
@@ -21,6 +21,7 @@ import { ManagementPageModule } from "./management/management.module";
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     ExercicesPageModule,
@@ -31,7 +32,8 @@ import { ManagementPageModule } from "./management/management.module";
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Storage
   ],
   bootstrap: [AppComponent]
 })

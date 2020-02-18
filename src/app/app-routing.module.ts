@@ -25,13 +25,13 @@ const routes: Routes = [
     loadChildren: () => import('./management/management.module').then( m => m.ManagementPageModule)
   },
   {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
     path: "**",
     component: NotFoundComponent
   },
-  {
-    path: 'management',
-    loadChildren: () => import('./management/management.module').then( m => m.ManagementPageModule)
-  }
 ];
 
 @NgModule({
