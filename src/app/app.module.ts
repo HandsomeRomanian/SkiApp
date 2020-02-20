@@ -13,6 +13,7 @@ import { HomePageModule } from "./home/home.module";
 import { SearchPageModule } from "./search/search.module";
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { ManagementPageModule } from "./management/management.module";
+import { AuthService } from './services/auth.service';
 ;
 
 @NgModule({

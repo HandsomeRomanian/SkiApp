@@ -28,3 +28,27 @@ export class LoginRequest{
     }
 
 }
+
+
+export class LoginResponse {
+
+    employe;
+    token;
+
+    public LoginResponse(Employe,Token){
+        this.employe = Employe;
+        this.token = Token;
+    }
+
+}
+
+export class Employe {
+    id;
+    name;
+    permissions;
+
+    public Employe(id, Name){
+        this.name = Name;
+        this.id = id;
+    }
+}
