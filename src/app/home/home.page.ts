@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SkiService } from '../SkiAPI/ski.service';
+import { SkiService } from '../services/ski.service';
 import { Storage  } from '@ionic/Storage';
 
 @Component({
@@ -13,7 +13,8 @@ export class HomePage implements OnInit {
 
   constructor(private SkiAPI: SkiService, public storage: Storage ) {
     SkiAPI.getTest().subscribe( resp =>{
-      console.log(resp);
+      console.table("Yp");
+      console.table(resp);
       this.storage.get("UserID").then(val => console.log(val))
     })
    }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { NavParams } from "@ionic/angular";
 import { ActivatedRoute, Router } from "@angular/router";
-import { SkiService } from "src/app/SkiAPI/ski.service";
-import { Groupe } from "src/app/SkiAPI/DTO";
+import { SkiService } from "src/app/services/ski.service";
+import { Groupe } from "src/app/services/DTO";
 
 @Component({
   selector: "app-groups-list",

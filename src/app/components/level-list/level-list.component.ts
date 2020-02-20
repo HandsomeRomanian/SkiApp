@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NavController, NavParams, LoadingController } from '@ionic/angular';
-import { SkiService } from 'src/app/SkiAPI/ski.service';
+import { SkiService } from 'src/app/services/ski.service';
 
 @Component({
   selector: 'app-level-list',

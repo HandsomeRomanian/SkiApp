@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
-import { SkiService } from "src/app/SkiAPI/ski.service";
+import { SkiService } from "src/app/services/ski.service";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({

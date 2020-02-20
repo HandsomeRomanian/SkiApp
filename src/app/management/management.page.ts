@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SkiService } from '../SkiAPI/ski.service';
+import { SkiService } from '../services/ski.service';
 
 @Component({
   selector: 'app-management',
