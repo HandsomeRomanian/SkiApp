@@ -19,14 +19,17 @@ export class LoginPage implements OnInit {
     private authAPI: AuthService,
     private router: Router
   ) {
-    this.storage.get("Token").then(val =>{
+    this.storage.get("Token").then(val => {
       console.log(val)
     })
+    if (authAPI.connected()) {
+      this.router.navigate(['/profile']);
+    }
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  login(form){
+  login(form) {
     this.authAPI.login(form.value.numero);
   }
 }
