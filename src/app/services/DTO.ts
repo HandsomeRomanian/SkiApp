@@ -1,8 +1,8 @@
 export class Student{
 
     id;
-    Name;
-    Status;
+    Name:string;
+    Status:number;
     Other;
 }
 

@@ -15,50 +15,17 @@
   <ion-list>
     <ion-item menuClose *ngFor="let sdnt of students" class="list-item">
       <ion-label>
-        <h2>
-          {{ sdnt.Name }}
-        </h2>
-        <h3>{{ sdnt.Special }} Special student comment.</h3>
+        <h2>{{ sdnt.Name }}</h2>
       </ion-label>
-      <!-- <ion-select
-        slot="end"
-        [(ngModel)]="sdnt.Status"
-        cancel-text="Annuler"
-        interface="popover"
-        placeholder="test"
-        (ionChange)="statusChange(sdnt)"
-      >
-        <ion-option >{{
-          status
-        }}</ion-option>
-      </ion-select> -->
-
-      <ion-select value="brown" ok-text="Ok" cancel-text="Dismiss">
-        <ion-select-option value="test">Test</ion-select-option>
-        <ion-select-option
-          *ngFor="let status of getStatusList()"
-          value="{{ status.id }}"
-          >{{ status }}</ion-select-option
-        >
+      <ion-select placeholder="Special" slot="end" cancel-text="Annuler">
+        <ion-select-option>{{status}}</ion-select-option>
       </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>Notifications</ion-label>
-      <ion-select value="notifications" interface="action-sheet">
-        <ion-select-option value="enable">Enable</ion-select-option>
-        <ion-select-option value="mute">Mute</ion-select-option>
-        <ion-select-option value="mute_week">Mute for a week</ion-select-option>
-        <ion-select-option value="mute_year">Mute for a year</ion-select-option>
+
+      <ion-select placeholder=" Status" slot="end" [(ngModel)]="sdnt.Status" interface="popover" value="brown"
+        ok-text="Ok" cancel-text="Dismiss" (ionChange)="statusChange(sdnt)">
+        <ion-select-option *ngFor="let status of getStatusList(); let i = index" value="{{i}}"> {{ status }}
+        </ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
-  <ion-item>
-    <ion-label>Notifications</ion-label>
-    <ion-select value="notifications" interface="action-sheet">
-      <ion-select-option value="enable">Enable</ion-select-option>
-      <ion-select-option value="mute">Mute</ion-select-option>
-      <ion-select-option value="mute_week">Mute for a week</ion-select-option>
-      <ion-select-option value="mute_year">Mute for a year</ion-select-option>
-    </ion-select>
-  </ion-item>
 </ion-content>

@@ -35,15 +35,9 @@ export class StudentListComponent {
   }
 
   statusChange(student) {
-    var tempstatus;
-    console.log(student.id + ":" + student.Status);
-    for (let index = 0; index < SkiService.status.length; index++) {
-      if (SkiService.status[index] == student.Status) {
-        tempstatus = index;
-        break;
-      }
-    }
-    var output = { "status": tempstatus, "studentID": student.id };
+    console.table(student)
+    var output = { "status": student.Status, "studentID": student.id };
+    console.table(output)
     this.skiService.setStatus(output).subscribe(x => {
       if (x) {
         location.reload()
@@ -62,8 +56,8 @@ export class StudentListComponent {
       this.students.forEach(element => {
         element.Status = SkiService.status[element.Status];
       });
-      console.log(event)
       event.complete();
     });
   }
+
 }
