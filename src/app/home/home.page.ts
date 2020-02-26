@@ -17,21 +17,11 @@ export class HomePage implements OnInit {
     public storage: Storage,
     private authAPI: AuthService,
     private router: Router
-  ) {}
+  ) {
+  }
 
-  profileClick(){
-    
-    this.storage.get("User").then(val =>console.log(val))
-
-    this.storage.get("Token").then(val =>{
-      console.log(val)
-      // if (val.length >31){
-      //   this.router.navigate(['/login']);
-      // }
-      // else {
-      //   this.router.navigate(['/login']);
-      // }
-    })
+  profileClick() {
+    this.router.navigate(['/login']);
   }
 
   ngOnInit() {

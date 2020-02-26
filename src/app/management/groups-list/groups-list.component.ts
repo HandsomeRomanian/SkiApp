@@ -30,11 +30,10 @@ export class GroupsListComponent implements OnInit {
     this.SkiAPI.getGroups(levelID).subscribe(resp => {
       this.groups = resp;
       this.data = resp;
-      console.log(resp);
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   getGroups() {
     this.data = [];
@@ -42,13 +41,13 @@ export class GroupsListComponent implements OnInit {
       this.data = this.groups;
       return this.data;
     } else {
-      this.data = this.groups.filter( group => this.currentClass(group))
+      this.data = this.groups.filter(group => this.currentClass(group))
       console.log(this.data)
     }
     return this.data
   }
 
-  updateList(){
+  updateList() {
     this.listVisibility = !this.listVisibility;
     this.getGroups()
     this.listVisibility = !this.listVisibility;
