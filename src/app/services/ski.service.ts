@@ -108,10 +108,12 @@ export class SkiService {
   search(input) {
     input = input.trim().replace(" ", "_");
 
-    const headers = new HttpHeaders({
-      "Content-Type": "application/json"
-    });
-    var tmp = this.http.get(SkiService.apiUrl + "search/" + input);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "UserToken": this.authStorage.getToken(),
+      })
+    };
+    var tmp = this.http.get(SkiService.apiUrl + "search/" + input,httpOptions);
     return tmp;
   }
 }
