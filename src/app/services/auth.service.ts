@@ -31,12 +31,19 @@ export class AuthService {
     
   }
 
+
+
   public connected():boolean{    
     return this.getToken() != null;
   }
 
   public getToken() {
     return window.localStorage.getItem("Token");
+  }
+
+
+  public getUser() {
+    this.storage.getItem("User")
   }
 
 
