@@ -14,6 +14,9 @@ import { SearchPageModule } from "./search/search.module";
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { ManagementPageModule } from "./management/management.module";
 import { AuthService } from './services/auth.service';
+import { AuthModule } from './auth/auth.module';
+import { SkiService } from './services/ski.service';
+import { SharedModule } from './components/shared.module';
 ;
 
 @NgModule({
@@ -28,14 +31,18 @@ import { AuthService } from './services/auth.service';
     ExercicesPageModule,
     HomePageModule,
     SearchPageModule,
-    ManagementPageModule
+    ManagementPageModule,
+    AuthModule,
+    SharedModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    SkiService,
+    AuthService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Storage
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

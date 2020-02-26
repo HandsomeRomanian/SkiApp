@@ -34,6 +34,11 @@ export class AppComponent implements OnInit {
       title: "Recherche",
       url: "/search/",
       icon: "search"
+    },
+    {
+      title: "Deconnection",
+      url: "/auth/",
+      icon: "lock"
     }
   ];
 

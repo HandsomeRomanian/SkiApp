@@ -7,7 +7,7 @@ import { ExercicesPage } from "./exercices.page";
 import { HttpClientModule } from "@angular/common/http";
 import { ExerciceListComponent } from "./exercice-list/exercice-list.component";
 import { ExerciceInfoComponent } from "./exercice-info/exercice-info.component";
-import { ComponentsModule } from "../components/components.module";
+import { SharedModule } from "../components/shared.module";
 
 @NgModule({
   imports: [
@@ -16,7 +16,7 @@ import { ComponentsModule } from "../components/components.module";
     IonicModule,
     ExercicesPageRoutingModule,
     HttpClientModule,
-    ComponentsModule
+    SharedModule
   ],
   declarations: [ExercicesPage, ExerciceListComponent, ExerciceInfoComponent]
 })

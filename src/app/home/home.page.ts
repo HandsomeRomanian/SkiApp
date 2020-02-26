@@ -10,19 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ["./home.page.scss"]
 })
 export class HomePage implements OnInit {
-  title: string = "SkiApp";
+  
+  constructor(  ) {  }
 
-  constructor(
-    private SkiAPI: SkiService,
-    public storage: Storage,
-    private authAPI: AuthService,
-    private router: Router
-  ) {
-  }
-
-  profileClick() {
-    this.router.navigate(['/login']);
-  }
 
   ngOnInit() {
   }

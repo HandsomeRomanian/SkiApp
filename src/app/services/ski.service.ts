@@ -84,7 +84,13 @@ export class SkiService {
   }
 
   getGroup(groupID: number) {
-    var tmp = this.http.get<Groupe>(SkiService.apiUrl + "group/" + groupID);
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "UserToken": this.authStorage.getToken(),
+      })
+    };
+    var tmp = this.http.get<Groupe>(SkiService.apiUrl + "group/" + groupID,httpOptions);
     return tmp;
   }
 
