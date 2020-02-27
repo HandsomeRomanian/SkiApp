@@ -13,7 +13,7 @@ import { Employe } from "./services/DTO";
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
-  public user = {name:"Non connecté"};
+  public user = "Non connecté"
   public appPages = [
     {
       title: "Home",
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: "Deconnection",
-      url: "/auth/",
+      url: "/auth/logout",
       icon: "lock"
     }
   ];

@@ -9,8 +9,8 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent  {
-  
+export class LoginComponent {
+
   title = "Login";
   empID: number;
 
@@ -18,17 +18,13 @@ export class LoginComponent  {
   constructor(
     public storage: Storage,
     private authAPI: AuthService,
-    private router: Router) 
-  {
-    this.storage.get("Token").then(val => {
-      console.log(val)
-    })
-    if (authAPI.connected()) {
-      this.router.navigate(['/profile']);
+    private router: Router) { }
+
+  ngOnInit() {
+    if (this.authAPI.connected()) {
+      this.router.navigate(["/profile"])
     }
   }
-
-  ngOnInit() { }
 
   login(form) {
     this.authAPI.login(form.value.numero);

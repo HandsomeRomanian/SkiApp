@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
   profileClick() {
     if (this.authService.connected()){
       this.router.navigate(['/profile']);
-
     }
     else{
       this.router.navigate(['/auth/login']);
