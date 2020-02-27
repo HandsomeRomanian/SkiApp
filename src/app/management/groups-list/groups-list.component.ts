@@ -3,6 +3,7 @@ import { NavParams } from "@ionic/angular";
 import { ActivatedRoute, Router } from "@angular/router";
 import { SkiService } from "src/app/services/ski.service";
 import { Groupe } from "src/app/services/DTO";
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: "app-groups-list",
@@ -25,7 +26,8 @@ export class GroupsListComponent implements OnInit {
     "Dimanche"
   ];
 
-  constructor(private route: ActivatedRoute, private SkiAPI: SkiService) {
+  constructor(private route: ActivatedRoute, private SkiAPI: SkiService,private authService: AuthService) {
+    this.authService.checkConnected()
     const levelID = this.route.snapshot.params.id;
     this.SkiAPI.getGroups(levelID).subscribe(resp => {
       this.groups = resp;

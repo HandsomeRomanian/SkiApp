@@ -40,8 +40,7 @@ import { SharedModule } from './components/shared.module';
     SplashScreen,
     SkiService,
     AuthService,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Storage
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })
