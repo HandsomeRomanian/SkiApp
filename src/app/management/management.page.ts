@@ -19,6 +19,7 @@ export class ManagementPage implements OnInit {
    }
 
   ngOnInit() {
+    console.log("ici")
     this.authService.checkConnected();
   }
 
