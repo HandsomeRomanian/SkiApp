@@ -32,6 +32,8 @@ export class GroupsListComponent implements OnInit {
     this.SkiAPI.getGroups(levelID).subscribe(resp => {
       this.groups = resp;
       this.data = resp;
+      this.title = SkiService.levels[resp[0].Level];
+
     });
   }
 

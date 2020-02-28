@@ -18,31 +18,27 @@ export class StudentListComponent implements OnInit {
   students: Observable<any>;
 
   constructor(private route: ActivatedRoute,
-              private skiService: SkiService,
-              public toastController: ToastController,
-              private authService: AuthService
+    private skiService: SkiService,
+    public toastController: ToastController,
+    private authService: AuthService
   ) {
     this.groupID = this.route.snapshot.params.id;
   }
   ngOnInit(): void {
     this.skiService.getGroup(this.groupID).subscribe(resp => {
       this.group = resp;
-      console.table(resp)
       this.students = this.group.Students;
       this.title =
         SkiService.levels[this.group.Level] +
         " " + this.group.Number +
-        " " + this.group.Time;
-      console.log(this.students)
+        " " + this.group.Time.substring(0, 5) +
+        " " + SkiService.days[this.group.day-1];
     });
   }
 
   statusChange(student: Student, $event) {
-    console.log($event.detail.value)
-    console.log(student)
     student.Status = $event.detail.value;
     var output = { "status": student.Status, "studentID": student.id };
-    console.log(output)
     this.skiService.setStatus(output).subscribe(
       success => { },
       async error => {
