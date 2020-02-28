@@ -438,7 +438,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n      <ion-content>\r\n        <ion-list id=\"inbox-list\">\r\n          <ion-list-header>SkiApp</ion-list-header>\r\n          <ion-note>{{user}}</ion-note>\r\n\r\n          <ion-menu-toggle\r\n            auto-hide=\"false\"\r\n            *ngFor=\"let p of appPages; let i = index\"\r\n          >\r\n            <ion-item\r\n              (click)=\"selectedIndex = i\"\r\n              routerDirection=\"root\"\r\n              [routerLink]=\"[p.url]\"\r\n              lines=\"none\"\r\n              detail=\"false\"\r\n              [class.selected]=\"selectedIndex == i\"\r\n            >\r\n              <ion-icon\r\n                slot=\"start\"\r\n                [ios]=\"p.icon + '-outline'\"\r\n                [md]=\"p.icon + '-sharp'\"\r\n              ></ion-icon>\r\n              <ion-label>{{ p.title }}</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n\r\n        <!-- <ion-list id=\"labels-list\">\r\n          <ion-list-header>Labels</ion-list-header>\r\n\r\n          <ion-item *ngFor=\"let label of labels\" lines=\"none\">\r\n            <ion-icon slot=\"start\" ios=\"bookmark-outline\" md=\"bookmark-sharp\"></ion-icon>\r\n            <ion-label>{{ label }}</ion-label>\r\n          </ion-item>\r\n        </ion-list> -->\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n \r\n</ion-app>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n      <ion-content>\r\n        <ion-list id=\"inbox-list\">\r\n          <ion-list-header>SkiApp</ion-list-header>\r\n          <ion-note> </ion-note>\r\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages; let i = index\">\r\n            <ion-item (click)=\"selectedIndex = i\" routerDirection=\"root\" [routerLink]=\"[p.url]\" lines=\"none\"\r\n              detail=\"false\" [class.selected]=\"selectedIndex == i\">\r\n              <ion-icon slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\r\n              <ion-label>{{ p.title }}</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n\r\n      <ion-footer>\r\n        <ion-item routerDirection=\"root\" [routerLink]=\"['/auth/logout']\" lines=\"none\" detail=\"false\">\r\n          <ion-icon slot=\"start\" [ios]=\"'power-outline'\" [md]=\"'power-sharp'\"></ion-icon>\r\n          <ion-label>Déconnection</ion-label>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-label></ion-label>\r\n        </ion-item>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n\r\n</ion-app>");
 
 /***/ }),
 
@@ -607,7 +607,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"Recherche\"></app-header>\r\n\r\n<ion-content>\r\n  <ion-searchbar\r\n    placeholder=\"Nom de l'élève\"\r\n    [ngModel]=\"search\"\r\n    inputmode=\"text\"\r\n    type=\"text\"\r\n    (ionChange)=\"onSearchChange($event)\"\r\n    [debounce]=\"100\"\r\n  ></ion-searchbar>\r\n  <ion-list>\r\n    <ion-item menuClose *ngFor=\"let sdnt of (students|async)\" class=\"list-item\">\r\n      <ion-label>\r\n        <h2>\r\n          {{sdnt.student.Name}}\r\n        </h2>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"Recherche\"></app-header>\r\n\r\n<ion-content>\r\n  <ion-searchbar\r\n    placeholder=\"Nom de l'élève\"\r\n    [ngModel]=\"search\"\r\n    inputmode=\"text\"\r\n    type=\"text\"\r\n    (ionChange)=\"onSearchChange($event)\"\r\n    [debounce]=\"100\"\r\n  ></ion-searchbar>\r\n  <ion-list>\r\n    <ion-item menuClose *ngFor=\"let sdnt of (students|async)\" class=\"list-item\" (click)=\"showInfoAlert(sdnt)\">\r\n      <ion-label>\r\n        <h2>\r\n          {{sdnt.student.Name}}\r\n        </h2>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -971,11 +971,6 @@ let AppComponent = class AppComponent {
                 title: "Recherche",
                 url: "/search/",
                 icon: "search"
-            },
-            {
-                title: "Deconnection",
-                url: "/auth/logout",
-                icon: "lock"
             }
         ];
         this.initializeApp();
@@ -2365,19 +2360,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _services_ski_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/ski.service */ "./src/app/services/ski.service.ts");
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
 
 
 
 
 let SearchPage = class SearchPage {
-    constructor(skiAPI, authService) {
+    constructor(skiAPI, authService, alertController, router) {
         this.skiAPI = skiAPI;
         this.authService = authService;
+        this.alertController = alertController;
+        this.router = router;
         this.title = "Recherche";
         this.search = "";
         this.authService.checkConnected();
+        console.log(_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].days[1]);
     }
     ngOnInit() {
+    }
+    showInfoAlert(result) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            console.log(result);
+            const alert = yield this.alertController.create({
+                header: 'Informations sur l\'étudiant',
+                subHeader: result.student.Name + " : " + _services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].status[result.student.Status],
+                //message: 'Groupe '+result.group.Number + " à " + result.group.Time + " le " + SkiService.days[result.group.day-1],
+                message: _services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].days[result.group.day - 1] + " " + result.group.Time.substring(0, 5) + '\n Groupe: ' + result.group.Number + "\n"
+                    + "Niveau: " + _services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].levels[result.group.Level] + "\nMoniteur: " + result.group.TeacherName,
+                buttons: [
+                    {
+                        text: 'Cancel',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: (blah) => {
+                        }
+                    }, {
+                        text: 'Groupe',
+                        handler: () => {
+                            this.router.navigate(['/management/group/' + result.group.id]);
+                        }
+                    }
+                ]
+            });
+            yield alert.present();
+        });
     }
     onSearchChange($event) {
         this.authService.checkConnected();
@@ -2390,7 +2419,9 @@ let SearchPage = class SearchPage {
 };
 SearchPage.ctorParameters = () => [
     { type: _services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"] },
-    { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] }
+    { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
 ];
 SearchPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2399,7 +2430,9 @@ SearchPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./search.page.scss */ "./src/app/search/search.page.scss")).default]
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"],
-        _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])
+        _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"],
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
 ], SearchPage);
 
 
@@ -2564,7 +2597,8 @@ __webpack_require__.r(__webpack_exports__);
 
 class Settings {
 }
-Settings.apiUrl = "https://api.mateimartin.ca:8081/";
+//public static apiUrl = "https://api.mateimartin.ca:8081/";
+Settings.apiUrl = "http://localhost:8100/api/";
 
 
 /***/ }),
@@ -2660,18 +2694,18 @@ let SkiService = class SkiService {
 SkiService.levels = [
     "Test",
     "Ourson",
-    " Kangourou",
-    " Prélude",
-    " Tigre",
-    " Lion",
-    " Christiania",
-    " Parallèle I",
-    " Parallèle II",
-    " Compétence I",
-    " Compétence II",
-    " Élite I",
-    " Élite II",
-    " Excellence"
+    "Kangourou",
+    "Prélude",
+    "Tigre",
+    "Lion",
+    "Christiania",
+    "Parallèle I",
+    "Parallèle II",
+    "Compétence I",
+    "Compétence II",
+    "Élite I",
+    "Élite II",
+    "Excellence"
 ];
 SkiService.status = [
     "Non évalué",
@@ -2679,6 +2713,15 @@ SkiService.status = [
     "En retard",
     "Absent",
     "Fort"
+];
+SkiService.days = [
+    "Lundi",
+    "Mardi",
+    "Mercredi",
+    "Jeudi",
+    "Vendredi",
+    "Samedi",
+    "Dimanche"
 ];
 SkiService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] },

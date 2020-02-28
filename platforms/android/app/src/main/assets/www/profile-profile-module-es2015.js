@@ -141,7 +141,6 @@ let ProfilePage = class ProfilePage {
         this.user = new _services_DTO__WEBPACK_IMPORTED_MODULE_6__["Employe"]();
         this.storage.get("User").then(user => {
             this.user = user;
-            console.log(user);
         });
     }
     ngOnInit() {

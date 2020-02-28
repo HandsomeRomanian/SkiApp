@@ -261,7 +261,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.user = new _services_DTO__WEBPACK_IMPORTED_MODULE_6__["Employe"]();
         this.storage.get("User").then(function (user) {
           _this.user = user;
-          console.log(user);
         });
       }
 
