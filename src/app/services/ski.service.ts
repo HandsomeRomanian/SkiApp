@@ -58,23 +58,26 @@ export class SkiService {
   getLevels() {
     const httpOptions = {
       headers: new HttpHeaders({
-        UserToken: '114627'
       })
     };
     return this.http.get(Settings.apiUrl + "levels", httpOptions);
   }
 
   getGroups(id: number) {
-    console.log("yo")
     const httpOptions = {
       headers: new HttpHeaders({
         "UserToken": this.authStorage.getToken(),
       })
     };
+<<<<<<< HEAD
     console.log(this.authStorage.getToken())
 
 
     var tmp = this.http.get<Groupe[]>(Settings.apiUrl + "groups/" + id, httpOptions).pipe(
+=======
+
+    var tmp = this.http.get<Groupe[]>(Settings.apiUrl + "levels/" + id + "/groups", httpOptions).pipe(
+>>>>>>> Ionic-Capacitor
       tap( // Log the result or error
         data => console.log("Yo", data),
         error => console.log("Yo", error)
@@ -106,7 +109,11 @@ export class SkiService {
     const httpOptions = {
       headers: new HttpHeaders({
         "UserToken": this.authStorage.getToken(),
+<<<<<<< HEAD
         "Content-Type": "application/json"
+=======
+        "Content-Type": "application/json",
+>>>>>>> Ionic-Capacitor
       })
     };
 
