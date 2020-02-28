@@ -20,7 +20,6 @@ export class ProfilePage implements OnInit {
 
     this.storage.get("User").then(user => {
       this.user = user;
-      console.log(user)
     });
   }
   ngOnInit() {
