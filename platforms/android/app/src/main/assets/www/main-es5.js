@@ -3129,6 +3129,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.authService = authService;
         this.title = "Gestion";
         this.levels = skiService.getLevels();
+        this.authService.checkConnected();
       }
 
       _createClass(ManagementPage, [{
@@ -3939,7 +3940,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               while (1) {
                 switch (_context3.prev = _context3.next) {
                   case 0:
-                    if (this.connected) {
+                    if (this.connected()) {
                       _context3.next = 6;
                       break;
                     }
@@ -3974,7 +3975,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getToken",
         value: function getToken() {
-          console.log(window.localStorage.getItem("Token"));
           return window.localStorage.getItem("Token");
         }
       }, {
@@ -4139,13 +4139,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getGroups",
         value: function getGroups(id) {
-          console.log("yo");
           var httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
               "UserToken": this.authStorage.getToken()
             })
           };
-          console.log(this.authStorage.getToken());
           var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "groups/" + id, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])( // Log the result or error
           // Log the result or error
           function (data) {

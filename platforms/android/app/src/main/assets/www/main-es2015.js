@@ -2082,6 +2082,7 @@ let ManagementPage = class ManagementPage {
         this.authService = authService;
         this.title = "Gestion";
         this.levels = skiService.getLevels();
+        this.authService.checkConnected();
     }
     ngOnInit() {
         this.authService.checkConnected();
@@ -2506,7 +2507,7 @@ let AuthService = class AuthService {
     }
     checkConnected() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            if (!this.connected) {
+            if (!this.connected()) {
                 const toast = yield this.toastController.create({
                     message: 'Cette section est reservée au utilisateurs connectées.',
                     duration: 2000
@@ -2521,7 +2522,6 @@ let AuthService = class AuthService {
         return this.getToken() != null;
     }
     getToken() {
-        console.log(window.localStorage.getItem("Token"));
         return window.localStorage.getItem("Token");
     }
     getUser() {
@@ -2614,13 +2614,11 @@ let SkiService = class SkiService {
         return this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "levels");
     }
     getGroups(id) {
-        console.log("yo");
         const httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
                 "UserToken": this.authStorage.getToken(),
             })
         };
-        console.log(this.authStorage.getToken());
         var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "groups/" + id, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(// Log the result or error
         // Log the result or error
         data => console.log("Yo", data), error => console.log("Yo", error)));
