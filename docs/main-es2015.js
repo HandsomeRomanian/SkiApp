@@ -1817,41 +1817,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePage", function() { return HomePage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-
 
 
 let HomePage = class HomePage {
-    constructor(http) {
-        this.http = http;
-    }
+    constructor() { }
     ngOnInit() {
-        const httpOptions = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
-                "Token": '114627',
-                "test": "placeholder"
-            })
-        };
-        this.http.get("http://localhost:1234/test", httpOptions).subscribe(resp => {
-            console.log(resp);
-            this.display = resp;
-        });
     }
     sync() {
         window.localStorage.setItem("test", this.allo);
         this.display = window.localStorage.getItem("test");
     }
 };
-HomePage.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
-];
 HomePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: "app-home",
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./home.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.page.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./home.page.scss */ "./src/app/home/home.page.scss")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
 ], HomePage);
 
 
@@ -2099,9 +2082,9 @@ let ManagementPage = class ManagementPage {
         this.authService = authService;
         this.title = "Gestion";
         this.levels = skiService.getLevels();
+        this.authService.checkConnected();
     }
     ngOnInit() {
-        console.log("ici");
         this.authService.checkConnected();
     }
 };
@@ -2539,7 +2522,6 @@ let AuthService = class AuthService {
         return this.getToken() != null;
     }
     getToken() {
-        console.log(window.localStorage.getItem("Token"));
         return window.localStorage.getItem("Token");
     }
     getUser() {
@@ -2582,8 +2564,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class Settings {
 }
-//public static apiUrl = "http://localhost:8100/api/";
-Settings.apiUrl = "http://api.mateimartin.ca:8082/";
+Settings.apiUrl = "https://api.mateimartin.ca:8081/";
 
 
 /***/ }),
@@ -2630,10 +2611,7 @@ let SkiService = class SkiService {
         return this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl, httpOptions);
     }
     getLevels() {
-        const httpOptions = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({})
-        };
-        return this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "levels", httpOptions);
+        return this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "levels");
     }
     getGroups(id) {
         const httpOptions = {
@@ -2641,7 +2619,7 @@ let SkiService = class SkiService {
                 "UserToken": this.authStorage.getToken(),
             })
         };
-        var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "levels/" + id + "/groups", httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(// Log the result or error
+        var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "groups/" + id, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(// Log the result or error
         // Log the result or error
         data => console.log("Yo", data), error => console.log("Yo", error)));
         return tmp;
@@ -2663,7 +2641,7 @@ let SkiService = class SkiService {
         const httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
                 "UserToken": this.authStorage.getToken(),
-                "Content-Type": "application/json",
+                "Content-Type": "application/json"
             })
         };
         return this.http.post(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "status/", student, httpOptions);

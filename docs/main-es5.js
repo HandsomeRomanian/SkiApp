@@ -2694,38 +2694,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
 
     var HomePage =
     /*#__PURE__*/
     function () {
-      function HomePage(http) {
+      function HomePage() {
         _classCallCheck(this, HomePage);
-
-        this.http = http;
       }
 
       _createClass(HomePage, [{
         key: "ngOnInit",
-        value: function ngOnInit() {
-          var _this3 = this;
-
-          var httpOptions = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
-              "Token": '114627',
-              "test": "placeholder"
-            })
-          };
-          this.http.get("http://localhost:1234/test", httpOptions).subscribe(function (resp) {
-            console.log(resp);
-            _this3.display = resp;
-          });
-        }
+        value: function ngOnInit() {}
       }, {
         key: "sync",
         value: function sync() {
@@ -2737,12 +2716,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return HomePage;
     }();
 
-    HomePage.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-      }];
-    };
-
     HomePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: "app-home",
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
@@ -2751,7 +2724,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./home.page.scss */
       "./src/app/home/home.page.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], HomePage);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], HomePage);
     /***/
   },
 
@@ -2829,7 +2802,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GroupsListComponent(route, SkiAPI, authService) {
-        var _this4 = this;
+        var _this3 = this;
 
         _classCallCheck(this, GroupsListComponent);
 
@@ -2842,8 +2815,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.authService.checkConnected();
         var levelID = this.route.snapshot.params.id;
         this.SkiAPI.getGroups(levelID).subscribe(function (resp) {
-          _this4.groups = resp;
-          _this4.data = resp;
+          _this3.groups = resp;
+          _this3.data = resp;
         });
       }
 
@@ -2853,7 +2826,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getGroups",
         value: function getGroups() {
-          var _this5 = this;
+          var _this4 = this;
 
           this.data = [];
 
@@ -2862,7 +2835,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return this.data;
           } else {
             this.data = this.groups.filter(function (group) {
-              return _this5.currentClass(group);
+              return _this4.currentClass(group);
             });
             console.log(this.data);
           }
@@ -3156,12 +3129,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.authService = authService;
         this.title = "Gestion";
         this.levels = skiService.getLevels();
+        this.authService.checkConnected();
       }
 
       _createClass(ManagementPage, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          console.log("ici");
           this.authService.checkConnected();
         }
       }]);
@@ -3282,20 +3255,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(StudentListComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this6 = this;
+          var _this5 = this;
 
           this.skiService.getGroup(this.groupID).subscribe(function (resp) {
-            _this6.group = resp;
+            _this5.group = resp;
             console.table(resp);
-            _this6.students = _this6.group.Students;
-            _this6.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].levels[_this6.group.Level] + " " + _this6.group.Number + " " + _this6.group.Time;
-            console.log(_this6.students);
+            _this5.students = _this5.group.Students;
+            _this5.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].levels[_this5.group.Level] + " " + _this5.group.Number + " " + _this5.group.Time;
+            console.log(_this5.students);
           });
         }
       }, {
         key: "statusChange",
         value: function statusChange(student, $event) {
-          var _this7 = this;
+          var _this6 = this;
 
           console.log($event.detail.value);
           console.log(student);
@@ -3306,7 +3279,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           };
           console.log(output);
           this.skiService.setStatus(output).subscribe(function (success) {}, function (error) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this7, void 0, void 0,
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this6, void 0, void 0,
             /*#__PURE__*/
             regeneratorRuntime.mark(function _callee() {
               var toast, _toast;
@@ -3909,11 +3882,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AuthService, [{
         key: "login",
         value: function login(code) {
-          var _this8 = this;
+          var _this7 = this;
 
           var body = new _DTO__WEBPACK_IMPORTED_MODULE_3__["LoginRequest"](code);
           this.http.post(_settings__WEBPACK_IMPORTED_MODULE_7__["Settings"].apiUrl + "login", body).subscribe(function (resp) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this8, void 0, void 0,
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this7, void 0, void 0,
             /*#__PURE__*/
             regeneratorRuntime.mark(function _callee2() {
               var toast;
@@ -4002,7 +3975,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getToken",
         value: function getToken() {
-          console.log(window.localStorage.getItem("Token"));
           return window.localStorage.getItem("Token");
         }
       }, {
@@ -4065,10 +4037,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var Settings = function Settings() {
       _classCallCheck(this, Settings);
-    }; //public static apiUrl = "http://localhost:8100/api/";
+    };
 
-
-    Settings.apiUrl = "http://api.mateimartin.ca:8082/";
+    Settings.apiUrl = "https://api.mateimartin.ca:8081/";
     /***/
   },
 
@@ -4163,10 +4134,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getLevels",
         value: function getLevels() {
-          var httpOptions = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({})
-          };
-          return this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "levels", httpOptions);
+          return this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "levels");
         }
       }, {
         key: "getGroups",
@@ -4176,7 +4144,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "UserToken": this.authStorage.getToken()
             })
           };
-          var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "levels/" + id + "/groups", httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])( // Log the result or error
+          var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "groups/" + id, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])( // Log the result or error
           // Log the result or error
           function (data) {
             return console.log("Yo", data);

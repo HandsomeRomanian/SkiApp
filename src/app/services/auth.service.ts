@@ -50,7 +50,7 @@ export class AuthService {
   public async checkConnected() {
 <<<<<<< HEAD
 
-    if (this.connected) {
+    if (!this.connected()) {
       const toast = await this.toastController.create({
         message: 'Cette section est reservée au utilisateurs connectées.',
         duration: 2000
@@ -79,7 +79,6 @@ export class AuthService {
   }
 
   public getToken() {
-    console.log(window.localStorage.getItem("Token"))
     return window.localStorage.getItem("Token");
   }
 

@@ -16,6 +16,7 @@ export class ManagementPage implements OnInit {
   constructor(private skiService: SkiService,
               private authService: AuthService) {
     this.levels = skiService.getLevels();
+    this.authService.checkConnected();
    }
 
   ngOnInit() {
