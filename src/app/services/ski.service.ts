@@ -56,23 +56,15 @@ export class SkiService {
   }
 
   getLevels() {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        UserToken: '114627'
-      })
-    };
-    return this.http.get(Settings.apiUrl + "levels", httpOptions);
+    return this.http.get(Settings.apiUrl + "levels");
   }
 
   getGroups(id: number) {
-    console.log("yo")
     const httpOptions = {
       headers: new HttpHeaders({
         "UserToken": this.authStorage.getToken(),
       })
     };
-    console.log(this.authStorage.getToken())
-
 
     var tmp = this.http.get<Groupe[]>(Settings.apiUrl + "groups/" + id, httpOptions).pipe(
       tap( // Log the result or error
