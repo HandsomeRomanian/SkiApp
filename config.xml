@@ -1,16 +1,9 @@
-<<<<<<< HEAD
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8" ?>
 <widget id="ca.mateimartin.skiapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>SkiApp</name>
     <description>AppForSki</description>
     <author email="matei@mateimartin.ca" href="https://mateimartin.ca/">Matei Martin</author>
-=======
-<?xml version="1.0" encoding="utf-8" ?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>SkiApp</name>
-    <description>SkiApp</description>
-    <author email="hi@ionicframework.com" href="http://ionicframework.com/">Ionic Framework Team</author>
->>>>>>> Ionic-Capacitor
+
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
