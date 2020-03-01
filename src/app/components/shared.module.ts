@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { IonicModule } from "@ionic/angular";
-import { LevelListComponent } from "./level-list/level-list.component";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
+import { LevelListComponent } from "./level-list/level-list.component";
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({

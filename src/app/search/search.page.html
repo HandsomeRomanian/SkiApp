@@ -10,7 +10,7 @@
     [debounce]="100"
   ></ion-searchbar>
   <ion-list>
-    <ion-item menuClose *ngFor="let sdnt of (students|async)" class="list-item">
+    <ion-item menuClose *ngFor="let sdnt of (students|async)" class="list-item" (click)="showInfoAlert(sdnt)">
       <ion-label>
         <h2>
           {{sdnt.student.Name}}

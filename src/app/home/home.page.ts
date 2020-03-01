@@ -33,4 +33,9 @@ export class HomePage implements OnInit {
     window.localStorage.setItem("test",this.allo);
     this.display = window.localStorage.getItem("test");
   }
+
+  sync(){
+    window.localStorage.setItem("test",this.allo);
+    this.display = window.localStorage.getItem("test");
+  }
 }

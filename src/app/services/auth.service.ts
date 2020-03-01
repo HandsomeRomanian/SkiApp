@@ -48,6 +48,7 @@ export class AuthService {
   }
 
   public async checkConnected() {
+
     if (!this.connected()) {
       const toast = await this.toastController.create({
         message: 'Cette section est reservée au utilisateurs connectées.',

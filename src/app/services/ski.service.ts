@@ -13,18 +13,18 @@ export class SkiService {
   public static levels = [
     "Test",
     "Ourson",
-    " Kangourou",
-    " Prélude",
-    " Tigre",
-    " Lion",
-    " Christiania",
-    " Parallèle I",
-    " Parallèle II",
-    " Compétence I",
-    " Compétence II",
-    " Élite I",
-    " Élite II",
-    " Excellence"
+    "Kangourou",
+    "Prélude",
+    "Tigre",
+    "Lion",
+    "Christiania",
+    "Parallèle I",
+    "Parallèle II",
+    "Compétence I",
+    "Compétence II",
+    "Élite I",
+    "Élite II",
+    "Excellence"
   ];
   public static status = [
     "Non évalué",
@@ -32,6 +32,16 @@ export class SkiService {
     "En retard",
     "Absent",
     "Fort"
+  ];
+  public static days = [
+    "Erreur",
+    "Lundi",
+    "Mardi",
+    "Mercredi",
+    "Jeudi",
+    "Vendredi",
+    "Samedi",
+    "Dimanche"
   ];
 
 
@@ -56,11 +66,7 @@ export class SkiService {
   }
 
   getLevels() {
-    const httpOptions = {
-      headers: new HttpHeaders({
-      })
-    };
-    return this.http.get(Settings.apiUrl + "levels", httpOptions);
+    return this.http.get(Settings.apiUrl + "levels");
   }
 
   getGroups(id: number) {
@@ -70,7 +76,7 @@ export class SkiService {
       })
     };
 
-    var tmp = this.http.get<Groupe[]>(Settings.apiUrl + "levels/" + id + "/groups", httpOptions).pipe(
+    var tmp = this.http.get<Groupe[]>(Settings.apiUrl + "groups/" + id, httpOptions).pipe(
       tap( // Log the result or error
         data => console.log("Yo", data),
         error => console.log("Yo", error)
@@ -102,7 +108,7 @@ export class SkiService {
     const httpOptions = {
       headers: new HttpHeaders({
         "UserToken": this.authStorage.getToken(),
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       })
     };
 
