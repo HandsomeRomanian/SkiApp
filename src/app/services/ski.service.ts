@@ -76,7 +76,7 @@ export class SkiService {
       })
     };
 
-    var tmp = this.http.get<Groupe[]>(Settings.apiUrl + "groups/" + id, httpOptions).pipe(
+    var tmp = this.http.get<Groupe[]>(Settings.apiUrl + "levels/" + id + "/groups", httpOptions).pipe(
       tap( // Log the result or error
         data => console.log("Yo", data),
         error => console.log("Yo", error)
