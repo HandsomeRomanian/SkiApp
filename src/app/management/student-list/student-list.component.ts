@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 import { SkiService } from "src/app/services/ski.service";
 import { ActivatedRoute } from "@angular/router";
 import { Student } from 'src/app/services/DTO';
-import { ToastController } from '@ionic/angular';
+import { ToastController, PopoverController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -20,7 +20,8 @@ export class StudentListComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private skiService: SkiService,
     public toastController: ToastController,
-    private authService: AuthService
+    private authService: AuthService,
+    private popoverController: PopoverController
   ) {
     this.groupID = this.route.snapshot.params.id;
   }
@@ -68,6 +69,13 @@ export class StudentListComponent implements OnInit {
     return SkiService.status;
   }
 
-
+  async openPopOver(ev) {
+    let popover = await this.popoverController.create({
+      component: 'app-popover-options',
+      event: ev,
+      translucent: true
+    });
+    return popover.present();
+  }
 
 }

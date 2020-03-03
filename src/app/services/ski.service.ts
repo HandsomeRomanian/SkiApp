@@ -27,7 +27,6 @@ export class SkiService {
     "Excellence"
   ];
   public static status = [
-    "Non évalué",
     "Normal",
     "En retard",
     "Absent",
