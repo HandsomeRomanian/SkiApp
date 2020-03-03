@@ -226,7 +226,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header text-center [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button auto-hide=\"false\"></ion-menu-button>\r\n      <ion-button icon=\"person\" (click)=\"back()\"></ion-button>\r\n    </ion-buttons>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button (click)=\"profileClick()\">\r\n        <ion-icon slot=\"icon-only\" ios=\"person\" md=\"person\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n\r\n    <ion-title class=\"ion-text-center\">{{title}}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>";
+    __webpack_exports__["default"] = "<ion-header text-center [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button auto-hide=\"false\"></ion-menu-button>\r\n      <ion-button icon=\"person\" (click)=\"back()\"></ion-button>\r\n    </ion-buttons>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button (click)=\"profileClick()\">\r\n        <ion-icon slot=\"icon-only\" ios=\"person\" md=\"person\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n\r\n    <ion-title class=\"ion-text-center\" >{{title}}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>";
     /***/
   },
 
@@ -346,7 +346,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-header title=\"{{title}}\"></app-header>\r\n\r\n\r\n<ion-content padding>\r\n  <!-- <ion-item>\r\n    <ion-label>Cours courrants seulement</ion-label>\r\n    <ion-toggle\r\n      slot=\"end\"\r\n      (click)=\"updateList()\"\r\n      [(ngModel)]=\"onlyCurrent\"\r\n    ></ion-toggle>\r\n  </ion-item> -->\r\n\r\n  <ion-list *ngIf=\"listVisibility\">\r\n    <ion-item\r\n      text-center\r\n      routerLinkActive=\"active\"\r\n      *ngFor=\"let grp of getGroups()\"\r\n      class=\"list-item\"\r\n    >\r\n      <ion-label>\r\n        <h2>\r\n          <ion-badge color=\"primary\" slot=\"end\">{{ grp.Number }}</ion-badge>\r\n          {{ grp.Time.substr(0, 5) + \" \" + this.day[grp.day - 1] }}\r\n        </h2>\r\n        <h2>{{ grp.TeacherName }} Matei</h2>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<app-header title=\"{{ title }}\"></app-header>\r\n\r\n<ion-content padding>\r\n  <!-- <ion-item>\r\n    <ion-label>Cours courrants seulement</ion-label>\r\n    <ion-toggle\r\n      slot=\"end\"\r\n      (click)=\"updateList()\"\r\n      [(ngModel)]=\"onlyCurrent\"\r\n    ></ion-toggle>\r\n  </ion-item> -->\r\n\r\n  <ion-list *ngIf=\"listVisibility\">\r\n    <ion-item\r\n      text-center\r\n      routerLinkActive=\"active\"\r\n      routerLink=\"../group/{{ grp.id }}\"\r\n      *ngFor=\"let grp of getGroups()\"\r\n      class=\"list-item\"\r\n    >\r\n      <ion-label>\r\n        <h2>\r\n          <ion-badge color=\"primary\" slot=\"end\">{{ grp.Number }}</ion-badge>\r\n          {{ grp.Time.substr(0, 5) + \" \" + this.day[grp.day - 1] }}\r\n        </h2>\r\n        <h2>{{ grp.TeacherName }} Matei</h2>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -2721,17 +2721,38 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
 
     var HomePage =
     /*#__PURE__*/
     function () {
-      function HomePage() {
+      function HomePage(http) {
         _classCallCheck(this, HomePage);
+
+        this.http = http;
       }
 
       _createClass(HomePage, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          var _this3 = this;
+
+          var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+              "Token": '114627',
+              "test": "placeholder"
+            })
+          };
+          this.http.get("http://localhost:1234/test", httpOptions).subscribe(function (resp) {
+            console.log(resp);
+            _this3.display = resp;
+          });
+        }
       }, {
         key: "sync",
         value: function sync() {
@@ -2743,6 +2764,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return HomePage;
     }();
 
+    HomePage.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+      }];
+    };
+
     HomePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: "app-home",
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
@@ -2751,7 +2778,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./home.page.scss */
       "./src/app/home/home.page.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], HomePage);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], HomePage);
     /***/
   },
 
@@ -2829,7 +2856,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GroupsListComponent(route, SkiAPI, authService) {
-        var _this3 = this;
+        var _this4 = this;
 
         _classCallCheck(this, GroupsListComponent);
 
@@ -2842,9 +2869,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.authService.checkConnected();
         var levelID = this.route.snapshot.params.id;
         this.SkiAPI.getGroups(levelID).subscribe(function (resp) {
-          _this3.groups = resp;
-          _this3.data = resp;
-          _this3.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"].levels[resp[0].Level];
+          _this4.groups = resp;
+          _this4.data = resp;
+          _this4.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"].levels[resp[0].Level];
         });
       }
 
@@ -2854,7 +2881,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getGroups",
         value: function getGroups() {
-          var _this4 = this;
+          var _this5 = this;
 
           this.data = [];
 
@@ -2863,7 +2890,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return this.data;
           } else {
             this.data = this.groups.filter(function (group) {
-              return _this4.currentClass(group);
+              return _this5.currentClass(group);
             });
             console.log(this.data);
           }
@@ -3283,18 +3310,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(StudentListComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this5 = this;
+          var _this6 = this;
 
           this.skiService.getGroup(this.groupID).subscribe(function (resp) {
-            _this5.group = resp;
-            _this5.students = _this5.group.Students;
-            _this5.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].levels[_this5.group.Level] + " " + _this5.group.Number + " " + _this5.group.Time.substring(0, 5) + " " + src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].days[_this5.group.day - 1];
+            _this6.group = resp;
+            console.table(resp);
+            _this6.students = _this6.group.Students;
+            _this6.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].levels[_this6.group.Level] + " " + _this6.group.Number + " " + _this6.group.Time.substring(0, 5) + " " + src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].days[_this6.group.day];
           });
         }
       }, {
         key: "statusChange",
         value: function statusChange(student, $event) {
-          var _this6 = this;
+          var _this7 = this;
 
           student.Status = $event.detail.value;
           var output = {
@@ -3302,7 +3330,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "studentID": student.id
           };
           this.skiService.setStatus(output).subscribe(function (success) {}, function (error) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this6, void 0, void 0,
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this7, void 0, void 0,
             /*#__PURE__*/
             regeneratorRuntime.mark(function _callee() {
               var toast, _toast;
@@ -3703,7 +3731,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee2() {
-            var _this7 = this;
+            var _this8 = this;
 
             var alert;
             return regeneratorRuntime.wrap(function _callee2$(_context2) {
@@ -3725,7 +3753,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       }, {
                         text: 'Groupe',
                         handler: function handler() {
-                          _this7.router.navigate(['/management/group/' + result.group.id]);
+                          _this8.router.navigate(['/management/group/' + result.group.id]);
                         }
                       }]
                     });
@@ -3970,11 +3998,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AuthService, [{
         key: "login",
         value: function login(code) {
-          var _this8 = this;
+          var _this9 = this;
 
           var body = new _DTO__WEBPACK_IMPORTED_MODULE_3__["LoginRequest"](code);
           this.http.post(_settings__WEBPACK_IMPORTED_MODULE_7__["Settings"].apiUrl + "login", body).subscribe(function (resp) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this8, void 0, void 0,
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this9, void 0, void 0,
             /*#__PURE__*/
             regeneratorRuntime.mark(function _callee3() {
               var toast;
@@ -4063,6 +4091,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getToken",
         value: function getToken() {
+          console.log(window.localStorage.getItem("Token"));
           return window.localStorage.getItem("Token");
         }
       }, {
@@ -4232,7 +4261,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "UserToken": this.authStorage.getToken()
             })
           };
-          var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "groups/" + id, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])( // Log the result or error
+          var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "levels/" + id + "/groups", httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])( // Log the result or error
           // Log the result or error
           function (data) {
             return console.log("Yo", data);

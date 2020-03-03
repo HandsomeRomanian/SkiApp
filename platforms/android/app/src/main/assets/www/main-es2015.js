@@ -477,7 +477,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header text-center [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button auto-hide=\"false\"></ion-menu-button>\r\n      <ion-button icon=\"person\" (click)=\"back()\"></ion-button>\r\n    </ion-buttons>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button (click)=\"profileClick()\">\r\n        <ion-icon slot=\"icon-only\" ios=\"person\" md=\"person\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n\r\n    <ion-title class=\"ion-text-center\">{{title}}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header text-center [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button auto-hide=\"false\"></ion-menu-button>\r\n      <ion-button icon=\"person\" (click)=\"back()\"></ion-button>\r\n    </ion-buttons>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button (click)=\"profileClick()\">\r\n        <ion-icon slot=\"icon-only\" ios=\"person\" md=\"person\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n\r\n    <ion-title class=\"ion-text-center\" >{{title}}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>");
 
 /***/ }),
 
@@ -555,7 +555,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"{{title}}\"></app-header>\r\n\r\n\r\n<ion-content padding>\r\n  <!-- <ion-item>\r\n    <ion-label>Cours courrants seulement</ion-label>\r\n    <ion-toggle\r\n      slot=\"end\"\r\n      (click)=\"updateList()\"\r\n      [(ngModel)]=\"onlyCurrent\"\r\n    ></ion-toggle>\r\n  </ion-item> -->\r\n\r\n  <ion-list *ngIf=\"listVisibility\">\r\n    <ion-item\r\n      text-center\r\n      routerLinkActive=\"active\"\r\n      *ngFor=\"let grp of getGroups()\"\r\n      class=\"list-item\"\r\n    >\r\n      <ion-label>\r\n        <h2>\r\n          <ion-badge color=\"primary\" slot=\"end\">{{ grp.Number }}</ion-badge>\r\n          {{ grp.Time.substr(0, 5) + \" \" + this.day[grp.day - 1] }}\r\n        </h2>\r\n        <h2>{{ grp.TeacherName }} Matei</h2>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"{{ title }}\"></app-header>\r\n\r\n<ion-content padding>\r\n  <!-- <ion-item>\r\n    <ion-label>Cours courrants seulement</ion-label>\r\n    <ion-toggle\r\n      slot=\"end\"\r\n      (click)=\"updateList()\"\r\n      [(ngModel)]=\"onlyCurrent\"\r\n    ></ion-toggle>\r\n  </ion-item> -->\r\n\r\n  <ion-list *ngIf=\"listVisibility\">\r\n    <ion-item\r\n      text-center\r\n      routerLinkActive=\"active\"\r\n      routerLink=\"../group/{{ grp.id }}\"\r\n      *ngFor=\"let grp of getGroups()\"\r\n      class=\"list-item\"\r\n    >\r\n      <ion-label>\r\n        <h2>\r\n          <ion-badge color=\"primary\" slot=\"end\">{{ grp.Number }}</ion-badge>\r\n          {{ grp.Time.substr(0, 5) + \" \" + this.day[grp.day - 1] }}\r\n        </h2>\r\n        <h2>{{ grp.TeacherName }} Matei</h2>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -1837,24 +1837,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePage", function() { return HomePage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
 
 
 let HomePage = class HomePage {
-    constructor() { }
+    constructor(http) {
+        this.http = http;
+    }
     ngOnInit() {
+        const httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
+                "Token": '114627',
+                "test": "placeholder"
+            })
+        };
+        this.http.get("http://localhost:1234/test", httpOptions).subscribe(resp => {
+            console.log(resp);
+            this.display = resp;
+        });
     }
     sync() {
         window.localStorage.setItem("test", this.allo);
         this.display = window.localStorage.getItem("test");
     }
 };
+HomePage.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
 HomePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: "app-home",
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./home.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.page.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./home.page.scss */ "./src/app/home/home.page.scss")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
 ], HomePage);
 
 
@@ -2174,12 +2191,13 @@ let StudentListComponent = class StudentListComponent {
     ngOnInit() {
         this.skiService.getGroup(this.groupID).subscribe(resp => {
             this.group = resp;
+            console.table(resp);
             this.students = this.group.Students;
             this.title =
                 src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].levels[this.group.Level] +
                     " " + this.group.Number +
                     " " + this.group.Time.substring(0, 5) +
-                    " " + src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].days[this.group.day - 1];
+                    " " + src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].days[this.group.day];
         });
     }
     statusChange(student, $event) {
@@ -2577,6 +2595,7 @@ let AuthService = class AuthService {
         return this.getToken() != null;
     }
     getToken() {
+        console.log(window.localStorage.getItem("Token"));
         return window.localStorage.getItem("Token");
     }
     getUser() {
@@ -2674,7 +2693,7 @@ let SkiService = class SkiService {
                 "UserToken": this.authStorage.getToken(),
             })
         };
-        var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "groups/" + id, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(// Log the result or error
+        var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "levels/" + id + "/groups", httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(// Log the result or error
         // Log the result or error
         data => console.log("Yo", data), error => console.log("Yo", error)));
         return tmp;
