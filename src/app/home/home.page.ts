@@ -16,17 +16,6 @@ export class HomePage implements OnInit {
   ngOnInit() {
 
     
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Token": '114627',
-        "test": "placeholder"
-      })
-    };
-
-    this.http.get("http://localhost:1234/test",httpOptions).subscribe(resp=>{
-      console.log(resp);
-      this.display = resp;
-    })
   }
 
   sync(){
