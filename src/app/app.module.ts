@@ -17,11 +17,12 @@ import { AuthService } from './services/auth.service';
 import { AuthModule } from './auth/auth.module';
 import { SkiService } from './services/ski.service';
 import { SharedModule } from './components/shared.module';
+import { PopoverOptionsComponent } from './management/student-list/popover-options/popover-options.component';
 ;
 
 @NgModule({
-  declarations: [AppComponent, NotFoundComponent],
-  entryComponents: [],
+  declarations: [AppComponent, NotFoundComponent,PopoverOptionsComponent],
+  entryComponents: [PopoverOptionsComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -40,8 +41,7 @@ import { SharedModule } from './components/shared.module';
     SplashScreen,
     SkiService,
     AuthService,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Storage
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })

@@ -22,8 +22,7 @@ export class LoginRequest{
 
     code: number;
     ip: string;
-
-    public LoginRequest(code:number){
+    constructor(code:number){
         this.code = code;
     }
 
@@ -32,7 +31,7 @@ export class LoginRequest{
 
 export class LoginResponse {
 
-    employe;
+    employe:Employe;
     token;
 
     public LoginResponse(Employe,Token){

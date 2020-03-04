@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Groupe } from './DTO';
 import { Storage } from '@ionic/Storage';
 import { tap } from 'rxjs/operators';
+import { Settings } from './settings';
 
 @Injectable({
   providedIn: 'root'
@@ -12,31 +13,40 @@ export class SkiService {
   public static levels = [
     "Test",
     "Ourson",
-    " Kangourou",
-    " Prélude",
-    " Tigre",
-    " Lion",
-    " Christiania",
-    " Parallèle I",
-    " Parallèle II",
-    " Compétence I",
-    " Compétence II",
-    " Élite I",
-    " Élite II",
-    " Excellence"
+    "Kangourou",
+    "Prélude",
+    "Tigre",
+    "Lion",
+    "Christiania",
+    "Parallèle I",
+    "Parallèle II",
+    "Compétence I",
+    "Compétence II",
+    "Élite I",
+    "Élite II",
+    "Excellence"
   ];
   public static status = [
-    "Non évalué",
     "Normal",
     "En retard",
     "Absent",
     "Fort"
   ];
+  public static days = [
+    "Erreur",
+    "Lundi",
+    "Mardi",
+    "Mercredi",
+    "Jeudi",
+    "Vendredi",
+    "Samedi",
+    "Dimanche"
+  ];
 
-  private static tokenName = "UserToken";
-  public static apiUrl = "http://localhost:8100/api/";
 
-  constructor(public http: HttpClient, private storage: Storage, private authStorage: AuthService) {
+  constructor(public http: HttpClient,
+    private storage: Storage,
+    private authStorage: AuthService) {
 
   }
 
@@ -49,66 +59,58 @@ export class SkiService {
         "test": "placeholder"
       })
     };
-    this.storage.get("UserID").then(val => console.log(val))
-    return this.http.get(SkiService.apiUrl, httpOptions);
+    return this.http.get(Settings.apiUrl, httpOptions);
 
   }
 
   getLevels() {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        UserToken: '114627'
-      })
-    };
-    return this.http.get(SkiService.apiUrl + "levels", httpOptions);
+    return this.http.get(Settings.apiUrl + "levels");
   }
 
   getGroups(id: number) {
-    console.log("yo")
     const httpOptions = {
       headers: new HttpHeaders({
         "UserToken": this.authStorage.getToken(),
       })
     };
-    console.log(this.authStorage.getToken())
-    
 
-    var tmp = this.http.get<Groupe[]>(SkiService.apiUrl + "groups/" + id, httpOptions).pipe(
+    var tmp = this.http.get<Groupe[]>(Settings.apiUrl + "levels/" + id + "/groups", httpOptions).pipe(
       tap( // Log the result or error
         data => console.log("Yo", data),
         error => console.log("Yo", error)
       )
     );
-    
+
     return tmp;
   }
 
   getGroup(groupID: number) {
-    
+
     const httpOptions = {
       headers: new HttpHeaders({
         "UserToken": this.authStorage.getToken(),
       })
     };
-    var tmp = this.http.get<Groupe>(SkiService.apiUrl + "group/" + groupID,httpOptions);
+    var tmp = this.http.get<Groupe>(Settings.apiUrl + "group/" + groupID, httpOptions);
     return tmp;
   }
 
   getExercices(levelID: number) {
     var tmp = this.http.get(
-      SkiService.apiUrl + "levels/" + levelID + "/exercices"
+      Settings.apiUrl + "levels/" + levelID + "/exercices"
     );
     return tmp;
   }
 
   setStatus(student: any) {
-    const headers = new HttpHeaders({
-      "Content-Type": "application/json"
-    });
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "UserToken": this.authStorage.getToken(),
+        "Content-Type": "application/json"
+      })
+    };
 
-    return this.http.post<any>(SkiService.apiUrl + "status/", student, {
-      headers
-    });
+    return this.http.post(Settings.apiUrl + "status/", student, httpOptions)
   }
 
   search(input) {
@@ -119,7 +121,8 @@ export class SkiService {
         "UserToken": this.authStorage.getToken(),
       })
     };
-    var tmp = this.http.get(SkiService.apiUrl + "search/" + input,httpOptions);
+    var tmp = this.http.get(Settings.apiUrl + "search/" + input, httpOptions);
     return tmp;
   }
+
 }

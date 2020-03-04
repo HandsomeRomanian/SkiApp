@@ -166,7 +166,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n      <ion-content>\r\n        <ion-list id=\"inbox-list\">\r\n          <ion-list-header>SkiApp</ion-list-header>\r\n          <ion-note>{{user}}</ion-note>\r\n\r\n          <ion-menu-toggle\r\n            auto-hide=\"false\"\r\n            *ngFor=\"let p of appPages; let i = index\"\r\n          >\r\n            <ion-item\r\n              (click)=\"selectedIndex = i\"\r\n              routerDirection=\"root\"\r\n              [routerLink]=\"[p.url]\"\r\n              lines=\"none\"\r\n              detail=\"false\"\r\n              [class.selected]=\"selectedIndex == i\"\r\n            >\r\n              <ion-icon\r\n                slot=\"start\"\r\n                [ios]=\"p.icon + '-outline'\"\r\n                [md]=\"p.icon + '-sharp'\"\r\n              ></ion-icon>\r\n              <ion-label>{{ p.title }}</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n\r\n        <!-- <ion-list id=\"labels-list\">\r\n          <ion-list-header>Labels</ion-list-header>\r\n\r\n          <ion-item *ngFor=\"let label of labels\" lines=\"none\">\r\n            <ion-icon slot=\"start\" ios=\"bookmark-outline\" md=\"bookmark-sharp\"></ion-icon>\r\n            <ion-label>{{ label }}</ion-label>\r\n          </ion-item>\r\n        </ion-list> -->\r\n      </ion-content>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n \r\n</ion-app>\r\n";
+    __webpack_exports__["default"] = "<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n      <ion-content>\r\n        <ion-list id=\"inbox-list\">\r\n          <ion-list-header>SkiApp</ion-list-header>\r\n          <ion-note> </ion-note>\r\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages; let i = index\">\r\n            <ion-item (click)=\"selectedIndex = i\" routerDirection=\"root\" [routerLink]=\"[p.url]\" lines=\"none\"\r\n              detail=\"false\" [class.selected]=\"selectedIndex == i\">\r\n              <ion-icon slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\r\n              <ion-label>{{ p.title }}</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n\r\n      <ion-footer>\r\n        <ion-item routerDirection=\"root\" [routerLink]=\"['/auth/logout']\" lines=\"none\" detail=\"false\">\r\n          <ion-icon slot=\"start\" [ios]=\"'power-outline'\" [md]=\"'power-sharp'\"></ion-icon>\r\n          <ion-label>Déconnection</ion-label>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-label></ion-label>\r\n        </ion-item>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n\r\n</ion-app>";
     /***/
   },
 
@@ -186,7 +186,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-header title=\"Profile\"></app-header>\n\n<ion-content  padding>\n  <form #form=\"ngForm\" (ngSubmit)=\"login(form)\">\n    <ion-grid>\n      <ion-row color=\"primary\" justify-content-center>\n        <ion-col align-self-center size-md=\"6\" size-lg=\"5\" size-xs=\"12\">\n          <div padding>\n            <ion-item>\n              <ion-input name=\"numero\" type=\"password\" placeholder=\"Numéro Employé\" ngModel required></ion-input>\n            </ion-item>\n          </div>\n          <div padding>\n            <ion-button size=\"large\" type=\"submit\" [disabled]=\"form.invalid\" expand=\"block\">Connection</ion-button>\n          </div>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </form>\n</ion-content>\n\n";
+    __webpack_exports__["default"] = "<app-header title=\"Connection\"></app-header>\r\n\r\n<ion-content center padding>\r\n  <form #form=\"ngForm\" (ngSubmit)=\"login(form)\">\r\n    <ion-grid>\r\n      <ion-row center color=\"primary\" justify-content-center>\r\n        <ion-col align-self-center size-md=\"6\" size-lg=\"5\" size-xs=\"12\">\r\n          <div padding>\r\n            <ion-item>\r\n              <ion-input name=\"numero\" type=\"password\" placeholder=\"Numéro Employé\" ngModel required></ion-input>\r\n            </ion-item>\r\n          </div>\r\n          <div padding>\r\n            <ion-button size=\"large\" type=\"submit\" [disabled]=\"form.invalid\" expand=\"block\">Connection</ion-button>\r\n          </div>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </form>\r\n</ion-content>";
     /***/
   },
 
@@ -206,7 +206,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<p>\n  logout works!\n</p>\n";
+    __webpack_exports__["default"] = "<p>\r\n  Error\r\n</p>\r\n";
     /***/
   },
 
@@ -226,7 +226,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header text-center [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button auto-hide=\"false\"></ion-menu-button>\n    </ion-buttons>\n    <ion-buttons slot=\"primary\">\n      <ion-button (click)=\"profileClick()\">\n        <ion-icon slot=\"icon-only\" ios=\"person\" md=\"person\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n\n    <ion-title >{{title}}</ion-title>\n  </ion-toolbar>\n</ion-header>";
+    __webpack_exports__["default"] = "<ion-header text-center [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button auto-hide=\"false\"></ion-menu-button>\r\n      <ion-button icon=\"person\" (click)=\"back()\"></ion-button>\r\n    </ion-buttons>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button (click)=\"profileClick()\">\r\n        <ion-icon slot=\"icon-only\" ios=\"person\" md=\"person\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n\r\n    <ion-title class=\"ion-text-center\" >{{title}}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>";
     /***/
   },
 
@@ -266,7 +266,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ title }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>";
+    __webpack_exports__["default"] = "<app-header title=\"Info Exercice\"></app-header>";
     /***/
   },
 
@@ -286,7 +286,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ title }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content padding>\r\n  <ion-list>\r\n    <ion-item\r\n      menuClose\r\n      ion-item\r\n      *ngFor=\"let ex of exercices | async\"\r\n      routerLink=\"info\"\r\n      routerLinkActive=\"active\"\r\n    >\r\n      <ion-label text-wrap>\r\n        <ion-badge color=\"primary\" slot=\"end\">H</ion-badge>\r\n        {{ ex.description }}\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<app-header title=\"Liste Exercices\"></app-header>\r\n\r\n<ion-content padding>\r\n  <ion-list>\r\n    <ion-item\r\n      menuClose\r\n      ion-item\r\n      *ngFor=\"let ex of exercices | async\"\r\n      routerLink=\"info\"\r\n      routerLinkActive=\"active\"\r\n    >\r\n      <ion-label text-wrap>\r\n        <ion-badge color=\"primary\" slot=\"end\">H</ion-badge>\r\n        {{ ex.description }}\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -306,7 +306,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ title }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content>\r\n    <app-level-list></app-level-list>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<app-header title=\"Niveaux\"></app-header>\r\n\r\n<ion-content>\r\n    <app-level-list></app-level-list>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -326,7 +326,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-header title=\"Home\"></app-header>\r\n\r\n<ion-content class=\"ion-padding\">\r\n  <h1>Home Component</h1>\r\n</ion-content>";
+    __webpack_exports__["default"] = "<app-header title=\"SkiApp\"></app-header>\r\n\r\n<ion-content class=\"ion-padding\">\r\n  <ion-text class=\"ion-text-center\">\r\n    <h1 >Accueil Temporaire</h1>\r\n  </ion-text>\r\n\r\n  <ion-input [(ngModel)]=\"allo\"></ion-input>\r\n\r\n  <h1>{{display}}</h1>\r\n</ion-content>";
     /***/
   },
 
@@ -346,7 +346,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ title }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content padding>\r\n  <ion-item>\r\n    <ion-label>Cours courrants seulement</ion-label>\r\n    <ion-toggle\r\n      slot=\"end\"\r\n      (click)=\"updateList()\"\r\n      [(ngModel)]=\"onlyCurrent\"\r\n    ></ion-toggle>\r\n  </ion-item>\r\n  <!-- <ion-item>\r\n    <ion-label>Cours courrants seulement</ion-label>\r\n    <ion-toggle\r\n      slot=\"end\"\r\n      (click)=\"updateList()\"\r\n      [(ngModel)]=\"onlyCurrent\"\r\n    ></ion-toggle>\r\n  </ion-item>\r\n  <ion-item>\r\n    <ion-label>Cours courrants seulement</ion-label>\r\n    <ion-toggle\r\n      slot=\"end\"\r\n      (click)=\"updateList()\"\r\n      [(ngModel)]=\"onlyCurrent\"\r\n    ></ion-toggle>\r\n  </ion-item>\r\n  <ion-item>\r\n    <ion-label>Cours courrants seulement</ion-label>\r\n    <ion-toggle\r\n      slot=\"end\"\r\n      (click)=\"updateList()\"\r\n      [(ngModel)]=\"onlyCurrent\"\r\n    ></ion-toggle> \r\n  </ion-item>-->\r\n\r\n  <ion-list *ngIf=\"listVisibility\">\r\n    <ion-item\r\n      text-center\r\n      routerLinkActive=\"active\"\r\n      *ngFor=\"let grp of getGroups()\"\r\n      routerLink=\"/management/group/{{grp.id}}\"\r\n      class=\"list-item\"\r\n    >\r\n      <ion-label>\r\n        <h2>\r\n          <ion-badge color=\"primary\" slot=\"end\">{{ grp.Number }}</ion-badge>\r\n          {{ grp.Time.substr(0, 5) + \" \" + this.day[grp.day - 1] }}\r\n        </h2>\r\n        <h2>{{ grp.TeacherName }} Matei</h2>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<app-header title=\"{{ title }}\"></app-header>\r\n\r\n<ion-content padding>\r\n  <!-- <ion-item>\r\n    <ion-label>Cours courrants seulement</ion-label>\r\n    <ion-toggle\r\n      slot=\"end\"\r\n      (click)=\"updateList()\"\r\n      [(ngModel)]=\"onlyCurrent\"\r\n    ></ion-toggle>\r\n  </ion-item> -->\r\n\r\n  <ion-list *ngIf=\"listVisibility\">\r\n    <ion-item\r\n      text-center\r\n      routerLinkActive=\"active\"\r\n      routerLink=\"../group/{{ grp.id }}\"\r\n      *ngFor=\"let grp of getGroups()\"\r\n      class=\"list-item\"\r\n    >\r\n      <ion-label>\r\n        <h2>\r\n          <ion-badge color=\"primary\" slot=\"end\">{{ grp.Number }}</ion-badge>\r\n          {{ grp.Time.substr(0, 5) + \" \" + this.day[grp.day - 1] }}\r\n        </h2>\r\n        <h2>{{ grp.TeacherName }} Matei</h2>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -366,7 +366,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ title }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content>\r\n  <app-level-list></app-level-list>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<app-header title=\"Home\"></app-header>\r\n<ion-content>\r\n  <app-level-list></app-level-list>\r\n</ion-content>\r\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/popover-options/popover-options.component.html":
+  /*!******************************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/popover-options/popover-options.component.html ***!
+    \******************************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppManagementStudentListPopoverOptionsPopoverOptionsComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<ion-list>\r\n  <ion-list-header>Ionic</ion-list-header>\r\n  <ion-item button>Learn Ionic</ion-item>\r\n  <ion-item button>Documentation</ion-item>\r\n  <ion-item button>Showcase</ion-item>\r\n  <ion-item button>GitHub Repo</ion-item>\r\n  <ion-item lines=\"none\" detail=\"false\" button onClick=\"dismissPopover()\"\r\n    >Close</ion-item\r\n  >\r\n</ion-list>\r\n";
     /***/
   },
 
@@ -386,7 +406,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ title }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content padding>\r\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"doRefresh($event)\">\r\n    <ion-refresher-content></ion-refresher-content>\r\n  </ion-refresher>\r\n\r\n  <ion-list>\r\n    <ion-item menuClose *ngFor=\"let sdnt of students\" class=\"list-item\">\r\n      <ion-label>\r\n        <h2>\r\n          {{ sdnt.Name }}\r\n        </h2>\r\n        <h3>{{ sdnt.Special }} Special student comment.</h3>\r\n      </ion-label>\r\n      <!-- <ion-select\r\n        slot=\"end\"\r\n        [(ngModel)]=\"sdnt.Status\"\r\n        cancel-text=\"Annuler\"\r\n        interface=\"popover\"\r\n        placeholder=\"test\"\r\n        (ionChange)=\"statusChange(sdnt)\"\r\n      >\r\n        <ion-option >{{\r\n          status\r\n        }}</ion-option>\r\n      </ion-select> -->\r\n\r\n      <ion-select value=\"brown\" ok-text=\"Ok\" cancel-text=\"Dismiss\">\r\n        <ion-select-option value=\"test\">Test</ion-select-option>\r\n        <ion-select-option\r\n          *ngFor=\"let status of getStatusList()\"\r\n          value=\"{{ status.id }}\"\r\n          >{{ status }}</ion-select-option\r\n        >\r\n      </ion-select>\r\n    </ion-item>\r\n    <ion-item>\r\n      <ion-label>Notifications</ion-label>\r\n      <ion-select value=\"notifications\" interface=\"action-sheet\">\r\n        <ion-select-option value=\"enable\">Enable</ion-select-option>\r\n        <ion-select-option value=\"mute\">Mute</ion-select-option>\r\n        <ion-select-option value=\"mute_week\">Mute for a week</ion-select-option>\r\n        <ion-select-option value=\"mute_year\">Mute for a year</ion-select-option>\r\n      </ion-select>\r\n    </ion-item>\r\n  </ion-list>\r\n  <ion-item>\r\n    <ion-label>Notifications</ion-label>\r\n    <ion-select value=\"notifications\" interface=\"action-sheet\">\r\n      <ion-select-option value=\"enable\">Enable</ion-select-option>\r\n      <ion-select-option value=\"mute\">Mute</ion-select-option>\r\n      <ion-select-option value=\"mute_week\">Mute for a week</ion-select-option>\r\n      <ion-select-option value=\"mute_year\">Mute for a year</ion-select-option>\r\n    </ion-select>\r\n  </ion-item>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<app-header title=\"{{ title }}\"></app-header>\r\n\r\n<ion-content padding>\r\n  <ion-list>\r\n    <ion-card *ngFor=\"let sdnt of students\">\r\n      <ion-item>\r\n        <ion-label>{{ sdnt.Name }}</ion-label>\r\n        <ion-button slot=\"end\" (click)=\"openPopOver($event)\">\r\n          <ion-icon\r\n            slot=\"icon-only\"\r\n            ios=\"ellipsis-horizontal\"\r\n            md=\"ellipsis-vertical\"\r\n            \r\n          ></ion-icon>\r\n        </ion-button>\r\n      </ion-item>\r\n\r\n      <ion-card-content>\r\n        <ion-segment\r\n          value=\"{{ sdnt.Status }}\"\r\n          (ionChange)=\"statusChange(sdnt, $event)\"\r\n        >\r\n          <ion-segment-button\r\n          fill=\"outline\"\r\n            *ngFor=\"let status of getStatusList(); let i = index\"\r\n            value=\"{{ i }}\"\r\n          >\r\n            <ion-label>{{ status }}</ion-label>\r\n          </ion-segment-button>\r\n        </ion-segment>\r\n      </ion-card-content>\r\n    </ion-card>\r\n\r\n    <!-- <ion-item *ngFor=\"let sdnt of students\">\r\n      <ion-item>\r\n        <ion-label>\r\n          <h2>{{ sdnt.Name }}</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <br />\r\n      <ion-item>\r\n        <ion-segment (ionChange)=\"statusChange(sdnt, $event)\">\r\n          <ion-segment-button\r\n            *ngFor=\"let status of getStatusList(); let i = index\"\r\n            value=\"{{ i }}\"\r\n          >\r\n            <ion-label>{{ status }}</ion-label>\r\n          </ion-segment-button>\r\n        </ion-segment>\r\n      </ion-item> \r\n      <ion-input type=\"text\" text-wrap></ion-input>\r\n      <ion-select name=\"test\" value=\"{{sdnt.Status}}\"  interface=\"popover\" (ionChange)=\"statusChange(sdnt, $event)\">\r\n        <ion-select-option *ngFor=\"let status of getStatusList(); let i = index\" value=\"{{i}}\">\r\n          {{ status }} </ion-select-option>\r\n      </ion-select> \r\n    </ion-item>-->\r\n    =\r\n  </ion-list>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -406,7 +426,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-content class=\"ion-padding\">\r\n  <h1>404 Error</h1>\r\n  <p>\r\n    Si vous êtes ici c'est que l'application ne vous a pas envoyé a la bonne\r\n    place!\r\n  </p>\r\n  <ion-button routerLink=\"/home\" expand=\"block\" fill=\"solid\" shape=\"round\">\r\n    Accueil\r\n  </ion-button>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<app-header title=\"Home\"></app-header>\r\n<ion-content class=\"ion-padding\">\r\n  <h1>404 Error</h1>\r\n  <p>\r\n    Si vous êtes ici c'est que l'application ne vous a pas envoyé a la bonne\r\n    place!\r\n  </p>\r\n  <ion-button routerLink=\"/home\" expand=\"block\" fill=\"solid\" shape=\"round\">\r\n    Accueil\r\n  </ion-button>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -426,7 +446,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button></ion-menu-button>\r\n    </ion-buttons>\r\n    <ion-title>{{ title }}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-searchbar\r\n    placeholder=\"Nom de l'élève\"\r\n    [ngModel]=\"search\"\r\n    inputmode=\"text\"\r\n    type=\"text\"\r\n    (ionChange)=\"onSearchChange($event)\"\r\n    [debounce]=\"100\"\r\n  ></ion-searchbar>\r\n  <ion-list>\r\n    <ion-item menuClose *ngFor=\"let sdnt of (students|async)\" class=\"list-item\">\r\n      <ion-label>\r\n        <h2>\r\n          {{sdnt.student.Name}}\r\n        </h2>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<app-header title=\"Recherche\"></app-header>\r\n\r\n<ion-content>\r\n  <ion-searchbar\r\n    placeholder=\"Nom de l'élève\"\r\n    [ngModel]=\"search\"\r\n    inputmode=\"text\"\r\n    type=\"text\"\r\n    (ionChange)=\"onSearchChange($event)\"\r\n    [debounce]=\"100\"\r\n  ></ion-searchbar>\r\n  <ion-list>\r\n    <ion-item menuClose *ngFor=\"let sdnt of (students|async)\" class=\"list-item\" (click)=\"showInfoAlert(sdnt)\">\r\n      <ion-label>\r\n        <h2>\r\n          {{sdnt.student.Name}}\r\n        </h2>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -1126,7 +1146,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "ion-menu ion-content {\n  --background: var(--ion-item-background, var(--ion-background-color, #fff));\n}\n\nion-menu.md ion-content {\n  --padding-start: 8px;\n  --padding-end: 8px;\n  --padding-top: 20px;\n  --padding-bottom: 20px;\n}\n\nion-menu.md ion-list {\n  padding: 20px 0;\n}\n\nion-menu.md ion-note {\n  margin-bottom: 30px;\n}\n\nion-menu.md ion-list-header,\nion-menu.md ion-note {\n  padding-left: 10px;\n}\n\nion-menu.md ion-list#inbox-list {\n  border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);\n}\n\nion-menu.md ion-list#inbox-list ion-list-header {\n  font-size: 22px;\n  font-weight: 600;\n  min-height: 20px;\n}\n\nion-menu.md ion-list#labels-list ion-list-header {\n  font-size: 16px;\n  margin-bottom: 18px;\n  color: #757575;\n  min-height: 26px;\n}\n\nion-menu.md ion-item {\n  --padding-start: 10px;\n  --padding-end: 10px;\n  border-radius: 4px;\n}\n\nion-menu.md ion-item.selected {\n  --background: rgba(var(--ion-color-primary-rgb), 0.14);\n}\n\nion-menu.md ion-item.selected ion-icon {\n  color: var(--ion-color-primary);\n}\n\nion-menu.md ion-item ion-icon {\n  color: #616e7e;\n}\n\nion-menu.md ion-item ion-label {\n  font-weight: 500;\n}\n\nion-menu.ios ion-content {\n  --padding-bottom: 20px;\n}\n\nion-menu.ios ion-list {\n  padding: 20px 0 0 0;\n}\n\nion-menu.ios ion-note {\n  line-height: 24px;\n  margin-bottom: 20px;\n}\n\nion-menu.ios ion-item {\n  --padding-start: 16px;\n  --padding-end: 16px;\n  --min-height: 50px;\n}\n\nion-menu.ios ion-item.selected ion-icon {\n  color: var(--ion-color-primary);\n}\n\nion-menu.ios ion-item ion-icon {\n  font-size: 24px;\n  color: #73849a;\n}\n\nion-menu.ios ion-list#labels-list ion-list-header {\n  margin-bottom: 8px;\n}\n\nion-menu.ios ion-list-header,\nion-menu.ios ion-note {\n  padding-left: 16px;\n  padding-right: 16px;\n}\n\nion-menu.ios ion-note {\n  margin-bottom: 8px;\n}\n\nion-note {\n  display: inline-block;\n  font-size: 16px;\n  color: var(--ion-color-medium-shade);\n}\n\nion-item.selected {\n  --color: var(--ion-color-primary);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFwxNzY1MDUwXFxEb3dubG9hZHNcXFNraUFwcC9zcmNcXGFwcFxcYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwyRUFBQTtBQ0NGOztBREVBO0VBQ0Usb0JBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0Esc0JBQUE7QUNDRjs7QURFQTtFQUNFLGVBQUE7QUNDRjs7QURFQTtFQUNFLG1CQUFBO0FDQ0Y7O0FERUE7O0VBRUUsa0JBQUE7QUNDRjs7QURFQTtFQUNFLDJEQUFBO0FDQ0Y7O0FERUE7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7RUFFQSxnQkFBQTtBQ0FGOztBREdBO0VBQ0UsZUFBQTtFQUVBLG1CQUFBO0VBRUEsY0FBQTtFQUVBLGdCQUFBO0FDSEY7O0FETUE7RUFDRSxxQkFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7QUNIRjs7QURNQTtFQUNFLHNEQUFBO0FDSEY7O0FETUE7RUFDRSwrQkFBQTtBQ0hGOztBRE1BO0VBQ0UsY0FBQTtBQ0hGOztBRE1BO0VBQ0UsZ0JBQUE7QUNIRjs7QURNQTtFQUNFLHNCQUFBO0FDSEY7O0FETUE7RUFDRSxtQkFBQTtBQ0hGOztBRE1BO0VBQ0UsaUJBQUE7RUFDQSxtQkFBQTtBQ0hGOztBRE1BO0VBQ0UscUJBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FDSEY7O0FETUE7RUFDRSwrQkFBQTtBQ0hGOztBRE1BO0VBQ0UsZUFBQTtFQUNBLGNBQUE7QUNIRjs7QURNQTtFQUNFLGtCQUFBO0FDSEY7O0FETUE7O0VBRUUsa0JBQUE7RUFDQSxtQkFBQTtBQ0hGOztBRE1BO0VBQ0Usa0JBQUE7QUNIRjs7QURNQTtFQUNFLHFCQUFBO0VBQ0EsZUFBQTtFQUVBLG9DQUFBO0FDSkY7O0FET0E7RUFDRSxpQ0FBQTtBQ0pGIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLW1lbnUgaW9uLWNvbnRlbnQge1xyXG4gIC0tYmFja2dyb3VuZDogdmFyKC0taW9uLWl0ZW0tYmFja2dyb3VuZCwgdmFyKC0taW9uLWJhY2tncm91bmQtY29sb3IsICNmZmYpKTtcclxufVxyXG5cclxuaW9uLW1lbnUubWQgaW9uLWNvbnRlbnQge1xyXG4gIC0tcGFkZGluZy1zdGFydDogOHB4O1xyXG4gIC0tcGFkZGluZy1lbmQ6IDhweDtcclxuICAtLXBhZGRpbmctdG9wOiAyMHB4O1xyXG4gIC0tcGFkZGluZy1ib3R0b206IDIwcHg7XHJcbn1cclxuXHJcbmlvbi1tZW51Lm1kIGlvbi1saXN0IHtcclxuICBwYWRkaW5nOiAyMHB4IDA7XHJcbn1cclxuXHJcbmlvbi1tZW51Lm1kIGlvbi1ub3RlIHtcclxuICBtYXJnaW4tYm90dG9tOiAzMHB4O1xyXG59XHJcblxyXG5pb24tbWVudS5tZCBpb24tbGlzdC1oZWFkZXIsXHJcbmlvbi1tZW51Lm1kIGlvbi1ub3RlIHtcclxuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbn1cclxuXHJcbmlvbi1tZW51Lm1kIGlvbi1saXN0I2luYm94LWxpc3Qge1xyXG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCB2YXIoLS1pb24tY29sb3Itc3RlcC0xNTAsICNkN2Q4ZGEpO1xyXG59XHJcblxyXG5pb24tbWVudS5tZCBpb24tbGlzdCNpbmJveC1saXN0IGlvbi1saXN0LWhlYWRlciB7XHJcbiAgZm9udC1zaXplOiAyMnB4O1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcblxyXG4gIG1pbi1oZWlnaHQ6IDIwcHg7XHJcbn1cclxuXHJcbmlvbi1tZW51Lm1kIGlvbi1saXN0I2xhYmVscy1saXN0IGlvbi1saXN0LWhlYWRlciB7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG5cclxuICBtYXJnaW4tYm90dG9tOiAxOHB4O1xyXG5cclxuICBjb2xvcjogIzc1NzU3NTtcclxuXHJcbiAgbWluLWhlaWdodDogMjZweDtcclxufVxyXG5cclxuaW9uLW1lbnUubWQgaW9uLWl0ZW0ge1xyXG4gIC0tcGFkZGluZy1zdGFydDogMTBweDtcclxuICAtLXBhZGRpbmctZW5kOiAxMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDRweDtcclxufVxyXG5cclxuaW9uLW1lbnUubWQgaW9uLWl0ZW0uc2VsZWN0ZWQge1xyXG4gIC0tYmFja2dyb3VuZDogcmdiYSh2YXIoLS1pb24tY29sb3ItcHJpbWFyeS1yZ2IpLCAwLjE0KTtcclxufVxyXG5cclxuaW9uLW1lbnUubWQgaW9uLWl0ZW0uc2VsZWN0ZWQgaW9uLWljb24ge1xyXG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbn1cclxuXHJcbmlvbi1tZW51Lm1kIGlvbi1pdGVtIGlvbi1pY29uIHtcclxuICBjb2xvcjogIzYxNmU3ZTtcclxufVxyXG5cclxuaW9uLW1lbnUubWQgaW9uLWl0ZW0gaW9uLWxhYmVsIHtcclxuICBmb250LXdlaWdodDogNTAwO1xyXG59XHJcblxyXG5pb24tbWVudS5pb3MgaW9uLWNvbnRlbnQge1xyXG4gIC0tcGFkZGluZy1ib3R0b206IDIwcHg7XHJcbn1cclxuXHJcbmlvbi1tZW51LmlvcyBpb24tbGlzdCB7XHJcbiAgcGFkZGluZzogMjBweCAwIDAgMDtcclxufVxyXG5cclxuaW9uLW1lbnUuaW9zIGlvbi1ub3RlIHtcclxuICBsaW5lLWhlaWdodDogMjRweDtcclxuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG59XHJcblxyXG5pb24tbWVudS5pb3MgaW9uLWl0ZW0ge1xyXG4gIC0tcGFkZGluZy1zdGFydDogMTZweDtcclxuICAtLXBhZGRpbmctZW5kOiAxNnB4O1xyXG4gIC0tbWluLWhlaWdodDogNTBweDtcclxufVxyXG5cclxuaW9uLW1lbnUuaW9zIGlvbi1pdGVtLnNlbGVjdGVkIGlvbi1pY29uIHtcclxuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xyXG59XHJcblxyXG5pb24tbWVudS5pb3MgaW9uLWl0ZW0gaW9uLWljb24ge1xyXG4gIGZvbnQtc2l6ZTogMjRweDtcclxuICBjb2xvcjogIzczODQ5YTtcclxufVxyXG5cclxuaW9uLW1lbnUuaW9zIGlvbi1saXN0I2xhYmVscy1saXN0IGlvbi1saXN0LWhlYWRlciB7XHJcbiAgbWFyZ2luLWJvdHRvbTogOHB4O1xyXG59XHJcblxyXG5pb24tbWVudS5pb3MgaW9uLWxpc3QtaGVhZGVyLFxyXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xyXG4gIHBhZGRpbmctbGVmdDogMTZweDtcclxuICBwYWRkaW5nLXJpZ2h0OiAxNnB4O1xyXG59XHJcblxyXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xyXG4gIG1hcmdpbi1ib3R0b206IDhweDtcclxufVxyXG5cclxuaW9uLW5vdGUge1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICBmb250LXNpemU6IDE2cHg7XHJcblxyXG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItbWVkaXVtLXNoYWRlKTtcclxufVxyXG5cclxuaW9uLWl0ZW0uc2VsZWN0ZWQge1xyXG4gIC0tY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcclxufSIsImlvbi1tZW51IGlvbi1jb250ZW50IHtcbiAgLS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24taXRlbS1iYWNrZ3JvdW5kLCB2YXIoLS1pb24tYmFja2dyb3VuZC1jb2xvciwgI2ZmZikpO1xufVxuXG5pb24tbWVudS5tZCBpb24tY29udGVudCB7XG4gIC0tcGFkZGluZy1zdGFydDogOHB4O1xuICAtLXBhZGRpbmctZW5kOiA4cHg7XG4gIC0tcGFkZGluZy10b3A6IDIwcHg7XG4gIC0tcGFkZGluZy1ib3R0b206IDIwcHg7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1saXN0IHtcbiAgcGFkZGluZzogMjBweCAwO1xufVxuXG5pb24tbWVudS5tZCBpb24tbm90ZSB7XG4gIG1hcmdpbi1ib3R0b206IDMwcHg7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1saXN0LWhlYWRlcixcbmlvbi1tZW51Lm1kIGlvbi1ub3RlIHtcbiAgcGFkZGluZy1sZWZ0OiAxMHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdCNpbmJveC1saXN0IHtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHZhcigtLWlvbi1jb2xvci1zdGVwLTE1MCwgI2Q3ZDhkYSk7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1saXN0I2luYm94LWxpc3QgaW9uLWxpc3QtaGVhZGVyIHtcbiAgZm9udC1zaXplOiAyMnB4O1xuICBmb250LXdlaWdodDogNjAwO1xuICBtaW4taGVpZ2h0OiAyMHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdCNsYWJlbHMtbGlzdCBpb24tbGlzdC1oZWFkZXIge1xuICBmb250LXNpemU6IDE2cHg7XG4gIG1hcmdpbi1ib3R0b206IDE4cHg7XG4gIGNvbG9yOiAjNzU3NTc1O1xuICBtaW4taGVpZ2h0OiAyNnB4O1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbSB7XG4gIC0tcGFkZGluZy1zdGFydDogMTBweDtcbiAgLS1wYWRkaW5nLWVuZDogMTBweDtcbiAgYm9yZGVyLXJhZGl1czogNHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbS5zZWxlY3RlZCB7XG4gIC0tYmFja2dyb3VuZDogcmdiYSh2YXIoLS1pb24tY29sb3ItcHJpbWFyeS1yZ2IpLCAwLjE0KTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0uc2VsZWN0ZWQgaW9uLWljb24ge1xuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbSBpb24taWNvbiB7XG4gIGNvbG9yOiAjNjE2ZTdlO1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbSBpb24tbGFiZWwge1xuICBmb250LXdlaWdodDogNTAwO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWNvbnRlbnQge1xuICAtLXBhZGRpbmctYm90dG9tOiAyMHB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWxpc3Qge1xuICBwYWRkaW5nOiAyMHB4IDAgMCAwO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xuICBsaW5lLWhlaWdodDogMjRweDtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1pdGVtIHtcbiAgLS1wYWRkaW5nLXN0YXJ0OiAxNnB4O1xuICAtLXBhZGRpbmctZW5kOiAxNnB4O1xuICAtLW1pbi1oZWlnaHQ6IDUwcHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24taXRlbS5zZWxlY3RlZCBpb24taWNvbiB7XG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XG59XG5cbmlvbi1tZW51LmlvcyBpb24taXRlbSBpb24taWNvbiB7XG4gIGZvbnQtc2l6ZTogMjRweDtcbiAgY29sb3I6ICM3Mzg0OWE7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tbGlzdCNsYWJlbHMtbGlzdCBpb24tbGlzdC1oZWFkZXIge1xuICBtYXJnaW4tYm90dG9tOiA4cHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tbGlzdC1oZWFkZXIsXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xuICBwYWRkaW5nLWxlZnQ6IDE2cHg7XG4gIHBhZGRpbmctcmlnaHQ6IDE2cHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tbm90ZSB7XG4gIG1hcmdpbi1ib3R0b206IDhweDtcbn1cblxuaW9uLW5vdGUge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1tZWRpdW0tc2hhZGUpO1xufVxuXG5pb24taXRlbS5zZWxlY3RlZCB7XG4gIC0tY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcbn0iXX0= */";
+    __webpack_exports__["default"] = "ion-menu ion-content {\n  --background: var(--ion-item-background, var(--ion-background-color, #fff));\n}\n\nion-menu.md ion-content {\n  --padding-start: 8px;\n  --padding-end: 8px;\n  --padding-top: 20px;\n  --padding-bottom: 20px;\n}\n\nion-menu.md ion-list {\n  padding: 20px 0;\n}\n\nion-menu.md ion-note {\n  margin-bottom: 30px;\n}\n\nion-menu.md ion-list-header,\nion-menu.md ion-note {\n  padding-left: 10px;\n}\n\nion-menu.md ion-list#inbox-list {\n  border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);\n}\n\nion-menu.md ion-list#inbox-list ion-list-header {\n  font-size: 22px;\n  font-weight: 600;\n  min-height: 20px;\n}\n\nion-menu.md ion-list#labels-list ion-list-header {\n  font-size: 16px;\n  margin-bottom: 18px;\n  color: #757575;\n  min-height: 26px;\n}\n\nion-menu.md ion-item {\n  --padding-start: 10px;\n  --padding-end: 10px;\n  border-radius: 4px;\n}\n\nion-menu.md ion-item.selected {\n  --background: rgba(var(--ion-color-primary-rgb), 0.14);\n}\n\nion-menu.md ion-item.selected ion-icon {\n  color: var(--ion-color-primary);\n}\n\nion-menu.md ion-item ion-icon {\n  color: #616e7e;\n}\n\nion-menu.md ion-item ion-label {\n  font-weight: 500;\n}\n\nion-menu.ios ion-content {\n  --padding-bottom: 20px;\n}\n\nion-menu.ios ion-list {\n  padding: 20px 0 0 0;\n}\n\nion-menu.ios ion-note {\n  line-height: 24px;\n  margin-bottom: 20px;\n}\n\nion-menu.ios ion-item {\n  --padding-start: 16px;\n  --padding-end: 16px;\n  --min-height: 50px;\n}\n\nion-menu.ios ion-item.selected ion-icon {\n  color: var(--ion-color-primary);\n}\n\nion-menu.ios ion-item ion-icon {\n  font-size: 24px;\n  color: #73849a;\n}\n\nion-menu.ios ion-list#labels-list ion-list-header {\n  margin-bottom: 8px;\n}\n\nion-menu.ios ion-list-header,\nion-menu.ios ion-note {\n  padding-left: 16px;\n  padding-right: 16px;\n}\n\nion-menu.ios ion-note {\n  margin-bottom: 8px;\n}\n\nion-note {\n  display: inline-block;\n  font-size: 16px;\n  color: var(--ion-color-medium-shade);\n}\n\nion-item.selected {\n  --color: var(--ion-color-primary);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvRDpcXFByb2plY3RzXFxTa2lBcHBJb25pYy9zcmNcXGFwcFxcYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwyRUFBQTtBQ0NGOztBREVBO0VBQ0Usb0JBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0Esc0JBQUE7QUNDRjs7QURFQTtFQUNFLGVBQUE7QUNDRjs7QURFQTtFQUNFLG1CQUFBO0FDQ0Y7O0FERUE7O0VBRUUsa0JBQUE7QUNDRjs7QURFQTtFQUNFLDJEQUFBO0FDQ0Y7O0FERUE7RUFDRSxlQUFBO0VBQ0EsZ0JBQUE7RUFFQSxnQkFBQTtBQ0FGOztBREdBO0VBQ0UsZUFBQTtFQUVBLG1CQUFBO0VBRUEsY0FBQTtFQUVBLGdCQUFBO0FDSEY7O0FETUE7RUFDRSxxQkFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7QUNIRjs7QURNQTtFQUNFLHNEQUFBO0FDSEY7O0FETUE7RUFDRSwrQkFBQTtBQ0hGOztBRE1BO0VBQ0UsY0FBQTtBQ0hGOztBRE1BO0VBQ0UsZ0JBQUE7QUNIRjs7QURNQTtFQUNFLHNCQUFBO0FDSEY7O0FETUE7RUFDRSxtQkFBQTtBQ0hGOztBRE1BO0VBQ0UsaUJBQUE7RUFDQSxtQkFBQTtBQ0hGOztBRE1BO0VBQ0UscUJBQUE7RUFDQSxtQkFBQTtFQUNBLGtCQUFBO0FDSEY7O0FETUE7RUFDRSwrQkFBQTtBQ0hGOztBRE1BO0VBQ0UsZUFBQTtFQUNBLGNBQUE7QUNIRjs7QURNQTtFQUNFLGtCQUFBO0FDSEY7O0FETUE7O0VBRUUsa0JBQUE7RUFDQSxtQkFBQTtBQ0hGOztBRE1BO0VBQ0Usa0JBQUE7QUNIRjs7QURNQTtFQUNFLHFCQUFBO0VBQ0EsZUFBQTtFQUVBLG9DQUFBO0FDSkY7O0FET0E7RUFDRSxpQ0FBQTtBQ0pGIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLW1lbnUgaW9uLWNvbnRlbnQge1xyXG4gIC0tYmFja2dyb3VuZDogdmFyKC0taW9uLWl0ZW0tYmFja2dyb3VuZCwgdmFyKC0taW9uLWJhY2tncm91bmQtY29sb3IsICNmZmYpKTtcclxufVxyXG5cclxuaW9uLW1lbnUubWQgaW9uLWNvbnRlbnQge1xyXG4gIC0tcGFkZGluZy1zdGFydDogOHB4O1xyXG4gIC0tcGFkZGluZy1lbmQ6IDhweDtcclxuICAtLXBhZGRpbmctdG9wOiAyMHB4O1xyXG4gIC0tcGFkZGluZy1ib3R0b206IDIwcHg7XHJcbn1cclxuXHJcbmlvbi1tZW51Lm1kIGlvbi1saXN0IHtcclxuICBwYWRkaW5nOiAyMHB4IDA7XHJcbn1cclxuXHJcbmlvbi1tZW51Lm1kIGlvbi1ub3RlIHtcclxuICBtYXJnaW4tYm90dG9tOiAzMHB4O1xyXG59XHJcblxyXG5pb24tbWVudS5tZCBpb24tbGlzdC1oZWFkZXIsXHJcbmlvbi1tZW51Lm1kIGlvbi1ub3RlIHtcclxuICBwYWRkaW5nLWxlZnQ6IDEwcHg7XHJcbn1cclxuXHJcbmlvbi1tZW51Lm1kIGlvbi1saXN0I2luYm94LWxpc3Qge1xyXG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCB2YXIoLS1pb24tY29sb3Itc3RlcC0xNTAsICNkN2Q4ZGEpO1xyXG59XHJcblxyXG5pb24tbWVudS5tZCBpb24tbGlzdCNpbmJveC1saXN0IGlvbi1saXN0LWhlYWRlciB7XHJcbiAgZm9udC1zaXplOiAyMnB4O1xyXG4gIGZvbnQtd2VpZ2h0OiA2MDA7XHJcblxyXG4gIG1pbi1oZWlnaHQ6IDIwcHg7XHJcbn1cclxuXHJcbmlvbi1tZW51Lm1kIGlvbi1saXN0I2xhYmVscy1saXN0IGlvbi1saXN0LWhlYWRlciB7XHJcbiAgZm9udC1zaXplOiAxNnB4O1xyXG5cclxuICBtYXJnaW4tYm90dG9tOiAxOHB4O1xyXG5cclxuICBjb2xvcjogIzc1NzU3NTtcclxuXHJcbiAgbWluLWhlaWdodDogMjZweDtcclxufVxyXG5cclxuaW9uLW1lbnUubWQgaW9uLWl0ZW0ge1xyXG4gIC0tcGFkZGluZy1zdGFydDogMTBweDtcclxuICAtLXBhZGRpbmctZW5kOiAxMHB4O1xyXG4gIGJvcmRlci1yYWRpdXM6IDRweDtcclxufVxyXG5cclxuaW9uLW1lbnUubWQgaW9uLWl0ZW0uc2VsZWN0ZWQge1xyXG4gIC0tYmFja2dyb3VuZDogcmdiYSh2YXIoLS1pb24tY29sb3ItcHJpbWFyeS1yZ2IpLCAwLjE0KTtcclxufVxyXG5cclxuaW9uLW1lbnUubWQgaW9uLWl0ZW0uc2VsZWN0ZWQgaW9uLWljb24ge1xyXG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XHJcbn1cclxuXHJcbmlvbi1tZW51Lm1kIGlvbi1pdGVtIGlvbi1pY29uIHtcclxuICBjb2xvcjogIzYxNmU3ZTtcclxufVxyXG5cclxuaW9uLW1lbnUubWQgaW9uLWl0ZW0gaW9uLWxhYmVsIHtcclxuICBmb250LXdlaWdodDogNTAwO1xyXG59XHJcblxyXG5pb24tbWVudS5pb3MgaW9uLWNvbnRlbnQge1xyXG4gIC0tcGFkZGluZy1ib3R0b206IDIwcHg7XHJcbn1cclxuXHJcbmlvbi1tZW51LmlvcyBpb24tbGlzdCB7XHJcbiAgcGFkZGluZzogMjBweCAwIDAgMDtcclxufVxyXG5cclxuaW9uLW1lbnUuaW9zIGlvbi1ub3RlIHtcclxuICBsaW5lLWhlaWdodDogMjRweDtcclxuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG59XHJcblxyXG5pb24tbWVudS5pb3MgaW9uLWl0ZW0ge1xyXG4gIC0tcGFkZGluZy1zdGFydDogMTZweDtcclxuICAtLXBhZGRpbmctZW5kOiAxNnB4O1xyXG4gIC0tbWluLWhlaWdodDogNTBweDtcclxufVxyXG5cclxuaW9uLW1lbnUuaW9zIGlvbi1pdGVtLnNlbGVjdGVkIGlvbi1pY29uIHtcclxuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xyXG59XHJcblxyXG5pb24tbWVudS5pb3MgaW9uLWl0ZW0gaW9uLWljb24ge1xyXG4gIGZvbnQtc2l6ZTogMjRweDtcclxuICBjb2xvcjogIzczODQ5YTtcclxufVxyXG5cclxuaW9uLW1lbnUuaW9zIGlvbi1saXN0I2xhYmVscy1saXN0IGlvbi1saXN0LWhlYWRlciB7XHJcbiAgbWFyZ2luLWJvdHRvbTogOHB4O1xyXG59XHJcblxyXG5pb24tbWVudS5pb3MgaW9uLWxpc3QtaGVhZGVyLFxyXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xyXG4gIHBhZGRpbmctbGVmdDogMTZweDtcclxuICBwYWRkaW5nLXJpZ2h0OiAxNnB4O1xyXG59XHJcblxyXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xyXG4gIG1hcmdpbi1ib3R0b206IDhweDtcclxufVxyXG5cclxuaW9uLW5vdGUge1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICBmb250LXNpemU6IDE2cHg7XHJcblxyXG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItbWVkaXVtLXNoYWRlKTtcclxufVxyXG5cclxuaW9uLWl0ZW0uc2VsZWN0ZWQge1xyXG4gIC0tY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcclxufSIsImlvbi1tZW51IGlvbi1jb250ZW50IHtcbiAgLS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24taXRlbS1iYWNrZ3JvdW5kLCB2YXIoLS1pb24tYmFja2dyb3VuZC1jb2xvciwgI2ZmZikpO1xufVxuXG5pb24tbWVudS5tZCBpb24tY29udGVudCB7XG4gIC0tcGFkZGluZy1zdGFydDogOHB4O1xuICAtLXBhZGRpbmctZW5kOiA4cHg7XG4gIC0tcGFkZGluZy10b3A6IDIwcHg7XG4gIC0tcGFkZGluZy1ib3R0b206IDIwcHg7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1saXN0IHtcbiAgcGFkZGluZzogMjBweCAwO1xufVxuXG5pb24tbWVudS5tZCBpb24tbm90ZSB7XG4gIG1hcmdpbi1ib3R0b206IDMwcHg7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1saXN0LWhlYWRlcixcbmlvbi1tZW51Lm1kIGlvbi1ub3RlIHtcbiAgcGFkZGluZy1sZWZ0OiAxMHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdCNpbmJveC1saXN0IHtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHZhcigtLWlvbi1jb2xvci1zdGVwLTE1MCwgI2Q3ZDhkYSk7XG59XG5cbmlvbi1tZW51Lm1kIGlvbi1saXN0I2luYm94LWxpc3QgaW9uLWxpc3QtaGVhZGVyIHtcbiAgZm9udC1zaXplOiAyMnB4O1xuICBmb250LXdlaWdodDogNjAwO1xuICBtaW4taGVpZ2h0OiAyMHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24tbGlzdCNsYWJlbHMtbGlzdCBpb24tbGlzdC1oZWFkZXIge1xuICBmb250LXNpemU6IDE2cHg7XG4gIG1hcmdpbi1ib3R0b206IDE4cHg7XG4gIGNvbG9yOiAjNzU3NTc1O1xuICBtaW4taGVpZ2h0OiAyNnB4O1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbSB7XG4gIC0tcGFkZGluZy1zdGFydDogMTBweDtcbiAgLS1wYWRkaW5nLWVuZDogMTBweDtcbiAgYm9yZGVyLXJhZGl1czogNHB4O1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbS5zZWxlY3RlZCB7XG4gIC0tYmFja2dyb3VuZDogcmdiYSh2YXIoLS1pb24tY29sb3ItcHJpbWFyeS1yZ2IpLCAwLjE0KTtcbn1cblxuaW9uLW1lbnUubWQgaW9uLWl0ZW0uc2VsZWN0ZWQgaW9uLWljb24ge1xuICBjb2xvcjogdmFyKC0taW9uLWNvbG9yLXByaW1hcnkpO1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbSBpb24taWNvbiB7XG4gIGNvbG9yOiAjNjE2ZTdlO1xufVxuXG5pb24tbWVudS5tZCBpb24taXRlbSBpb24tbGFiZWwge1xuICBmb250LXdlaWdodDogNTAwO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWNvbnRlbnQge1xuICAtLXBhZGRpbmctYm90dG9tOiAyMHB4O1xufVxuXG5pb24tbWVudS5pb3MgaW9uLWxpc3Qge1xuICBwYWRkaW5nOiAyMHB4IDAgMCAwO1xufVxuXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xuICBsaW5lLWhlaWdodDogMjRweDtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbn1cblxuaW9uLW1lbnUuaW9zIGlvbi1pdGVtIHtcbiAgLS1wYWRkaW5nLXN0YXJ0OiAxNnB4O1xuICAtLXBhZGRpbmctZW5kOiAxNnB4O1xuICAtLW1pbi1oZWlnaHQ6IDUwcHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24taXRlbS5zZWxlY3RlZCBpb24taWNvbiB7XG4gIGNvbG9yOiB2YXIoLS1pb24tY29sb3ItcHJpbWFyeSk7XG59XG5cbmlvbi1tZW51LmlvcyBpb24taXRlbSBpb24taWNvbiB7XG4gIGZvbnQtc2l6ZTogMjRweDtcbiAgY29sb3I6ICM3Mzg0OWE7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tbGlzdCNsYWJlbHMtbGlzdCBpb24tbGlzdC1oZWFkZXIge1xuICBtYXJnaW4tYm90dG9tOiA4cHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tbGlzdC1oZWFkZXIsXG5pb24tbWVudS5pb3MgaW9uLW5vdGUge1xuICBwYWRkaW5nLWxlZnQ6IDE2cHg7XG4gIHBhZGRpbmctcmlnaHQ6IDE2cHg7XG59XG5cbmlvbi1tZW51LmlvcyBpb24tbm90ZSB7XG4gIG1hcmdpbi1ib3R0b206IDhweDtcbn1cblxuaW9uLW5vdGUge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1tZWRpdW0tc2hhZGUpO1xufVxuXG5pb24taXRlbS5zZWxlY3RlZCB7XG4gIC0tY29sb3I6IHZhcigtLWlvbi1jb2xvci1wcmltYXJ5KTtcbn0iXX0= */";
     /***/
   },
 
@@ -1197,9 +1217,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.statusBar = statusBar;
         this.storage = storage;
         this.selectedIndex = 0;
-        this.user = {
-          name: "Non connecté"
-        };
+        this.user = "Non connecté";
         this.appPages = [{
           title: "Home",
           url: "/",
@@ -1216,10 +1234,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           title: "Recherche",
           url: "/search/",
           icon: "search"
-        }, {
-          title: "Deconnection",
-          url: "/auth/",
-          icon: "lock"
         }];
         this.initializeApp();
       }
@@ -1437,7 +1451,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       providers: [_ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_7__["StatusBar"], _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_6__["SplashScreen"], _services_ski_service__WEBPACK_IMPORTED_MODULE_18__["SkiService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_16__["AuthService"], {
         provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"],
         useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicRouteStrategy"]
-      }, Storage],
+      }],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
     })], AppModule);
     /***/
@@ -1552,7 +1566,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2F1dGgvbG9naW4vbG9naW4uY29tcG9uZW50LnNjc3MifQ== */";
+    __webpack_exports__["default"] = "form {\n  margin-top: 50%;\n  padding: 5%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXV0aC9sb2dpbi9EOlxcUHJvamVjdHNcXFNraUFwcElvbmljL3NyY1xcYXBwXFxhdXRoXFxsb2dpblxcbG9naW4uY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2F1dGgvbG9naW4vbG9naW4uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxlQUFBO0VBQ0EsV0FBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvYXV0aC9sb2dpbi9sb2dpbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImZvcm17XHJcbiAgICBtYXJnaW4tdG9wOiA1MCU7IFxyXG4gICAgcGFkZGluZzogNSU7XHJcbn0iLCJmb3JtIHtcbiAgbWFyZ2luLXRvcDogNTAlO1xuICBwYWRkaW5nOiA1JTtcbn0iXX0= */";
     /***/
   },
 
@@ -1616,18 +1630,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.authAPI = authAPI;
         this.router = router;
         this.title = "Login";
-        this.storage.get("Token").then(function (val) {
-          console.log(val);
-        });
-
-        if (authAPI.connected()) {
-          this.router.navigate(['/profile']);
-        }
       }
 
       _createClass(LoginComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          if (this.authAPI.connected()) {
+            this.router.navigate(["/profile"]);
+          }
+        }
       }, {
         key: "login",
         value: function login(form) {
@@ -1708,15 +1719,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! src/app/services/auth.service */
+    "./src/app/services/auth.service.ts");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
 
     var LogoutComponent =
     /*#__PURE__*/
     function () {
-      function LogoutComponent() {
+      function LogoutComponent(authService) {
         _classCallCheck(this, LogoutComponent);
+
+        this.authService = authService;
+        this.authService.logout();
       }
 
       _createClass(LogoutComponent, [{
@@ -1727,7 +1747,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return LogoutComponent;
     }();
 
-    LogoutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+    LogoutComponent.ctorParameters = function () {
+      return [{
+        type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"]
+      }];
+    };
+
+    LogoutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
       selector: 'app-logout',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./logout.component.html */
@@ -1735,7 +1761,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./logout.component.scss */
       "./src/app/auth/logout/logout.component.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], LogoutComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"]])], LogoutComponent);
     /***/
   },
 
@@ -1802,15 +1828,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! src/app/services/auth.service */
     "./src/app/services/auth.service.ts");
+    /* harmony import */
+
+
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @ionic/angular */
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
 
     var HeaderComponent =
     /*#__PURE__*/
     function () {
-      function HeaderComponent(router, authService) {
+      function HeaderComponent(router, authService, navCtrl) {
         _classCallCheck(this, HeaderComponent);
 
         this.router = router;
         this.authService = authService;
+        this.navCtrl = navCtrl;
       }
 
       _createClass(HeaderComponent, [{
@@ -1825,6 +1858,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.router.navigate(['/auth/login']);
           }
         }
+      }, {
+        key: "back",
+        value: function back() {
+          var animations = {
+            animated: true,
+            animationDirection: "back"
+          };
+          this.navCtrl.back(animations);
+        }
       }]);
 
       return HeaderComponent;
@@ -1835,6 +1877,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
       }, {
         type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["NavController"]
       }];
     };
 
@@ -1847,7 +1891,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./header.component.scss */
       "./src/app/components/header/header.component.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])], HeaderComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["NavController"]])], HeaderComponent);
     /***/
   },
 
@@ -1918,11 +1962,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var LevelListComponent =
     /*#__PURE__*/
     function () {
-      function LevelListComponent(skiService, loadingCtrl) {
+      function LevelListComponent(skiService, loadingCtrl, nav) {
         _classCallCheck(this, LevelListComponent);
 
         this.skiService = skiService;
         this.loadingCtrl = loadingCtrl;
+        this.nav = nav;
         this.title = "Exercices"; // If we navigated to this page, we will have an item available as a nav param
 
         this.levels = skiService.getLevels();
@@ -1934,7 +1979,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function ngOnInit() {}
       }, {
         key: "openPage",
-        value: function openPage(id) {}
+        value: function openPage(id) {
+          switch (this.action) {
+            case 0:
+              this.nav.pop();
+              break;
+
+            default:
+              break;
+          }
+        }
       }]);
 
       return LevelListComponent;
@@ -1945,9 +1999,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"]
       }, {
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"]
       }];
     };
 
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)], LevelListComponent.prototype, "action", void 0);
     LevelListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-level-list',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
@@ -1956,7 +2013,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./level-list.component.scss */
       "./src/app/components/level-list/level-list.component.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"]])], LevelListComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["LoadingController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["NavController"]])], LevelListComponent);
     /***/
   },
 
@@ -2000,21 +2057,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _level_list_level_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./level-list/level-list.component */
-    "./src/app/components/level-list/level-list.component.ts");
-    /* harmony import */
-
-
-    var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/fesm2015/common.js");
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _level_list_level_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./level-list/level-list.component */
+    "./src/app/components/level-list/level-list.component.ts");
     /* harmony import */
 
 
@@ -2027,9 +2084,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     };
 
     SharedModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-      declarations: [_level_list_level_list_component__WEBPACK_IMPORTED_MODULE_3__["LevelListComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"]],
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["CommonModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicModule"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"]],
-      exports: [_level_list_level_list_component__WEBPACK_IMPORTED_MODULE_3__["LevelListComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"]]
+      declarations: [_level_list_level_list_component__WEBPACK_IMPORTED_MODULE_5__["LevelListComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"]],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicModule"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"]],
+      exports: [_level_list_level_list_component__WEBPACK_IMPORTED_MODULE_5__["LevelListComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"]]
     })], SharedModule);
     /***/
   },
@@ -2684,21 +2741,41 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
 
     var HomePage =
     /*#__PURE__*/
     function () {
-      function HomePage() {
+      function HomePage(http) {
         _classCallCheck(this, HomePage);
+
+        this.http = http;
       }
 
       _createClass(HomePage, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
+      }, {
+        key: "sync",
+        value: function sync() {
+          window.localStorage.setItem("test", this.allo);
+          this.display = window.localStorage.getItem("test");
+        }
       }]);
 
       return HomePage;
     }();
+
+    HomePage.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+      }];
+    };
 
     HomePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: "app-home",
@@ -2708,7 +2785,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./home.page.scss */
       "./src/app/home/home.page.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], HomePage);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], HomePage);
     /***/
   },
 
@@ -2775,24 +2852,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! src/app/services/ski.service */
     "./src/app/services/ski.service.ts");
+    /* harmony import */
+
+
+    var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! src/app/services/auth.service */
+    "./src/app/services/auth.service.ts");
 
     var GroupsListComponent =
     /*#__PURE__*/
     function () {
-      function GroupsListComponent(route, SkiAPI) {
+      function GroupsListComponent(route, SkiAPI, authService) {
         var _this3 = this;
 
         _classCallCheck(this, GroupsListComponent);
 
         this.route = route;
         this.SkiAPI = SkiAPI;
+        this.authService = authService;
         this.title = "Groupes";
         this.listVisibility = true;
         this.day = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+        this.authService.checkConnected();
         var levelID = this.route.snapshot.params.id;
         this.SkiAPI.getGroups(levelID).subscribe(function (resp) {
           _this3.groups = resp;
           _this3.data = resp;
+          _this3.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"].levels[resp[0].Level];
         });
       }
 
@@ -2845,6 +2931,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
       }, {
         type: src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"]
+      }, {
+        type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]
       }];
     };
 
@@ -2856,7 +2944,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./groups-list.component.scss */
       "./src/app/management/groups-list/groups-list.component.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"]])], GroupsListComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"], src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]])], GroupsListComponent);
     /***/
   },
 
@@ -3017,6 +3105,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! ./student-list/student-list.component */
     "./src/app/management/student-list/student-list.component.ts");
+    /* harmony import */
+
+
+    var _student_list_popover_options_popover_options_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! ./student-list/popover-options/popover-options.component */
+    "./src/app/management/student-list/popover-options/popover-options.component.ts");
 
     var ManagementPageModule = function ManagementPageModule() {
       _classCallCheck(this, ManagementPageModule);
@@ -3024,7 +3118,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     ManagementPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"], _management_routing_module__WEBPACK_IMPORTED_MODULE_5__["ManagementPageRoutingModule"], _components_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"]],
-      declarations: [_management_page__WEBPACK_IMPORTED_MODULE_6__["ManagementPage"], _groups_list_groups_list_component__WEBPACK_IMPORTED_MODULE_7__["GroupsListComponent"], _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_9__["StudentListComponent"]]
+      declarations: [_management_page__WEBPACK_IMPORTED_MODULE_6__["ManagementPage"], _groups_list_groups_list_component__WEBPACK_IMPORTED_MODULE_7__["GroupsListComponent"], _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_9__["StudentListComponent"], _student_list_popover_options_popover_options_component__WEBPACK_IMPORTED_MODULE_10__["PopoverOptionsComponent"]],
+      entryComponents: [_student_list_popover_options_popover_options_component__WEBPACK_IMPORTED_MODULE_10__["PopoverOptionsComponent"]]
     })], ManagementPageModule);
     /***/
   },
@@ -3086,21 +3181,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _services_ski_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ../services/ski.service */
     "./src/app/services/ski.service.ts");
+    /* harmony import */
+
+
+    var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../services/auth.service */
+    "./src/app/services/auth.service.ts");
 
     var ManagementPage =
     /*#__PURE__*/
     function () {
-      function ManagementPage(skiService) {
+      function ManagementPage(skiService, authService) {
         _classCallCheck(this, ManagementPage);
 
         this.skiService = skiService;
+        this.authService = authService;
         this.title = "Gestion";
         this.levels = skiService.getLevels();
+        this.authService.checkConnected();
       }
 
       _createClass(ManagementPage, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          this.authService.checkConnected();
+        }
       }]);
 
       return ManagementPage;
@@ -3109,6 +3214,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     ManagementPage.ctorParameters = function () {
       return [{
         type: _services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"]
+      }, {
+        type: _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]
       }];
     };
 
@@ -3120,7 +3227,86 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./management.page.scss */
       "./src/app/management/management.page.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"]])], ManagementPage);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])], ManagementPage);
+    /***/
+  },
+
+  /***/
+  "./src/app/management/student-list/popover-options/popover-options.component.scss":
+  /*!****************************************************************************************!*\
+    !*** ./src/app/management/student-list/popover-options/popover-options.component.scss ***!
+    \****************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppManagementStudentListPopoverOptionsPopoverOptionsComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hbmFnZW1lbnQvc3R1ZGVudC1saXN0L3BvcG92ZXItb3B0aW9ucy9wb3BvdmVyLW9wdGlvbnMuY29tcG9uZW50LnNjc3MifQ== */";
+    /***/
+  },
+
+  /***/
+  "./src/app/management/student-list/popover-options/popover-options.component.ts":
+  /*!**************************************************************************************!*\
+    !*** ./src/app/management/student-list/popover-options/popover-options.component.ts ***!
+    \**************************************************************************************/
+
+  /*! exports provided: PopoverOptionsComponent */
+
+  /***/
+  function srcAppManagementStudentListPopoverOptionsPopoverOptionsComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PopoverOptionsComponent", function () {
+      return PopoverOptionsComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+
+    var PopoverOptionsComponent =
+    /*#__PURE__*/
+    function () {
+      function PopoverOptionsComponent() {
+        _classCallCheck(this, PopoverOptionsComponent);
+      }
+
+      _createClass(PopoverOptionsComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }]);
+
+      return PopoverOptionsComponent;
+    }();
+
+    PopoverOptionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-popover-options',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./popover-options.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/popover-options/popover-options.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./popover-options.component.scss */
+      "./src/app/management/student-list/popover-options/popover-options.component.scss")).default]
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], PopoverOptionsComponent);
     /***/
   },
 
@@ -3187,53 +3373,103 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @ionic/angular */
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+    /* harmony import */
+
+
+    var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! src/app/services/auth.service */
+    "./src/app/services/auth.service.ts");
 
     var StudentListComponent =
     /*#__PURE__*/
     function () {
-      function StudentListComponent(route, skiService) {
-        var _this5 = this;
-
+      function StudentListComponent(route, skiService, toastController, authService, popoverController) {
         _classCallCheck(this, StudentListComponent);
 
         this.route = route;
         this.skiService = skiService;
+        this.toastController = toastController;
+        this.authService = authService;
+        this.popoverController = popoverController;
         this.title = "Student List";
         this.groupID = this.route.snapshot.params.id;
-        this.skiService.getGroup(this.groupID).subscribe(function (resp) {
-          _this5.group = resp;
-          _this5.students = _this5.group.Students;
-
-          _this5.students.forEach(function (element) {
-            element.Status = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].status[element.Status];
-          });
-
-          _this5.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].levels[_this5.group.Level] + " " + _this5.group.Number + " " + _this5.group.Time;
-          console.log(_this5.group);
-        });
       }
 
       _createClass(StudentListComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this5 = this;
+
+          this.skiService.getGroup(this.groupID).subscribe(function (resp) {
+            _this5.group = resp;
+            console.table(resp);
+            _this5.students = _this5.group.Students;
+            _this5.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].levels[_this5.group.Level] + " " + _this5.group.Number + " " + _this5.group.Time.substring(0, 5) + " " + src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].days[_this5.group.day];
+          });
+        }
+      }, {
         key: "statusChange",
-        value: function statusChange(student) {
-          var tempstatus;
-          console.log(student.id + ":" + student.Status);
+        value: function statusChange(student, $event) {
+          var _this6 = this;
 
-          for (var index = 0; index < src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].status.length; index++) {
-            if (src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].status[index] == student.Status) {
-              tempstatus = index;
-              break;
-            }
-          }
-
+          student.Status = $event.detail.value;
           var output = {
-            "status": tempstatus,
+            "status": student.Status,
             "studentID": student.id
           };
-          this.skiService.setStatus(output).subscribe(function (x) {
-            if (x) {
-              location.reload();
-            }
+          this.skiService.setStatus(output).subscribe(function (success) {}, function (error) {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this6, void 0, void 0,
+            /*#__PURE__*/
+            regeneratorRuntime.mark(function _callee() {
+              var toast, _toast;
+
+              return regeneratorRuntime.wrap(function _callee$(_context) {
+                while (1) {
+                  switch (_context.prev = _context.next) {
+                    case 0:
+                      if (!(error.error == "InvalidToken")) {
+                        _context.next = 8;
+                        break;
+                      }
+
+                      this.authService.logout();
+                      _context.next = 4;
+                      return this.toastController.create({
+                        message: 'Veuillez vous reconnectez.',
+                        duration: 2000
+                      });
+
+                    case 4:
+                      toast = _context.sent;
+                      toast.present();
+                      _context.next = 12;
+                      break;
+
+                    case 8:
+                      _context.next = 10;
+                      return this.toastController.create({
+                        message: 'Une Erreur est survenue.',
+                        duration: 2000
+                      });
+
+                    case 10:
+                      _toast = _context.sent;
+
+                      _toast.present();
+
+                    case 12:
+                    case "end":
+                      return _context.stop();
+                  }
+                }
+              }, _callee, this);
+            }));
           });
         }
       }, {
@@ -3242,21 +3478,34 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].status;
         }
       }, {
-        key: "doRefresh",
-        value: function doRefresh(event) {
-          var _this6 = this;
+        key: "openPopOver",
+        value: function openPopOver(ev) {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee2() {
+            var popover;
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    _context2.next = 2;
+                    return this.popoverController.create({
+                      component: 'app-popover-options',
+                      event: ev,
+                      translucent: true
+                    });
 
-          this.skiService.getGroup(this.groupID).subscribe(function (resp) {
-            _this6.group = resp;
-            _this6.students = _this6.group.Students;
+                  case 2:
+                    popover = _context2.sent;
+                    return _context2.abrupt("return", popover.present());
 
-            _this6.students.forEach(function (element) {
-              element.Status = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].status[element.Status];
-            });
-
-            console.log(event);
-            event.complete();
-          });
+                  case 4:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2, this);
+          }));
         }
       }]);
 
@@ -3268,6 +3517,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]
       }, {
         type: src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"]
+      }, {
+        type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["PopoverController"]
       }];
     };
 
@@ -3279,7 +3534,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./student-list.component.scss */
       "./src/app/management/student-list/student-list.component.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"]])], StudentListComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"], src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["PopoverController"]])], StudentListComponent);
     /***/
   },
 
@@ -3483,13 +3738,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _search_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ./search.page */
     "./src/app/search/search.page.ts");
+    /* harmony import */
+
+
+    var _components_shared_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ../components/shared.module */
+    "./src/app/components/shared.module.ts");
 
     var SearchPageModule = function SearchPageModule() {
       _classCallCheck(this, SearchPageModule);
     };
 
     SearchPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"], _search_routing_module__WEBPACK_IMPORTED_MODULE_5__["SearchPageRoutingModule"]],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"], _search_routing_module__WEBPACK_IMPORTED_MODULE_5__["SearchPageRoutingModule"], _components_shared_module__WEBPACK_IMPORTED_MODULE_7__["SharedModule"]],
       declarations: [_search_page__WEBPACK_IMPORTED_MODULE_6__["SearchPage"]]
     })], SearchPageModule);
     /***/
@@ -3552,26 +3813,94 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _services_ski_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ../services/ski.service */
     "./src/app/services/ski.service.ts");
+    /* harmony import */
+
+
+    var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../services/auth.service */
+    "./src/app/services/auth.service.ts");
+    /* harmony import */
+
+
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @ionic/angular */
+    "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
 
     var SearchPage =
     /*#__PURE__*/
     function () {
-      function SearchPage(skiAPI) {
+      function SearchPage(skiAPI, authService, alertController, router) {
         _classCallCheck(this, SearchPage);
 
         this.skiAPI = skiAPI;
+        this.authService = authService;
+        this.alertController = alertController;
+        this.router = router;
         this.title = "Recherche";
         this.search = "";
+        this.authService.checkConnected();
+        console.log(_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].days[1]);
       }
 
       _createClass(SearchPage, [{
-        key: "ionViewDidLoad",
-        value: function ionViewDidLoad() {
-          console.log("ionViewDidLoad SearchPage");
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }, {
+        key: "showInfoAlert",
+        value: function showInfoAlert(result) {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee3() {
+            var _this7 = this;
+
+            var alert;
+            return regeneratorRuntime.wrap(function _callee3$(_context3) {
+              while (1) {
+                switch (_context3.prev = _context3.next) {
+                  case 0:
+                    console.log(result);
+                    _context3.next = 3;
+                    return this.alertController.create({
+                      header: 'Informations sur l\'étudiant',
+                      subHeader: result.student.Name + " : " + _services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].status[result.student.Status],
+                      //message: 'Groupe '+result.group.Number + " à " + result.group.Time + " le " + SkiService.days[result.group.day-1],
+                      message: _services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].days[result.group.day - 1] + " " + result.group.Time.substring(0, 5) + '\n Groupe: ' + result.group.Number + "\n" + "Niveau: " + _services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].levels[result.group.Level] + "\nMoniteur: " + result.group.TeacherName,
+                      buttons: [{
+                        text: 'Cancel',
+                        role: 'cancel',
+                        cssClass: 'secondary',
+                        handler: function handler(blah) {}
+                      }, {
+                        text: 'Groupe',
+                        handler: function handler() {
+                          _this7.router.navigate(['/management/group/' + result.group.id]);
+                        }
+                      }]
+                    });
+
+                  case 3:
+                    alert = _context3.sent;
+                    _context3.next = 6;
+                    return alert.present();
+
+                  case 6:
+                  case "end":
+                    return _context3.stop();
+                }
+              }
+            }, _callee3, this);
+          }));
         }
       }, {
         key: "onSearchChange",
         value: function onSearchChange($event) {
+          this.authService.checkConnected();
           this.search = $event.target.value.trim();
 
           if (this.search && this.search != "") {
@@ -3587,6 +3916,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     SearchPage.ctorParameters = function () {
       return [{
         type: _services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"]
+      }, {
+        type: _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
       }];
     };
 
@@ -3598,7 +3933,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./search.page.scss */
       "./src/app/search/search.page.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"]])], SearchPage);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])], SearchPage);
     /***/
   },
 
@@ -3660,22 +3995,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _classCallCheck(this, Groupe);
     };
 
-    var LoginRequest =
-    /*#__PURE__*/
-    function () {
-      function LoginRequest() {
-        _classCallCheck(this, LoginRequest);
-      }
+    var LoginRequest = function LoginRequest(code) {
+      _classCallCheck(this, LoginRequest);
 
-      _createClass(LoginRequest, [{
-        key: "LoginRequest",
-        value: function LoginRequest(code) {
-          this.code = code;
-        }
-      }]);
-
-      return LoginRequest;
-    }();
+      this.code = code;
+    };
 
     var LoginResponse =
     /*#__PURE__*/
@@ -3756,67 +4080,135 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _ski_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./ski.service */
-    "./src/app/services/ski.service.ts");
-    /* harmony import */
-
-
-    var _DTO__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _DTO__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./DTO */
     "./src/app/services/DTO.ts");
     /* harmony import */
 
 
-    var _ionic_Storage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _ionic_Storage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @ionic/Storage */
     "./node_modules/@ionic/Storage/fesm2015/ionic-storage.js");
     /* harmony import */
 
 
-    var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @ionic/angular */
     "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
     /* harmony import */
 
 
-    var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-    /*! rxjs */
-    "./node_modules/rxjs/_esm2015/index.js");
+    var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
     /* harmony import */
 
 
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-    /*! rxjs/operators */
-    "./node_modules/rxjs/_esm2015/operators/index.js");
+    var _settings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ./settings */
+    "./src/app/services/settings.ts");
 
     var AuthService =
     /*#__PURE__*/
     function () {
-      function AuthService(http, storage, toastController) {
+      function AuthService(http, storage, toastController, router, navCtrl) {
         _classCallCheck(this, AuthService);
 
         this.http = http;
         this.storage = storage;
         this.toastController = toastController;
+        this.router = router;
+        this.navCtrl = navCtrl;
       }
 
       _createClass(AuthService, [{
         key: "login",
         value: function login(code) {
-          var body = new _DTO__WEBPACK_IMPORTED_MODULE_4__["LoginRequest"]();
-          body.code = code; // this.http.post<LoginResponse>(SkiService.apiUrl + "login", body).subscribe(async resp => {
-          //   this.storage.set("User", resp.employe);
-          //   this.storage.set("Token", resp.token);
-          //   window.localStorage.setItem("Token",resp.token);
-          //   return resp;
-          // });
+          var _this8 = this;
 
-          this.http.post(_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"].apiUrl + "login", body).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["catchError"])(this.handleError));
+          var body = new _DTO__WEBPACK_IMPORTED_MODULE_3__["LoginRequest"](code);
+          this.http.post(_settings__WEBPACK_IMPORTED_MODULE_7__["Settings"].apiUrl + "login", body).subscribe(function (resp) {
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this8, void 0, void 0,
+            /*#__PURE__*/
+            regeneratorRuntime.mark(function _callee4() {
+              var toast;
+              return regeneratorRuntime.wrap(function _callee4$(_context4) {
+                while (1) {
+                  switch (_context4.prev = _context4.next) {
+                    case 0:
+                      this.storage.set("User", resp.employe);
+                      this.storage.set("Token", resp.token);
+                      window.localStorage.setItem("Token", resp.token);
+                      this.router.navigate(["/home"]);
+                      _context4.next = 6;
+                      return this.toastController.create({
+                        message: 'Bienvenue ' + resp.employe.name + '!',
+                        duration: 2000
+                      });
+
+                    case 6:
+                      toast = _context4.sent;
+                      toast.present();
+                      return _context4.abrupt("return", resp);
+
+                    case 9:
+                    case "end":
+                      return _context4.stop();
+                  }
+                }
+              }, _callee4, this);
+            }));
+          }, function (error) {
+            console.log(error);
+          });
         }
       }, {
         key: "logout",
-        value: function logout() {}
+        value: function logout() {
+          window.localStorage.removeItem("Token");
+          this.storage.remove("Token");
+          this.storage.remove("User");
+          this.navCtrl.pop();
+          this.router.navigate(["/home"]);
+        }
+      }, {
+        key: "checkConnected",
+        value: function checkConnected() {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee5() {
+            var toast;
+            return regeneratorRuntime.wrap(function _callee5$(_context5) {
+              while (1) {
+                switch (_context5.prev = _context5.next) {
+                  case 0:
+                    if (this.connected()) {
+                      _context5.next = 6;
+                      break;
+                    }
+
+                    _context5.next = 3;
+                    return this.toastController.create({
+                      message: 'Cette section est reservée au utilisateurs connectées.',
+                      duration: 2000
+                    });
+
+                  case 3:
+                    toast = _context5.sent;
+                    toast.present();
+                    this.logout();
+
+                  case 6:
+                    return _context5.abrupt("return", true);
+
+                  case 7:
+                  case "end":
+                    return _context5.stop();
+                }
+              }
+            }, _callee5, this);
+          }));
+        }
       }, {
         key: "connected",
         value: function connected() {
@@ -3825,28 +4217,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getToken",
         value: function getToken() {
+          console.log(window.localStorage.getItem("Token"));
           return window.localStorage.getItem("Token");
         }
       }, {
         key: "getUser",
         value: function getUser() {
-          this.storage.get("User");
-        }
-      }, {
-        key: "handleError",
-        value: function handleError(error) {
-          var errorMessage = 'Unknown error!';
-
-          if (error.error instanceof ErrorEvent) {
-            // Client-side errors
-            errorMessage = "Error: ".concat(error.error.message);
-          } else {
-            // Server-side errors
-            errorMessage = "Error Code: ".concat(error.status, "\nMessage: ").concat(error.message);
-          }
-
-          window.alert(errorMessage);
-          return Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["throwError"])(errorMessage);
+          this.storage.get("User").then(function (user) {
+            return user;
+          });
         }
       }]);
 
@@ -3857,15 +4236,53 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return [{
         type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
       }, {
-        type: _ionic_Storage__WEBPACK_IMPORTED_MODULE_5__["Storage"]
+        type: _ionic_Storage__WEBPACK_IMPORTED_MODULE_4__["Storage"]
       }, {
-        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ToastController"]
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ToastController"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["NavController"]
       }];
     };
 
     AuthService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
       providedIn: 'root'
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _ionic_Storage__WEBPACK_IMPORTED_MODULE_5__["Storage"], _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ToastController"]])], AuthService);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _ionic_Storage__WEBPACK_IMPORTED_MODULE_4__["Storage"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ToastController"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["NavController"]])], AuthService);
+    /***/
+  },
+
+  /***/
+  "./src/app/services/settings.ts":
+  /*!**************************************!*\
+    !*** ./src/app/services/settings.ts ***!
+    \**************************************/
+
+  /*! exports provided: Settings */
+
+  /***/
+  function srcAppServicesSettingsTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "Settings", function () {
+      return Settings;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+
+    var Settings = function Settings() {
+      _classCallCheck(this, Settings);
+    };
+
+    Settings.apiUrl = "https://api.mateimartin.ca:8081/";
     /***/
   },
 
@@ -3924,10 +4341,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! rxjs/operators */
     "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
 
-    var SkiService_1;
 
-    var SkiService = SkiService_1 =
+    var _settings__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ./settings */
+    "./src/app/services/settings.ts");
+
+    var SkiService =
     /*#__PURE__*/
     function () {
       function SkiService(http, storage, authStorage) {
@@ -3951,29 +4372,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.storage.get("UserID").then(function (val) {
             return console.log(val);
           });
-          return this.http.get(SkiService_1.apiUrl, httpOptions);
+          return this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl, httpOptions);
         }
       }, {
         key: "getLevels",
         value: function getLevels() {
-          var httpOptions = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
-              UserToken: '114627'
-            })
-          };
-          return this.http.get(SkiService_1.apiUrl + "levels", httpOptions);
+          return this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "levels");
         }
       }, {
         key: "getGroups",
         value: function getGroups(id) {
-          console.log("yo");
           var httpOptions = {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
               "UserToken": this.authStorage.getToken()
             })
           };
-          console.log(this.authStorage.getToken());
-          var tmp = this.http.get(SkiService_1.apiUrl + "groups/" + id, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])( // Log the result or error
+          var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "levels/" + id + "/groups", httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])( // Log the result or error
           // Log the result or error
           function (data) {
             return console.log("Yo", data);
@@ -3990,24 +4404,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "UserToken": this.authStorage.getToken()
             })
           };
-          var tmp = this.http.get(SkiService_1.apiUrl + "group/" + groupID, httpOptions);
+          var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "group/" + groupID, httpOptions);
           return tmp;
         }
       }, {
         key: "getExercices",
         value: function getExercices(levelID) {
-          var tmp = this.http.get(SkiService_1.apiUrl + "levels/" + levelID + "/exercices");
+          var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "levels/" + levelID + "/exercices");
           return tmp;
         }
       }, {
         key: "setStatus",
         value: function setStatus(student) {
-          var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
-            "Content-Type": "application/json"
-          });
-          return this.http.post(SkiService_1.apiUrl + "status/", student, {
-            headers: headers
-          });
+          var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
+              "UserToken": this.authStorage.getToken(),
+              "Content-Type": "application/json"
+            })
+          };
+          return this.http.post(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "status/", student, httpOptions);
         }
       }, {
         key: "search",
@@ -4018,7 +4433,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               "UserToken": this.authStorage.getToken()
             })
           };
-          var tmp = this.http.get(SkiService_1.apiUrl + "search/" + input, httpOptions);
+          var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "search/" + input, httpOptions);
           return tmp;
         }
       }]);
@@ -4026,10 +4441,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return SkiService;
     }();
 
-    SkiService.levels = ["Test", "Ourson", " Kangourou", " Prélude", " Tigre", " Lion", " Christiania", " Parallèle I", " Parallèle II", " Compétence I", " Compétence II", " Élite I", " Élite II", " Excellence"];
-    SkiService.status = ["Non évalué", "Normal", "En retard", "Absent", "Fort"];
-    SkiService.tokenName = "UserToken";
-    SkiService.apiUrl = "http://localhost:8100/api/";
+    SkiService.levels = ["Test", "Ourson", "Kangourou", "Prélude", "Tigre", "Lion", "Christiania", "Parallèle I", "Parallèle II", "Compétence I", "Compétence II", "Élite I", "Élite II", "Excellence"];
+    SkiService.status = ["Normal", "En retard", "Absent", "Fort"];
+    SkiService.days = ["Erreur", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
 
     SkiService.ctorParameters = function () {
       return [{
@@ -4041,7 +4455,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }];
     };
 
-    SkiService = SkiService_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
+    SkiService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])({
       providedIn: 'root'
     }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"], _ionic_Storage__WEBPACK_IMPORTED_MODULE_4__["Storage"], _auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"]])], SkiService);
     /***/
@@ -4156,7 +4570,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\1765050\Downloads\SkiApp\src\main.ts */
+    /*! D:\Projects\SkiAppIonic\src\main.ts */
     "./src/main.ts");
     /***/
   }

@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"Profile\"></app-header>\r\n\r\n\r\n<ion-content class=\"ion-padding\">\r\n  <h1>Vous êtes déjà connectés.</h1>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"Profile\"></app-header>\r\n\r\n\r\n<ion-content class=\"ion-padding\">\r\n  <ion-text>\r\n    <h1>Vous êtes déjà connectés en tant que:</h1>\r\n    <h2>{{user.name}}</h2>\r\n    <h2>{{user.id}}</h2>\r\n  </ion-text>\r\n</ion-content>");
 
 /***/ }),
 
@@ -124,6 +124,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/auth.service */ "./src/app/services/auth.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _ionic_Storage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/Storage */ "./node_modules/@ionic/Storage/fesm2015/ionic-storage.js");
+/* harmony import */ var _services_DTO__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../services/DTO */ "./src/app/services/DTO.ts");
+
 
 
 
@@ -136,7 +138,11 @@ let ProfilePage = class ProfilePage {
         this.storage = storage;
         this.authAPI = authAPI;
         this.router = router;
-        this.storage.get("User").then(user => this.user = user);
+        this.user = new _services_DTO__WEBPACK_IMPORTED_MODULE_6__["Employe"]();
+        this.storage.get("User").then(user => {
+            this.user = user;
+            console.log(user);
+        });
     }
     ngOnInit() {
     }

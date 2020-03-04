@@ -1,8 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { SkiService } from "../services/ski.service";
-import { Storage } from "@ionic/Storage";
-import { AuthService } from "../services/auth.service";
-import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: "app-home",
@@ -11,9 +8,18 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
   
-  constructor(  ) {  }
+  allo: string;
+  display;
+  constructor( private http: HttpClient ) { }
 
 
   ngOnInit() {
+
+    
+  }
+
+  sync(){
+    window.localStorage.setItem("test",this.allo);
+    this.display = window.localStorage.getItem("test");
   }
 }

@@ -6,7 +6,7 @@ import { ManagementPageRoutingModule } from "./management-routing.module";
 import { ManagementPage } from "./management.page";
 import { GroupsListComponent } from "./groups-list/groups-list.component";
 import { SharedModule } from '../components/shared.module';
-import { StudentListComponent } from './student-list/student-list.component';
+import { StudentListComponent } from './student-list/student-list.component'; 
 
 @NgModule({
   imports: [
@@ -14,7 +14,7 @@ import { StudentListComponent } from './student-list/student-list.component';
     FormsModule,
     IonicModule,
     ManagementPageRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   declarations: [
     ManagementPage, 

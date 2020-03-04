@@ -1,11 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>{{ title }}</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header title="Recherche"></app-header>
 
 <ion-content>
   <ion-searchbar
@@ -17,7 +10,7 @@
     [debounce]="100"
   ></ion-searchbar>
   <ion-list>
-    <ion-item menuClose *ngFor="let sdnt of (students|async)" class="list-item">
+    <ion-item menuClose *ngFor="let sdnt of (students|async)" class="list-item" (click)="showInfoAlert(sdnt)">
       <ion-label>
         <h2>
           {{sdnt.student.Name}}

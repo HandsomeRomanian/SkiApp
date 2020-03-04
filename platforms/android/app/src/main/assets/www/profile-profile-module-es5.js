@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-header title=\"Profile\"></app-header>\r\n\r\n\r\n<ion-content class=\"ion-padding\">\r\n  <h1>Vous êtes déjà connectés.</h1>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<app-header title=\"Profile\"></app-header>\r\n\r\n\r\n<ion-content class=\"ion-padding\">\r\n  <ion-text>\r\n    <h1>Vous êtes déjà connectés en tant que:</h1>\r\n    <h2>{{user.name}}</h2>\r\n    <h2>{{user.id}}</h2>\r\n  </ion-text>\r\n</ion-content>";
     /***/
   },
 
@@ -239,6 +239,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _ionic_Storage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @ionic/Storage */
     "./node_modules/@ionic/Storage/fesm2015/ionic-storage.js");
+    /* harmony import */
+
+
+    var _services_DTO__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ../services/DTO */
+    "./src/app/services/DTO.ts");
 
     var ProfilePage =
     /*#__PURE__*/
@@ -252,8 +258,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.storage = storage;
         this.authAPI = authAPI;
         this.router = router;
+        this.user = new _services_DTO__WEBPACK_IMPORTED_MODULE_6__["Employe"]();
         this.storage.get("User").then(function (user) {
-          return _this.user = user;
+          _this.user = user;
+          console.log(user);
         });
       }
 

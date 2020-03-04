@@ -13,7 +13,7 @@ import { Employe } from "./services/DTO";
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
-  public user = {name:"Non connecté"};
+  public user = "Non connecté"
   public appPages = [
     {
       title: "Home",
@@ -34,11 +34,6 @@ export class AppComponent implements OnInit {
       title: "Recherche",
       url: "/search/",
       icon: "search"
-    },
-    {
-      title: "Deconnection",
-      url: "/auth/",
-      icon: "lock"
     }
   ];
 
@@ -69,7 +64,6 @@ export class AppComponent implements OnInit {
     this.storage.get("User").then(val =>{
       if (val != null){
         this.user = val.name;
-        console.log(this.user)
       }
     });
   }
