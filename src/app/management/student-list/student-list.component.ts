@@ -5,6 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Student } from 'src/app/services/DTO';
 import { ToastController, PopoverController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
+import { PopoverOptionsComponent } from './popover-options/popover-options.component';
 
 @Component({
   selector: "app-student-list",
@@ -63,15 +64,13 @@ export class StudentListComponent implements OnInit {
     );
   }
 
-
-
   getStatusList() {
     return SkiService.status;
   }
 
   async openPopOver(ev) {
     let popover = await this.popoverController.create({
-      component: 'app-popover-options',
+      component: PopoverOptionsComponent,
       event: ev,
       translucent: true
     });

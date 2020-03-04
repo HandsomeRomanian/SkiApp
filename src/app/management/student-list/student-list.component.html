@@ -5,14 +5,13 @@
     <ion-card *ngFor="let sdnt of students">
       <ion-item>
         <ion-label>{{ sdnt.Name }}</ion-label>
-        <ion-button slot="end" (click)="openPopOver($event)">
+        <!-- <ion-button slot="end" (click)="openPopOver($event)">
           <ion-icon
             slot="icon-only"
             ios="ellipsis-horizontal"
             md="ellipsis-vertical"
-            
           ></ion-icon>
-        </ion-button>
+        </ion-button> -->
       </ion-item>
 
       <ion-card-content>
@@ -21,7 +20,7 @@
           (ionChange)="statusChange(sdnt, $event)"
         >
           <ion-segment-button
-          fill="outline"
+            fill="outline"
             *ngFor="let status of getStatusList(); let i = index"
             value="{{ i }}"
           >
@@ -30,30 +29,5 @@
         </ion-segment>
       </ion-card-content>
     </ion-card>
-
-    <!-- <ion-item *ngFor="let sdnt of students">
-      <ion-item>
-        <ion-label>
-          <h2>{{ sdnt.Name }}</h2>
-        </ion-label>
-      </ion-item>
-      <br />
-      <ion-item>
-        <ion-segment (ionChange)="statusChange(sdnt, $event)">
-          <ion-segment-button
-            *ngFor="let status of getStatusList(); let i = index"
-            value="{{ i }}"
-          >
-            <ion-label>{{ status }}</ion-label>
-          </ion-segment-button>
-        </ion-segment>
-      </ion-item> 
-      <ion-input type="text" text-wrap></ion-input>
-      <ion-select name="test" value="{{sdnt.Status}}"  interface="popover" (ionChange)="statusChange(sdnt, $event)">
-        <ion-select-option *ngFor="let status of getStatusList(); let i = index" value="{{i}}">
-          {{ status }} </ion-select-option>
-      </ion-select> 
-    </ion-item>-->
-    
   </ion-list>
 </ion-content>

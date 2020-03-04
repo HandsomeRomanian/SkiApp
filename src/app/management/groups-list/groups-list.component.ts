@@ -1,9 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { NavParams } from "@ionic/angular";
 import { ActivatedRoute, Router } from "@angular/router";
 import { SkiService } from "src/app/services/ski.service";
 import { Groupe } from "src/app/services/DTO";
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from "src/app/services/auth.service";
 
 @Component({
   selector: "app-groups-list",
@@ -12,10 +11,11 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class GroupsListComponent implements OnInit {
   title: string = "Groupes";
-  onlyCurrent: any;
+  onlyCurrent = true;
   listVisibility = true;
   data: Groupe[];
-  public groups: Groupe[];
+  public groups: Groupe[] = [];
+
   day = [
     "Lundi",
     "Mardi",
@@ -26,18 +26,22 @@ export class GroupsListComponent implements OnInit {
     "Dimanche"
   ];
 
-  constructor(private route: ActivatedRoute, private SkiAPI: SkiService,private authService: AuthService) {
-    this.authService.checkConnected()
+  constructor(
+    private route: ActivatedRoute,
+    private SkiAPI: SkiService,
+    private authService: AuthService
+  ) {
+    this.authService.checkConnected();
     const levelID = this.route.snapshot.params.id;
     this.SkiAPI.getGroups(levelID).subscribe(resp => {
       this.groups = resp;
       this.data = resp;
       this.title = SkiService.levels[resp[0].Level];
-
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   getGroups() {
     this.data = [];
@@ -45,15 +49,14 @@ export class GroupsListComponent implements OnInit {
       this.data = this.groups;
       return this.data;
     } else {
-      this.data = this.groups.filter(group => this.currentClass(group))
-      console.log(this.data)
+      this.data = this.groups.filter(group => this.currentClass(group));
     }
-    return this.data
+    return this.data;
   }
 
   updateList() {
     this.listVisibility = !this.listVisibility;
-    this.getGroups()
+    this.getGroups();
     this.listVisibility = !this.listVisibility;
   }
 
@@ -62,11 +65,21 @@ export class GroupsListComponent implements OnInit {
     let timeAr = inGroup.Time.split(":");
     classe.setHours(timeAr[0], timeAr[1], timeAr[2]);
 
-    let output = !(
-      classe.getTime() > new Date().getTime() &&
-      new Date().getTime() < classe.setHours(classe.getHours() + 1)
-    );
-    console.log(output)
-    return output;
+    if (
+      inGroup.Level < 3 &&
+      classe.getTime() < new Date().getTime() &&
+      new Date().getTime() < classe.setHours(classe.getHours() + 1) && (
+      (new Date().getDay() == 0 && inGroup.day == new Date().getDay()+7)|| (new Date().getDay() != 0 && inGroup.day == new Date().getDay())) ) 
+    {
+      return true;
+    } else if (
+      inGroup.Level >= 3 &&
+      classe.getTime() < new Date().getTime() &&
+      new Date().getTime() <
+        classe.setHours(classe.getHours() + 1, classe.getMinutes() + 30) &&
+      inGroup.day == new Date().getDay())
+    {
+      return true;
+    }
   }
 }
