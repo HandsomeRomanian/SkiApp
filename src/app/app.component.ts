@@ -64,7 +64,6 @@ export class AppComponent implements OnInit {
     this.storage.get("User").then(val =>{
       if (val != null){
         this.user = val.name;
-        console.log(this.user)
       }
     });
   }

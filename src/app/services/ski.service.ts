@@ -59,7 +59,6 @@ export class SkiService {
         "test": "placeholder"
       })
     };
-    this.storage.get("UserID").then(val => console.log(val))
     return this.http.get(Settings.apiUrl, httpOptions);
 
   }

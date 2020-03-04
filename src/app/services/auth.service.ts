@@ -34,7 +34,6 @@ export class AuthService {
         return resp;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -65,7 +64,6 @@ export class AuthService {
   }
 
   public getToken() {
-    console.log(window.localStorage.getItem("Token"))
     return window.localStorage.getItem("Token");
   }
 
