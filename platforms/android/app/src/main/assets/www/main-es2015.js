@@ -572,6 +572,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/popover-options/popover-options.component.html":
+/*!******************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/popover-options/popover-options.component.html ***!
+  \******************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-list>\r\n  <ion-list-header>Ionic</ion-list-header>\r\n  <ion-item button>Learn Ionic</ion-item>\r\n  <ion-item button>Documentation</ion-item>\r\n  <ion-item button>Showcase</ion-item>\r\n  <ion-item button>GitHub Repo</ion-item>\r\n  <ion-item lines=\"none\" detail=\"false\" button onClick=\"dismissPopover()\"\r\n    >Close</ion-item\r\n  >\r\n</ion-list>\r\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/student-list.component.html":
 /*!***********************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/student-list.component.html ***!
@@ -581,7 +594,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"{{title}}\"></app-header>\r\n\r\n<ion-content padding>\r\n\r\n  <ion-list>\r\n    <ion-item *ngFor=\"let sdnt of students\">\r\n\r\n      <ion-label>\r\n        <h2>{{ sdnt.Name }}</h2>\r\n      </ion-label>\r\n      <ion-input type=\"text\" text-wrap></ion-input>\r\n      <ion-select name=\"test\" value=\"{{sdnt.Status}}\"  interface=\"popover\" (ionChange)=\"statusChange(sdnt, $event)\">\r\n        <ion-select-option *ngFor=\"let status of getStatusList(); let i = index\" value=\"{{i}}\">\r\n          {{ status }} </ion-select-option>\r\n      </ion-select>\r\n\r\n\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"{{ title }}\"></app-header>\r\n\r\n<ion-content padding>\r\n  <ion-list>\r\n    <ion-card *ngFor=\"let sdnt of students\">\r\n      <ion-item>\r\n        <ion-label>{{ sdnt.Name }}</ion-label>\r\n        <ion-button slot=\"end\" (click)=\"openPopOver($event)\">\r\n          <ion-icon\r\n            slot=\"icon-only\"\r\n            ios=\"ellipsis-horizontal\"\r\n            md=\"ellipsis-vertical\"\r\n            \r\n          ></ion-icon>\r\n        </ion-button>\r\n      </ion-item>\r\n\r\n      <ion-card-content>\r\n        <ion-segment\r\n          value=\"{{ sdnt.Status }}\"\r\n          (ionChange)=\"statusChange(sdnt, $event)\"\r\n        >\r\n          <ion-segment-button\r\n          fill=\"outline\"\r\n            *ngFor=\"let status of getStatusList(); let i = index\"\r\n            value=\"{{ i }}\"\r\n          >\r\n            <ion-label>{{ status }}</ion-label>\r\n          </ion-segment-button>\r\n        </ion-segment>\r\n      </ion-card-content>\r\n    </ion-card>\r\n\r\n    <!-- <ion-item *ngFor=\"let sdnt of students\">\r\n      <ion-item>\r\n        <ion-label>\r\n          <h2>{{ sdnt.Name }}</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <br />\r\n      <ion-item>\r\n        <ion-segment (ionChange)=\"statusChange(sdnt, $event)\">\r\n          <ion-segment-button\r\n            *ngFor=\"let status of getStatusList(); let i = index\"\r\n            value=\"{{ i }}\"\r\n          >\r\n            <ion-label>{{ status }}</ion-label>\r\n          </ion-segment-button>\r\n        </ion-segment>\r\n      </ion-item> \r\n      <ion-input type=\"text\" text-wrap></ion-input>\r\n      <ion-select name=\"test\" value=\"{{sdnt.Status}}\"  interface=\"popover\" (ionChange)=\"statusChange(sdnt, $event)\">\r\n        <ion-select-option *ngFor=\"let status of getStatusList(); let i = index\" value=\"{{i}}\">\r\n          {{ status }} </ion-select-option>\r\n      </ion-select> \r\n    </ion-item>-->\r\n    =\r\n  </ion-list>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -1846,16 +1859,6 @@ let HomePage = class HomePage {
         this.http = http;
     }
     ngOnInit() {
-        const httpOptions = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
-                "Token": '114627',
-                "test": "placeholder"
-            })
-        };
-        this.http.get("http://localhost:1234/test", httpOptions).subscribe(resp => {
-            console.log(resp);
-            this.display = resp;
-        });
     }
     sync() {
         window.localStorage.setItem("test", this.allo);
@@ -2050,6 +2053,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _groups_list_groups_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./groups-list/groups-list.component */ "./src/app/management/groups-list/groups-list.component.ts");
 /* harmony import */ var _components_shared_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/shared.module */ "./src/app/components/shared.module.ts");
 /* harmony import */ var _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./student-list/student-list.component */ "./src/app/management/student-list/student-list.component.ts");
+/* harmony import */ var _student_list_popover_options_popover_options_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./student-list/popover-options/popover-options.component */ "./src/app/management/student-list/popover-options/popover-options.component.ts");
+
 
 
 
@@ -2069,12 +2074,16 @@ ManagementPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
             _management_routing_module__WEBPACK_IMPORTED_MODULE_5__["ManagementPageRoutingModule"],
-            _components_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"]
+            _components_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"],
         ],
         declarations: [
             _management_page__WEBPACK_IMPORTED_MODULE_6__["ManagementPage"],
             _groups_list_groups_list_component__WEBPACK_IMPORTED_MODULE_7__["GroupsListComponent"],
-            _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_9__["StudentListComponent"]
+            _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_9__["StudentListComponent"],
+            _student_list_popover_options_popover_options_component__WEBPACK_IMPORTED_MODULE_10__["PopoverOptionsComponent"],
+        ],
+        entryComponents: [
+            _student_list_popover_options_popover_options_component__WEBPACK_IMPORTED_MODULE_10__["PopoverOptionsComponent"],
         ]
     })
 ], ManagementPageModule);
@@ -2144,6 +2153,50 @@ ManagementPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/management/student-list/popover-options/popover-options.component.scss":
+/*!****************************************************************************************!*\
+  !*** ./src/app/management/student-list/popover-options/popover-options.component.scss ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hbmFnZW1lbnQvc3R1ZGVudC1saXN0L3BvcG92ZXItb3B0aW9ucy9wb3BvdmVyLW9wdGlvbnMuY29tcG9uZW50LnNjc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/management/student-list/popover-options/popover-options.component.ts":
+/*!**************************************************************************************!*\
+  !*** ./src/app/management/student-list/popover-options/popover-options.component.ts ***!
+  \**************************************************************************************/
+/*! exports provided: PopoverOptionsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PopoverOptionsComponent", function() { return PopoverOptionsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let PopoverOptionsComponent = class PopoverOptionsComponent {
+    constructor() { }
+    ngOnInit() { }
+};
+PopoverOptionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-popover-options',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./popover-options.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/popover-options/popover-options.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./popover-options.component.scss */ "./src/app/management/student-list/popover-options/popover-options.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], PopoverOptionsComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/management/student-list/student-list.component.scss":
 /*!*********************************************************************!*\
   !*** ./src/app/management/student-list/student-list.component.scss ***!
@@ -2180,11 +2233,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let StudentListComponent = class StudentListComponent {
-    constructor(route, skiService, toastController, authService) {
+    constructor(route, skiService, toastController, authService, popoverController) {
         this.route = route;
         this.skiService = skiService;
         this.toastController = toastController;
         this.authService = authService;
+        this.popoverController = popoverController;
         this.title = "Student List";
         this.groupID = this.route.snapshot.params.id;
     }
@@ -2224,12 +2278,23 @@ let StudentListComponent = class StudentListComponent {
     getStatusList() {
         return src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].status;
     }
+    openPopOver(ev) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            let popover = yield this.popoverController.create({
+                component: 'app-popover-options',
+                event: ev,
+                translucent: true
+            });
+            return popover.present();
+        });
+    }
 };
 StudentListComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
     { type: src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"] },
-    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"] }
+    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["PopoverController"] }
 ];
 StudentListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2240,7 +2305,8 @@ StudentListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
         src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"],
         _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"],
-        src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"]])
+        src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"],
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["PopoverController"]])
 ], StudentListComponent);
 
 
@@ -2748,7 +2814,6 @@ SkiService.levels = [
     "Excellence"
 ];
 SkiService.status = [
-    "Non évalué",
     "Normal",
     "En retard",
     "Absent",

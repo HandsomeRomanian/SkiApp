@@ -371,6 +371,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/popover-options/popover-options.component.html":
+  /*!******************************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/popover-options/popover-options.component.html ***!
+    \******************************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppManagementStudentListPopoverOptionsPopoverOptionsComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<ion-list>\r\n  <ion-list-header>Ionic</ion-list-header>\r\n  <ion-item button>Learn Ionic</ion-item>\r\n  <ion-item button>Documentation</ion-item>\r\n  <ion-item button>Showcase</ion-item>\r\n  <ion-item button>GitHub Repo</ion-item>\r\n  <ion-item lines=\"none\" detail=\"false\" button onClick=\"dismissPopover()\"\r\n    >Close</ion-item\r\n  >\r\n</ion-list>\r\n";
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/student-list.component.html":
   /*!***********************************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/student-list.component.html ***!
@@ -386,7 +406,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-header title=\"{{title}}\"></app-header>\r\n\r\n<ion-content padding>\r\n\r\n  <ion-list>\r\n    <ion-item *ngFor=\"let sdnt of students\">\r\n\r\n      <ion-label>\r\n        <h2>{{ sdnt.Name }}</h2>\r\n      </ion-label>\r\n      <ion-input type=\"text\" text-wrap></ion-input>\r\n      <ion-select name=\"test\" value=\"{{sdnt.Status}}\"  interface=\"popover\" (ionChange)=\"statusChange(sdnt, $event)\">\r\n        <ion-select-option *ngFor=\"let status of getStatusList(); let i = index\" value=\"{{i}}\">\r\n          {{ status }} </ion-select-option>\r\n      </ion-select>\r\n\r\n\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>";
+    __webpack_exports__["default"] = "<app-header title=\"{{ title }}\"></app-header>\r\n\r\n<ion-content padding>\r\n  <ion-list>\r\n    <ion-card *ngFor=\"let sdnt of students\">\r\n      <ion-item>\r\n        <ion-label>{{ sdnt.Name }}</ion-label>\r\n        <ion-button slot=\"end\" (click)=\"openPopOver($event)\">\r\n          <ion-icon\r\n            slot=\"icon-only\"\r\n            ios=\"ellipsis-horizontal\"\r\n            md=\"ellipsis-vertical\"\r\n            \r\n          ></ion-icon>\r\n        </ion-button>\r\n      </ion-item>\r\n\r\n      <ion-card-content>\r\n        <ion-segment\r\n          value=\"{{ sdnt.Status }}\"\r\n          (ionChange)=\"statusChange(sdnt, $event)\"\r\n        >\r\n          <ion-segment-button\r\n          fill=\"outline\"\r\n            *ngFor=\"let status of getStatusList(); let i = index\"\r\n            value=\"{{ i }}\"\r\n          >\r\n            <ion-label>{{ status }}</ion-label>\r\n          </ion-segment-button>\r\n        </ion-segment>\r\n      </ion-card-content>\r\n    </ion-card>\r\n\r\n    <!-- <ion-item *ngFor=\"let sdnt of students\">\r\n      <ion-item>\r\n        <ion-label>\r\n          <h2>{{ sdnt.Name }}</h2>\r\n        </ion-label>\r\n      </ion-item>\r\n      <br />\r\n      <ion-item>\r\n        <ion-segment (ionChange)=\"statusChange(sdnt, $event)\">\r\n          <ion-segment-button\r\n            *ngFor=\"let status of getStatusList(); let i = index\"\r\n            value=\"{{ i }}\"\r\n          >\r\n            <ion-label>{{ status }}</ion-label>\r\n          </ion-segment-button>\r\n        </ion-segment>\r\n      </ion-item> \r\n      <ion-input type=\"text\" text-wrap></ion-input>\r\n      <ion-select name=\"test\" value=\"{{sdnt.Status}}\"  interface=\"popover\" (ionChange)=\"statusChange(sdnt, $event)\">\r\n        <ion-select-option *ngFor=\"let status of getStatusList(); let i = index\" value=\"{{i}}\">\r\n          {{ status }} </ion-select-option>\r\n      </ion-select> \r\n    </ion-item>-->\r\n    =\r\n  </ion-list>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -2739,20 +2759,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       _createClass(HomePage, [{
         key: "ngOnInit",
-        value: function ngOnInit() {
-          var _this3 = this;
-
-          var httpOptions = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
-              "Token": '114627',
-              "test": "placeholder"
-            })
-          };
-          this.http.get("http://localhost:1234/test", httpOptions).subscribe(function (resp) {
-            console.log(resp);
-            _this3.display = resp;
-          });
-        }
+        value: function ngOnInit() {}
       }, {
         key: "sync",
         value: function sync() {
@@ -2856,7 +2863,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*#__PURE__*/
     function () {
       function GroupsListComponent(route, SkiAPI, authService) {
-        var _this4 = this;
+        var _this3 = this;
 
         _classCallCheck(this, GroupsListComponent);
 
@@ -2869,9 +2876,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.authService.checkConnected();
         var levelID = this.route.snapshot.params.id;
         this.SkiAPI.getGroups(levelID).subscribe(function (resp) {
-          _this4.groups = resp;
-          _this4.data = resp;
-          _this4.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"].levels[resp[0].Level];
+          _this3.groups = resp;
+          _this3.data = resp;
+          _this3.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"].levels[resp[0].Level];
         });
       }
 
@@ -2881,7 +2888,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "getGroups",
         value: function getGroups() {
-          var _this5 = this;
+          var _this4 = this;
 
           this.data = [];
 
@@ -2890,7 +2897,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return this.data;
           } else {
             this.data = this.groups.filter(function (group) {
-              return _this5.currentClass(group);
+              return _this4.currentClass(group);
             });
             console.log(this.data);
           }
@@ -3098,6 +3105,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! ./student-list/student-list.component */
     "./src/app/management/student-list/student-list.component.ts");
+    /* harmony import */
+
+
+    var _student_list_popover_options_popover_options_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! ./student-list/popover-options/popover-options.component */
+    "./src/app/management/student-list/popover-options/popover-options.component.ts");
 
     var ManagementPageModule = function ManagementPageModule() {
       _classCallCheck(this, ManagementPageModule);
@@ -3105,7 +3118,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     ManagementPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"], _management_routing_module__WEBPACK_IMPORTED_MODULE_5__["ManagementPageRoutingModule"], _components_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"]],
-      declarations: [_management_page__WEBPACK_IMPORTED_MODULE_6__["ManagementPage"], _groups_list_groups_list_component__WEBPACK_IMPORTED_MODULE_7__["GroupsListComponent"], _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_9__["StudentListComponent"]]
+      declarations: [_management_page__WEBPACK_IMPORTED_MODULE_6__["ManagementPage"], _groups_list_groups_list_component__WEBPACK_IMPORTED_MODULE_7__["GroupsListComponent"], _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_9__["StudentListComponent"], _student_list_popover_options_popover_options_component__WEBPACK_IMPORTED_MODULE_10__["PopoverOptionsComponent"]],
+      entryComponents: [_student_list_popover_options_popover_options_component__WEBPACK_IMPORTED_MODULE_10__["PopoverOptionsComponent"]]
     })], ManagementPageModule);
     /***/
   },
@@ -3218,6 +3232,85 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
+  "./src/app/management/student-list/popover-options/popover-options.component.scss":
+  /*!****************************************************************************************!*\
+    !*** ./src/app/management/student-list/popover-options/popover-options.component.scss ***!
+    \****************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppManagementStudentListPopoverOptionsPopoverOptionsComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hbmFnZW1lbnQvc3R1ZGVudC1saXN0L3BvcG92ZXItb3B0aW9ucy9wb3BvdmVyLW9wdGlvbnMuY29tcG9uZW50LnNjc3MifQ== */";
+    /***/
+  },
+
+  /***/
+  "./src/app/management/student-list/popover-options/popover-options.component.ts":
+  /*!**************************************************************************************!*\
+    !*** ./src/app/management/student-list/popover-options/popover-options.component.ts ***!
+    \**************************************************************************************/
+
+  /*! exports provided: PopoverOptionsComponent */
+
+  /***/
+  function srcAppManagementStudentListPopoverOptionsPopoverOptionsComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PopoverOptionsComponent", function () {
+      return PopoverOptionsComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+
+    var PopoverOptionsComponent =
+    /*#__PURE__*/
+    function () {
+      function PopoverOptionsComponent() {
+        _classCallCheck(this, PopoverOptionsComponent);
+      }
+
+      _createClass(PopoverOptionsComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }]);
+
+      return PopoverOptionsComponent;
+    }();
+
+    PopoverOptionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-popover-options',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./popover-options.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/popover-options/popover-options.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./popover-options.component.scss */
+      "./src/app/management/student-list/popover-options/popover-options.component.scss")).default]
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], PopoverOptionsComponent);
+    /***/
+  },
+
+  /***/
   "./src/app/management/student-list/student-list.component.scss":
   /*!*********************************************************************!*\
     !*** ./src/app/management/student-list/student-list.component.scss ***!
@@ -3296,13 +3389,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var StudentListComponent =
     /*#__PURE__*/
     function () {
-      function StudentListComponent(route, skiService, toastController, authService) {
+      function StudentListComponent(route, skiService, toastController, authService, popoverController) {
         _classCallCheck(this, StudentListComponent);
 
         this.route = route;
         this.skiService = skiService;
         this.toastController = toastController;
         this.authService = authService;
+        this.popoverController = popoverController;
         this.title = "Student List";
         this.groupID = this.route.snapshot.params.id;
       }
@@ -3310,19 +3404,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(StudentListComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this6 = this;
+          var _this5 = this;
 
           this.skiService.getGroup(this.groupID).subscribe(function (resp) {
-            _this6.group = resp;
+            _this5.group = resp;
             console.table(resp);
-            _this6.students = _this6.group.Students;
-            _this6.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].levels[_this6.group.Level] + " " + _this6.group.Number + " " + _this6.group.Time.substring(0, 5) + " " + src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].days[_this6.group.day];
+            _this5.students = _this5.group.Students;
+            _this5.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].levels[_this5.group.Level] + " " + _this5.group.Number + " " + _this5.group.Time.substring(0, 5) + " " + src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].days[_this5.group.day];
           });
         }
       }, {
         key: "statusChange",
         value: function statusChange(student, $event) {
-          var _this7 = this;
+          var _this6 = this;
 
           student.Status = $event.detail.value;
           var output = {
@@ -3330,7 +3424,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             "studentID": student.id
           };
           this.skiService.setStatus(output).subscribe(function (success) {}, function (error) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this7, void 0, void 0,
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this6, void 0, void 0,
             /*#__PURE__*/
             regeneratorRuntime.mark(function _callee() {
               var toast, _toast;
@@ -3383,6 +3477,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function getStatusList() {
           return src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].status;
         }
+      }, {
+        key: "openPopOver",
+        value: function openPopOver(ev) {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee2() {
+            var popover;
+            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    _context2.next = 2;
+                    return this.popoverController.create({
+                      component: 'app-popover-options',
+                      event: ev,
+                      translucent: true
+                    });
+
+                  case 2:
+                    popover = _context2.sent;
+                    return _context2.abrupt("return", popover.present());
+
+                  case 4:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2, this);
+          }));
+        }
       }]);
 
       return StudentListComponent;
@@ -3397,6 +3521,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"]
       }, {
         type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"]
+      }, {
+        type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["PopoverController"]
       }];
     };
 
@@ -3408,7 +3534,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./student-list.component.scss */
       "./src/app/management/student-list/student-list.component.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"], src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"]])], StudentListComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"], src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["PopoverController"]])], StudentListComponent);
     /***/
   },
 
@@ -3730,16 +3856,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function showInfoAlert(result) {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee2() {
-            var _this8 = this;
+          regeneratorRuntime.mark(function _callee3() {
+            var _this7 = this;
 
             var alert;
-            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+            return regeneratorRuntime.wrap(function _callee3$(_context3) {
               while (1) {
-                switch (_context2.prev = _context2.next) {
+                switch (_context3.prev = _context3.next) {
                   case 0:
                     console.log(result);
-                    _context2.next = 3;
+                    _context3.next = 3;
                     return this.alertController.create({
                       header: 'Informations sur l\'étudiant',
                       subHeader: result.student.Name + " : " + _services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].status[result.student.Status],
@@ -3753,22 +3879,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                       }, {
                         text: 'Groupe',
                         handler: function handler() {
-                          _this8.router.navigate(['/management/group/' + result.group.id]);
+                          _this7.router.navigate(['/management/group/' + result.group.id]);
                         }
                       }]
                     });
 
                   case 3:
-                    alert = _context2.sent;
-                    _context2.next = 6;
+                    alert = _context3.sent;
+                    _context3.next = 6;
                     return alert.present();
 
                   case 6:
                   case "end":
-                    return _context2.stop();
+                    return _context3.stop();
                 }
               }
-            }, _callee2, this);
+            }, _callee3, this);
           }));
         }
       }, {
@@ -3998,39 +4124,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AuthService, [{
         key: "login",
         value: function login(code) {
-          var _this9 = this;
+          var _this8 = this;
 
           var body = new _DTO__WEBPACK_IMPORTED_MODULE_3__["LoginRequest"](code);
           this.http.post(_settings__WEBPACK_IMPORTED_MODULE_7__["Settings"].apiUrl + "login", body).subscribe(function (resp) {
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this9, void 0, void 0,
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this8, void 0, void 0,
             /*#__PURE__*/
-            regeneratorRuntime.mark(function _callee3() {
+            regeneratorRuntime.mark(function _callee4() {
               var toast;
-              return regeneratorRuntime.wrap(function _callee3$(_context3) {
+              return regeneratorRuntime.wrap(function _callee4$(_context4) {
                 while (1) {
-                  switch (_context3.prev = _context3.next) {
+                  switch (_context4.prev = _context4.next) {
                     case 0:
                       this.storage.set("User", resp.employe);
                       this.storage.set("Token", resp.token);
                       window.localStorage.setItem("Token", resp.token);
                       this.router.navigate(["/home"]);
-                      _context3.next = 6;
+                      _context4.next = 6;
                       return this.toastController.create({
                         message: 'Bienvenue ' + resp.employe.name + '!',
                         duration: 2000
                       });
 
                     case 6:
-                      toast = _context3.sent;
+                      toast = _context4.sent;
                       toast.present();
-                      return _context3.abrupt("return", resp);
+                      return _context4.abrupt("return", resp);
 
                     case 9:
                     case "end":
-                      return _context3.stop();
+                      return _context4.stop();
                   }
                 }
-              }, _callee3, this);
+              }, _callee4, this);
             }));
           }, function (error) {
             console.log(error);
@@ -4050,37 +4176,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function checkConnected() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
           /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee4() {
+          regeneratorRuntime.mark(function _callee5() {
             var toast;
-            return regeneratorRuntime.wrap(function _callee4$(_context4) {
+            return regeneratorRuntime.wrap(function _callee5$(_context5) {
               while (1) {
-                switch (_context4.prev = _context4.next) {
+                switch (_context5.prev = _context5.next) {
                   case 0:
                     if (this.connected()) {
-                      _context4.next = 6;
+                      _context5.next = 6;
                       break;
                     }
 
-                    _context4.next = 3;
+                    _context5.next = 3;
                     return this.toastController.create({
                       message: 'Cette section est reservée au utilisateurs connectées.',
                       duration: 2000
                     });
 
                   case 3:
-                    toast = _context4.sent;
+                    toast = _context5.sent;
                     toast.present();
                     this.logout();
 
                   case 6:
-                    return _context4.abrupt("return", true);
+                    return _context5.abrupt("return", true);
 
                   case 7:
                   case "end":
-                    return _context4.stop();
+                    return _context5.stop();
                 }
               }
-            }, _callee4, this);
+            }, _callee5, this);
           }));
         }
       }, {
@@ -4316,7 +4442,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
 
     SkiService.levels = ["Test", "Ourson", "Kangourou", "Prélude", "Tigre", "Lion", "Christiania", "Parallèle I", "Parallèle II", "Compétence I", "Compétence II", "Élite I", "Élite II", "Excellence"];
-    SkiService.status = ["Non évalué", "Normal", "En retard", "Absent", "Fort"];
+    SkiService.status = ["Normal", "En retard", "Absent", "Fort"];
     SkiService.days = ["Erreur", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
 
     SkiService.ctorParameters = function () {

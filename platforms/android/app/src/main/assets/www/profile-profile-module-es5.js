@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<app-header title=\"Profile\"></app-header>\r\n\r\n\r\n<ion-content class=\"ion-padding\">\r\n  <h1>Vous êtes déjà connectés en tant que:</h1>\r\n  <h2>{{user.name}}</h2>\r\n  <h2>{{user.id}}</h2>\r\n</ion-content>";
+    __webpack_exports__["default"] = "<app-header title=\"Profile\"></app-header>\r\n\r\n\r\n<ion-content class=\"ion-padding\">\r\n  <ion-text>\r\n    <h1>Vous êtes déjà connectés en tant que:</h1>\r\n    <h2>{{user.name}}</h2>\r\n    <h2>{{user.id}}</h2>\r\n  </ion-text>\r\n</ion-content>";
     /***/
   },
 
