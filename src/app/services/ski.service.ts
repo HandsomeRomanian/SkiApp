@@ -73,6 +73,7 @@ export class SkiService {
         "UserToken": this.authStorage.getToken(),
       })
     };
+
     var tmp = this.http.get<Groupe[]>(Settings.apiUrl + "levels/" + id + "/groups", httpOptions).pipe(
       tap( // Log the result or error
         data => console.log("Yo", data),
