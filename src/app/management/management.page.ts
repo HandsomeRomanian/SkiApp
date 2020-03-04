@@ -20,10 +20,6 @@ export class ManagementPage implements OnInit {
    }
 
   ngOnInit() {
-<<<<<<< HEAD
-=======
-    console.log("ici")
->>>>>>> Ionic-Capacitor
     this.authService.checkConnected();
   }
 

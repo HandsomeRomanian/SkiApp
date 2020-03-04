@@ -13,25 +13,34 @@ export class SkiService {
   public static levels = [
     "Test",
     "Ourson",
-    " Kangourou",
-    " Prélude",
-    " Tigre",
-    " Lion",
-    " Christiania",
-    " Parallèle I",
-    " Parallèle II",
-    " Compétence I",
-    " Compétence II",
-    " Élite I",
-    " Élite II",
-    " Excellence"
+    "Kangourou",
+    "Prélude",
+    "Tigre",
+    "Lion",
+    "Christiania",
+    "Parallèle I",
+    "Parallèle II",
+    "Compétence I",
+    "Compétence II",
+    "Élite I",
+    "Élite II",
+    "Excellence"
   ];
   public static status = [
-    "Non évalué",
     "Normal",
     "En retard",
     "Absent",
     "Fort"
+  ];
+  public static days = [
+    "Erreur",
+    "Lundi",
+    "Mardi",
+    "Mercredi",
+    "Jeudi",
+    "Vendredi",
+    "Samedi",
+    "Dimanche"
   ];
 
 
@@ -50,7 +59,6 @@ export class SkiService {
         "test": "placeholder"
       })
     };
-    this.storage.get("UserID").then(val => console.log(val))
     return this.http.get(Settings.apiUrl, httpOptions);
 
   }

@@ -1,20 +1,33 @@
-<app-header title="Home"></app-header>
+<app-header title="{{ title }}"></app-header>
 
 <ion-content padding>
-
   <ion-list>
-    <ion-item *ngFor="let sdnt of students">
+    <ion-card *ngFor="let sdnt of students">
+      <ion-item>
+        <ion-label>{{ sdnt.Name }}</ion-label>
+        <!-- <ion-button slot="end" (click)="openPopOver($event)">
+          <ion-icon
+            slot="icon-only"
+            ios="ellipsis-horizontal"
+            md="ellipsis-vertical"
+          ></ion-icon>
+        </ion-button> -->
+      </ion-item>
 
-      <ion-label>
-        <h2>{{ sdnt.Name }}</h2>
-      </ion-label>
-      <ion-input type="text" text-wrap></ion-input>
-      <ion-select name="test" value="{{sdnt.Status}}"  interface="popover" (ionChange)="statusChange(sdnt, $event)">
-        <ion-select-option *ngFor="let status of getStatusList(); let i = index" value="{{i}}">
-          {{ status }} </ion-select-option>
-      </ion-select>
-
-
-    </ion-item>
+      <ion-card-content>
+        <ion-segment
+          value="{{ sdnt.Status }}"
+          (ionChange)="statusChange(sdnt, $event)"
+        >
+          <ion-segment-button
+            fill="outline"
+            *ngFor="let status of getStatusList(); let i = index"
+            value="{{ i }}"
+          >
+            <ion-label>{{ status }}</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-card-content>
+    </ion-card>
   </ion-list>
 </ion-content>

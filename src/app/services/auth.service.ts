@@ -34,7 +34,6 @@ export class AuthService {
         return resp;
       },
       error => {
-        console.log(error);
       }
     );
   }
@@ -49,6 +48,7 @@ export class AuthService {
 
   public async checkConnected() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     if (!this.connected()) {
       const toast = await this.toastController.create({
@@ -62,6 +62,9 @@ export class AuthService {
   }
 
 =======
+=======
+
+>>>>>>> a551801c7f460bfe262d113f18fe8f1b82938609
     if (!this.connected()) {
       const toast = await this.toastController.create({
         message: 'Cette section est reservée au utilisateurs connectées.',
@@ -73,7 +76,10 @@ export class AuthService {
     return true;
   }
 
+<<<<<<< HEAD
 >>>>>>> Ionic-Capacitor
+=======
+>>>>>>> a551801c7f460bfe262d113f18fe8f1b82938609
   public connected() {
     return this.getToken() != null;
   }

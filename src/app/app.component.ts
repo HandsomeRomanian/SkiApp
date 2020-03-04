@@ -34,11 +34,6 @@ export class AppComponent implements OnInit {
       title: "Recherche",
       url: "/search/",
       icon: "search"
-    },
-    {
-      title: "Deconnection",
-      url: "/auth/logout",
-      icon: "lock"
     }
   ];
 
@@ -69,7 +64,6 @@ export class AppComponent implements OnInit {
     this.storage.get("User").then(val =>{
       if (val != null){
         this.user = val.name;
-        console.log(this.user)
       }
     });
   }

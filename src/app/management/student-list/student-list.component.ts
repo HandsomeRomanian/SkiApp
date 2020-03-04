@@ -3,8 +3,9 @@ import { Observable } from "rxjs";
 import { SkiService } from "src/app/services/ski.service";
 import { ActivatedRoute } from "@angular/router";
 import { Student } from 'src/app/services/DTO';
-import { ToastController } from '@ionic/angular';
+import { ToastController, PopoverController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
+import { PopoverOptionsComponent } from './popover-options/popover-options.component';
 
 @Component({
   selector: "app-student-list",
@@ -18,9 +19,10 @@ export class StudentListComponent implements OnInit {
   students: Observable<any>;
 
   constructor(private route: ActivatedRoute,
-              private skiService: SkiService,
-              public toastController: ToastController,
-              private authService: AuthService
+    private skiService: SkiService,
+    public toastController: ToastController,
+    private authService: AuthService,
+    private popoverController: PopoverController
   ) {
     this.groupID = this.route.snapshot.params.id;
   }
@@ -32,17 +34,14 @@ export class StudentListComponent implements OnInit {
       this.title =
         SkiService.levels[this.group.Level] +
         " " + this.group.Number +
-        " " + this.group.Time;
-      console.log(this.students)
+        " " + this.group.Time.substring(0, 5) +
+        " " + SkiService.days[this.group.day];
     });
   }
 
   statusChange(student: Student, $event) {
-    console.log($event.detail.value)
-    console.log(student)
     student.Status = $event.detail.value;
     var output = { "status": student.Status, "studentID": student.id };
-    console.log(output)
     this.skiService.setStatus(output).subscribe(
       success => { },
       async error => {
@@ -65,12 +64,17 @@ export class StudentListComponent implements OnInit {
     );
   }
 
-
-
   getStatusList() {
     return SkiService.status;
   }
 
-
+  async openPopOver(ev) {
+    let popover = await this.popoverController.create({
+      component: PopoverOptionsComponent,
+      event: ev,
+      translucent: true
+    });
+    return popover.present();
+  }
 
 }
