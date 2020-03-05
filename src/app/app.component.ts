@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: "Gestion",
-      url: "/management/",
+      url: "/evals/",
       icon: "clipboard"
     },
     {
