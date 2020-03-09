@@ -12,13 +12,12 @@ import { ExercicesPageModule } from "./exercices/exercices.module";
 import { HomePageModule } from "./home/home.module";
 import { SearchPageModule } from "./search/search.module";
 import { NotFoundComponent } from "./not-found/not-found.component";
-import { ManagementPageModule } from "./management/management.module";
+import { ManagementPageModule } from "./evals/evals.module";
 import { AuthService } from './services/auth.service';
 import { AuthModule } from './auth/auth.module';
 import { SkiService } from './services/ski.service';
 import { SharedModule } from './components/shared.module';
-import { PopoverOptionsComponent } from './management/student-list/popover-options/popover-options.component';
-;
+import { PopoverOptionsComponent } from './evals/student-list/popover-options/popover-options.component';
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent,PopoverOptionsComponent],

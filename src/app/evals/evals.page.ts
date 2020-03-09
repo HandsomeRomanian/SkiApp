@@ -5,12 +5,12 @@ import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-management',
-  templateUrl: './management.page.html',
-  styleUrls: ['./management.page.scss'],
+  templateUrl: './evals.page.html',
+  styleUrls: ['./evals.page.scss'],
 })
-export class ManagementPage implements OnInit {
+export class EvalsPage implements OnInit {
 
-  title: string = "Gestion";
+  title: string = "Évaluations";
   levels: Observable<any>;
 
   constructor(private skiService: SkiService,
