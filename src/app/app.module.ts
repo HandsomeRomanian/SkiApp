@@ -18,6 +18,7 @@ import { AuthModule } from './auth/auth.module';
 import { SkiService } from './services/ski.service';
 import { SharedModule } from './components/shared.module';
 import { PopoverOptionsComponent } from './evals/student-list/popover-options/popover-options.component';
+import { FormBuilder } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent,PopoverOptionsComponent],
@@ -39,6 +40,7 @@ import { PopoverOptionsComponent } from './evals/student-list/popover-options/po
     StatusBar,
     SplashScreen,
     SkiService,
+    FormBuilder,
     AuthService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

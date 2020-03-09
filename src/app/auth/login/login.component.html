@@ -7,7 +7,9 @@
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
           <div padding>
             <ion-item>
-              <ion-input name="numero" type="password" placeholder="Numéro Employé" ngModel required></ion-input>
+              <ion-input name="numero" pattern="[0-9]*" type="password" placeholder="Numéro Employé" ngModel required></ion-input>
+              <p *ngIf="this.errorMSg != ''" class="danger" padding>Test</p>
+
             </ion-item>
           </div>
           <div padding>

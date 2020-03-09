@@ -33,7 +33,15 @@ export class AuthService {
         toast.present();
         return resp;
       },
-      error => {
+      async error => {
+        console.log(error)
+        const toast = await this.toastController.create({
+          message: 'Bienvenue ' + error.error + '!',
+          duration: 2000
+        });
+        toast.present();
+        
+        return error;
       }
     );
   }
