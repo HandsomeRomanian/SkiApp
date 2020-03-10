@@ -19,6 +19,7 @@ import { SkiService } from './services/ski.service';
 import { SharedModule } from './components/shared.module';
 import { PopoverOptionsComponent } from './evals/student-list/popover-options/popover-options.component';
 import { FormBuilder } from '@angular/forms';
+import { NetworkInterface } from '@ionic-native/network-interface/ngx';
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent,PopoverOptionsComponent],

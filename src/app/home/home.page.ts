@@ -6,11 +6,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   templateUrl: "./home.page.html",
   styleUrls: ["./home.page.scss"]
 })
-export class HomePage implements OnInit {
+export class HomePage {
   
   allo: string;
-  display;
-  constructor( private http: HttpClient ) { }
+
+
+  constructor( private http: HttpClient) { []}
 
 
   ngOnInit() {
@@ -18,8 +19,4 @@ export class HomePage implements OnInit {
     
   }
 
-  sync(){
-    window.localStorage.setItem("test",this.allo);
-    this.display = window.localStorage.getItem("test");
-  }
 }

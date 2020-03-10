@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Storage } from "@ionic/Storage";
 import { AuthService } from 'src/app/services/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -21,6 +22,7 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     public storage: Storage,
+    public toastController: ToastController,
     private authAPI: AuthService,
     private router: Router) {
     this.form = this.formBuilder.group({
@@ -35,12 +37,33 @@ export class LoginComponent {
     }
   }
 
-  login(form) {
+  async login(form) {
     if (isNaN(form.value.numero)) {
 
     }
 
-    this.authAPI.login(form.value.numero);
+    this.authAPI.login(form.value.numero).subscribe(
+      async resp => {
+        this.storage.set("User", resp.employe);
+        this.storage.set("Token", resp.token);
+        window.localStorage.setItem("Token", resp.token);
+        this.router.navigate(["/home"]);
+        const toast = await this.toastController.create({
+          message: 'Bienvenue ' + resp.employe.name + '!',
+          duration: 2000
+        });
+        toast.present();
+      },
+      async error => {
+        if (error.error == "InexistentUser" || error.error == "InvalidLogin")
+          this.errorMSg = "Code Invalide"
+        else
+          console.log(error.error);
+          
+        
+      }
+    );
+    
   }
 
 

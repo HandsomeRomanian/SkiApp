@@ -8,7 +8,7 @@
           <div padding>
             <ion-item>
               <ion-input name="numero" pattern="[0-9]*" type="password" placeholder="Numéro Employé" ngModel required></ion-input>
-              <p *ngIf="this.errorMSg != ''" class="danger" padding>Test</p>
+              <p *ngIf="this.errorMSg != ''" class="danger" padding>{{errorMSg}}</p>
 
             </ion-item>
           </div>

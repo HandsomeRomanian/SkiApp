@@ -20,30 +20,7 @@ export class AuthService {
 
   public login(code: number) {
     let body = new LoginRequest(code);
-    this.http.post<LoginResponse>(Settings.apiUrl + "login", body).subscribe(
-      async resp => {
-        this.storage.set("User", resp.employe);
-        this.storage.set("Token", resp.token);
-        window.localStorage.setItem("Token", resp.token);
-        this.router.navigate(["/home"]);
-        const toast = await this.toastController.create({
-          message: 'Bienvenue ' + resp.employe.name + '!',
-          duration: 2000
-        });
-        toast.present();
-        return resp;
-      },
-      async error => {
-        console.log(error)
-        const toast = await this.toastController.create({
-          message: 'Bienvenue ' + error.error + '!',
-          duration: 2000
-        });
-        toast.present();
-        
-        return error;
-      }
-    );
+    return this.http.post<LoginResponse>(Settings.apiUrl + "login", body);
   }
 
   public logout() {
@@ -74,7 +51,6 @@ export class AuthService {
   public getToken() {
     return window.localStorage.getItem("Token");
   }
-
 
   public getUser() {
     this.storage.get("User").then(user => { return user; });
