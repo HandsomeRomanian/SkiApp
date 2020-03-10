@@ -40,6 +40,7 @@ export class StudentListComponent implements OnInit {
   }
 
   statusChange(student: Student, $event) {
+    let old = student.Status;
     student.Status = $event.detail.value;
     var output = { "status": student.Status, "studentID": student.id };
     this.skiService.setStatus(output).subscribe(
@@ -52,6 +53,15 @@ export class StudentListComponent implements OnInit {
             duration: 2000
           });
           toast.present();
+        }
+        else if (error.error == "NotAuthorized") {
+          student.Status = old;
+          const toast = await this.toastController.create({
+            message: 'Vous n\'avez pas les permissions pour cette action.',
+            duration: 2000
+          });
+          toast.present();
+
         }
         else {
           const toast = await this.toastController.create({
