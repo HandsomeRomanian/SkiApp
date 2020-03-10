@@ -1,3 +1,4 @@
+import { async } from '@angular/core/testing';
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { SkiService } from "src/app/services/ski.service";
@@ -16,7 +17,8 @@ export class StudentListComponent implements OnInit {
   title = "Student List";
   groupID: number;
   group;
-  students: Observable<any>;
+  students: Student[];
+  observable: Observable<any>;
 
   constructor(private route: ActivatedRoute,
     private skiService: SkiService,
@@ -42,10 +44,15 @@ export class StudentListComponent implements OnInit {
   statusChange(student: Student, $event) {
     let old = student.Status;
     student.Status = $event.detail.value;
-    var output = { "status": student.Status, "studentID": student.id };
+    var output = { "status": student.Status, "studentID": student.id, "groupID": this.groupID };
     this.skiService.setStatus(output).subscribe(
-      success => { },
+      async () => {
+        return;
+      },
       async error => {
+        if (error.error.text == "Ok") {
+          return;
+        }
         if (error.error == "InvalidToken") {
           this.authService.logout();
           const toast = await this.toastController.create({

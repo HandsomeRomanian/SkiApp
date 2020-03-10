@@ -15,18 +15,18 @@
       </ion-item>
 
       <ion-card-content>
-        <ion-segment
-          value="{{ sdnt.Status }}"
-          (ionChange)="statusChange(sdnt, $event)"
-        >
-          <ion-segment-button
-            fill="outline"
-            *ngFor="let status of getStatusList(); let i = index"
-            value="{{ i }}"
-          >
+        <!-- <ion-segment value="{{ sdnt.Status }}" (ionChange)="clickReset(sdnt, $event)"
+          (dblclick)="statusChange(sdnt, $event)">
+          <ion-segment-button fill="outline" *ngFor="let status of getStatusList(); let i = index" value="{{ i }}">
             <ion-label>{{ status }}</ion-label>
           </ion-segment-button>
-        </ion-segment>
+        </ion-segment> -->
+        
+        <ion-select placeholder="Non évalué" value="{{ sdnt.Status }}" (ionChange)="statusChange(sdnt, $event)"
+          okText="Ok" cancelText="Fermer">
+          <ion-select-option *ngFor="let status of getStatusList(); let i = index" value="{{ i }}">{{ status }}
+          </ion-select-option>
+        </ion-select>
       </ion-card-content>
     </ion-card>
   </ion-list>
