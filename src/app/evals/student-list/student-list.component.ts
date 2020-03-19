@@ -28,6 +28,7 @@ export class StudentListComponent implements OnInit {
   ) {
     this.groupID = this.route.snapshot.params.id;
   }
+  
   ngOnInit(): void {
     this.skiService.getGroup(this.groupID).subscribe(resp => {
       this.group = resp;

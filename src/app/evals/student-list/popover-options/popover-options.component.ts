@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { PopoverController } from "@ionic/angular";
 
 @Component({
-  selector: "app-popover-options",
+  selector: "app-popover-comments",
   templateUrl: "./popover-options.component.html",
   styleUrls: ["./popover-options.component.scss"]
 })

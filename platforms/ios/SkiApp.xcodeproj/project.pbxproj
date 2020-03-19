@@ -27,6 +27,14 @@
 		EC4F1ED39B7242C29D24D4A8 /* SQLitePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F00BA6D425A4A0995195E19 /* SQLitePlugin.m */; };
 		8A96BCCCD46144E7B05473A5 /* CustomPSPDFThreadSafeMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 84876619600C4FD1AB0C7F74 /* CustomPSPDFThreadSafeMutableDictionary.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		67FD2F66E31344AC9B612215 /* sqlite3.c in Resources */ = {isa = PBXBuildFile; fileRef = 96DEA8F04A5B49D190A054D6 /* sqlite3.c */; settings = {COMPILER_FLAGS = "-w -DSQLITE_THREADSAFE=1 -DSQLITE_DEFAULT_SYNCHRONOUS=3 -DSQLITE_DEFAULT_MEMSTATUS=0 -DSQLITE_OMIT_DECLTYPE -DSQLITE_OMIT_DEPRECATED -DSQLITE_OMIT_PROGRESS_CALLBACK -DSQLITE_OMIT_SHARED_CACHE -DSQLITE_TEMP_STORE=2 -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS4 -DSQLITE_ENABLE_RTREE -DSQLITE_DEFAULT_PAGE_SIZE=4096"; }; };
+		CA786FFA46CC49A0AE669788 /* AppDelegate+notification.m in Sources */ = {isa = PBXBuildFile; fileRef = B300C5F23E3F4ACDB7EC4694 /* AppDelegate+notification.m */; };
+		E9A87BDB025B498996E6A20D /* PushPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF26214A5504D9697A62FFA /* PushPlugin.m */; };
+		2193AD1A28624684A39860C6 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F95E52C1F14679B8FFBBFD /* PushKit.framework */; };
+		A6BA3C9D25E640A390C893B6 /* CDVNetworkInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = B019929C45DC4D3CA150BC7E /* CDVNetworkInterface.m */; };
+		584073F80052480AA28FBEC3 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3364AE95FA4754A05DFFF5 /* CDVNotification.m */; };
+		2C3CCD062EA146CF9AD0BE74 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F8D4A51C4B94ADEA48DEC1F /* CDVNotification.bundle */; };
+		373F6D48969C42CE977A0A3E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613BD463F7314C2DA8D3B428 /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		DB508E718E6D4A42AEDF43EB /* Fingerprint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8F0F2A3044DAF8264915E /* Fingerprint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +106,19 @@
 		96DEA8F04A5B49D190A054D6 /* sqlite3.c */ = {isa = PBXFileReference; name = "sqlite3.c"; path = "cordova-sqlite-storage/sqlite3.c"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		696661521C7A4600BC3340F1 /* SQLitePlugin.h */ = {isa = PBXFileReference; name = "SQLitePlugin.h"; path = "cordova-sqlite-storage/SQLitePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		1CA5949BF71F412E9637A25E /* sqlite3.h */ = {isa = PBXFileReference; name = "sqlite3.h"; path = "cordova-sqlite-storage/sqlite3.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		B300C5F23E3F4ACDB7EC4694 /* AppDelegate+notification.m */ = {isa = PBXFileReference; name = "AppDelegate+notification.m"; path = "phonegap-plugin-push/AppDelegate+notification.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		6FF26214A5504D9697A62FFA /* PushPlugin.m */ = {isa = PBXFileReference; name = "PushPlugin.m"; path = "phonegap-plugin-push/PushPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		FCB3C2BC0A2D410AAA7587E3 /* AppDelegate+notification.h */ = {isa = PBXFileReference; name = "AppDelegate+notification.h"; path = "phonegap-plugin-push/AppDelegate+notification.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		1CCD9E97FF4649718C4CC814 /* PushPlugin.h */ = {isa = PBXFileReference; name = "PushPlugin.h"; path = "phonegap-plugin-push/PushPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		29F95E52C1F14679B8FFBBFD /* PushKit.framework */ = {isa = PBXFileReference; name = "PushKit.framework"; path = "System/Library/Frameworks/PushKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		B019929C45DC4D3CA150BC7E /* CDVNetworkInterface.m */ = {isa = PBXFileReference; name = "CDVNetworkInterface.m"; path = "cordova-plugin-networkinterface/CDVNetworkInterface.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		6F478034E65B4586AAC07006 /* CDVNetworkInterface.h */ = {isa = PBXFileReference; name = "CDVNetworkInterface.h"; path = "cordova-plugin-networkinterface/CDVNetworkInterface.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		6B3364AE95FA4754A05DFFF5 /* CDVNotification.m */ = {isa = PBXFileReference; name = "CDVNotification.m"; path = "cordova-plugin-dialogs/CDVNotification.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		259B1A36CFF94F338A7BAC2A /* CDVNotification.h */ = {isa = PBXFileReference; name = "CDVNotification.h"; path = "cordova-plugin-dialogs/CDVNotification.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		8F8D4A51C4B94ADEA48DEC1F /* CDVNotification.bundle */ = {isa = PBXFileReference; name = "CDVNotification.bundle"; path = "CDVNotification.bundle"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.plug-in; explicitFileType = undefined; includeInIndex = 0; };
+		613BD463F7314C2DA8D3B428 /* AudioToolbox.framework */ = {isa = PBXFileReference; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		19D8F0F2A3044DAF8264915E /* Fingerprint.swift */ = {isa = PBXFileReference; name = "Fingerprint.swift"; path = "cordova-plugin-fingerprint-aio/Fingerprint.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
+		5826F9C98874404C8E2F6F73 /* Bridging-Header.h */ = {isa = PBXFileReference; name = "Bridging-Header.h"; path = "cordova-plugin-fingerprint-aio/Bridging-Header.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +128,8 @@
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				E89CD0E67BAA4FF3A1F00A78 /* WebKit.framework in Frameworks */,
+				2193AD1A28624684A39860C6 /* PushKit.framework in Frameworks */,
+				373F6D48969C42CE977A0A3E /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +192,7 @@
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* SkiApp-Info.plist */,
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
+				8F8D4A51C4B94ADEA48DEC1F /* CDVNotification.bundle */,
 			);
 			name = Resources;
 			path = "SkiApp/Resources";
@@ -178,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				6F51873DDB464D9C8F6B7CDB /* WebKit.framework */,
+				29F95E52C1F14679B8FFBBFD /* PushKit.framework */,
+				613BD463F7314C2DA8D3B428 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -227,6 +253,16 @@
 				96DEA8F04A5B49D190A054D6 /* sqlite3.c */,
 				696661521C7A4600BC3340F1 /* SQLitePlugin.h */,
 				1CA5949BF71F412E9637A25E /* sqlite3.h */,
+				B300C5F23E3F4ACDB7EC4694 /* AppDelegate+notification.m */,
+				6FF26214A5504D9697A62FFA /* PushPlugin.m */,
+				FCB3C2BC0A2D410AAA7587E3 /* AppDelegate+notification.h */,
+				1CCD9E97FF4649718C4CC814 /* PushPlugin.h */,
+				B019929C45DC4D3CA150BC7E /* CDVNetworkInterface.m */,
+				6F478034E65B4586AAC07006 /* CDVNetworkInterface.h */,
+				6B3364AE95FA4754A05DFFF5 /* CDVNotification.m */,
+				259B1A36CFF94F338A7BAC2A /* CDVNotification.h */,
+				19D8F0F2A3044DAF8264915E /* Fingerprint.swift */,
+				5826F9C98874404C8E2F6F73 /* Bridging-Header.h */,
 			);
 			name = Plugins;
 			path = "SkiApp/Plugins";
@@ -320,6 +356,7 @@
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
+				2C3CCD062EA146CF9AD0BE74 /* CDVNotification.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +400,11 @@
 				EC4F1ED39B7242C29D24D4A8 /* SQLitePlugin.m in Sources */,
 				8A96BCCCD46144E7B05473A5 /* CustomPSPDFThreadSafeMutableDictionary.m in Sources */,
 				67FD2F66E31344AC9B612215 /* sqlite3.c in Resources */,
+				CA786FFA46CC49A0AE669788 /* AppDelegate+notification.m in Sources */,
+				E9A87BDB025B498996E6A20D /* PushPlugin.m in Sources */,
+				A6BA3C9D25E640A390C893B6 /* CDVNetworkInterface.m in Sources */,
+				584073F80052480AA28FBEC3 /* CDVNotification.m in Sources */,
+				DB508E718E6D4A42AEDF43EB /* Fingerprint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +441,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.mateimartin.skiapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				SWIFT_VERSION = 4.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -422,6 +468,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.mateimartin.skiapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -466,6 +515,10 @@
 				WK_WEB_VIEW_ONLY = 0;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.mateimartin.skiapp;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				SWIFT_VERSION = 4.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -508,6 +561,9 @@
 				WK_WEB_VIEW_ONLY = 0;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.mateimartin.skiapp;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

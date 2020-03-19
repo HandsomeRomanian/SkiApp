@@ -7,6 +7,7 @@ import { EvalsPage } from "./evals.page";
 import { GroupsListComponent } from "./groups-list/groups-list.component";
 import { SharedModule } from '../components/shared.module';
 import { StudentListComponent } from './student-list/student-list.component'; 
+import { PopoverOptionsComponent } from './student-list/popover-options/popover-options.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { StudentListComponent } from './student-list/student-list.component';
   declarations: [
     EvalsPage, 
     GroupsListComponent,
-    StudentListComponent
+    StudentListComponent,
+    PopoverOptionsComponent
   ]
 })
-export class ManagementPageModule {}
+export class EvalsPageModule {}

@@ -28,7 +28,28 @@
     },
     "cordova-sqlite-storage": {
       "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "phonegap-plugin-push": {
+      "ANDROID_SUPPORT_V13_VERSION": "27.+",
+      "FCM_VERSION": "17.0.+",
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "cordova-plugin-networkinterface": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "cordova-plugin-fingerprint-aio": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "phonegap-plugin-multidex": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    }
+  }
 }

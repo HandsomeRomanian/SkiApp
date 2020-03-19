@@ -1,0 +1,52 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "phonegap-plugin-push": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "cordova-plugin-networkinterface": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "cordova-plugin-fingerprint-aio": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    },
+    "phonegap-plugin-multidex": {
+      "PACKAGE_NAME": "ca.mateimartin.skiapp"
+    }
+  }
+}

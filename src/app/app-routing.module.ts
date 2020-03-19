@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'evals',
-    loadChildren: () => import('./evals/evals.module').then( m => m.ManagementPageModule)
+    loadChildren: () => import('./evals/evals.module').then( m => m.EvalsPageModule)
   },
   {
     path: 'auth',

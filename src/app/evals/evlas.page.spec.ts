@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { EvalsPage } from './evals.page';
 
-describe('ManagementPage', () => {
+describe('EvalsPage', () => {
   let component: EvalsPage;
   let fixture: ComponentFixture<EvalsPage>;
 

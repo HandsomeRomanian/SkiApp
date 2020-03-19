@@ -40,6 +40,18 @@
     <feature name="SQLitePlugin">
         <param name="ios-package" value="SQLitePlugin" />
     </feature>
+    <feature name="PushNotification">
+        <param name="ios-package" value="PushPlugin" />
+    </feature>
+    <feature name="networkinterface">
+        <param name="ios-package" onload="true" value="CDVNetworkInterface" />
+    </feature>
+    <feature name="Notification">
+        <param name="ios-package" value="CDVNotification" />
+    </feature>
+    <feature name="Fingerprint">
+        <param name="ios-package" value="Fingerprint" />
+    </feature>
     <name>SkiApp</name>
     <description>AppForSki</description>
     <author email="matei@mateimartin.ca" href="https://mateimartin.ca/">Matei Martin</author>

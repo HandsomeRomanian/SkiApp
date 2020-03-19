@@ -58,5 +58,11 @@
 	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>CDVLaunchScreen</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+	<key>NSFaceIDUsageDescription</key>
+	<string/>
 </dict>
 </plist>

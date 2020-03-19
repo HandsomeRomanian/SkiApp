@@ -37,12 +37,14 @@ export class LoginComponent {
     }
   }
 
-  async login(form) {
-    if (isNaN(form.value.numero)) {
-
+  async login() {
+    console.log(this.empID)
+    console.log(isNaN(this.empID))
+    if (isNaN(this.empID)) {
+      this.errorMSg = "Numéro invalide"
     }
 
-    this.authAPI.login(form.value.numero).subscribe(
+    this.authAPI.login(this.empID).subscribe(
       async resp => {
         this.storage.set("User", resp.employe);
         this.storage.set("Token", resp.token);
@@ -56,7 +58,7 @@ export class LoginComponent {
       },
       async error => {
         if (error.error == "InexistentUser" || error.error == "InvalidLogin")
-          this.errorMSg = "Code Invalide"
+          this.errorMSg = "Numéro invalide"
         else
           console.log(error.error);
           

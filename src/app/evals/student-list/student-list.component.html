@@ -5,28 +5,49 @@
     <ion-card *ngFor="let sdnt of students">
       <ion-item>
         <ion-label>{{ sdnt.Name }}</ion-label>
-        <!-- <ion-button slot="end" (click)="openPopOver($event)">
+        <ion-button slot="end" (click)="openPopOver($event)">
           <ion-icon
             slot="icon-only"
             ios="ellipsis-horizontal"
             md="ellipsis-vertical"
           ></ion-icon>
-        </ion-button> -->
+        </ion-button>
       </ion-item>
 
       <ion-card-content>
-        <!-- <ion-segment value="{{ sdnt.Status }}" (ionChange)="clickReset(sdnt, $event)"
+        <!-- <ion-segment 
+        value="{{ sdnt.Status }}"
           (dblclick)="statusChange(sdnt, $event)">
           <ion-segment-button fill="outline" *ngFor="let status of getStatusList(); let i = index" value="{{ i }}">
             <ion-label>{{ status }}</ion-label>
           </ion-segment-button>
         </ion-segment> -->
-        
-        <ion-select placeholder="Non évalué" value="{{ sdnt.Status }}" (ionChange)="statusChange(sdnt, $event)"
-          okText="Ok" cancelText="Fermer">
-          <ion-select-option *ngFor="let status of getStatusList(); let i = index" value="{{ i }}">{{ status }}
-          </ion-select-option>
-        </ion-select>
+        <ion-row>
+          <ion-col>
+            <ion-label>
+              Specificites
+            </ion-label>
+            <ion-item>Test</ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-label>
+              Status
+            </ion-label>
+            <ion-select
+              interface="popover"
+              placeholder="Non évalué"
+              value="{{ sdnt.Status }}"
+              (ionChange)="statusChange(sdnt, $event)"
+            >
+              <ion-select-option
+                *ngFor="let status of getStatusList(); let i = index"
+                value="{{ i }}"
+              >
+                {{ status }}
+              </ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
       </ion-card-content>
     </ion-card>
   </ion-list>

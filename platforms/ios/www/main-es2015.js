@@ -438,7 +438,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n      <ion-content>\r\n        <ion-list id=\"inbox-list\">\r\n          <ion-list-header>SkiApp</ion-list-header>\r\n          <ion-note> </ion-note>\r\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages; let i = index\">\r\n            <ion-item (click)=\"selectedIndex = i\" routerDirection=\"root\" [routerLink]=\"[p.url]\" lines=\"none\"\r\n              detail=\"false\" [class.selected]=\"selectedIndex == i\">\r\n              <ion-icon slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\r\n              <ion-label>{{ p.title }}</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n\r\n      <ion-footer>\r\n        <ion-item routerDirection=\"root\" [routerLink]=\"['/auth/logout']\" lines=\"none\" detail=\"false\">\r\n          <ion-icon slot=\"start\" [ios]=\"'power-outline'\" [md]=\"'power-sharp'\"></ion-icon>\r\n          <ion-label>Déconnection</ion-label>\r\n        </ion-item>\r\n        <ion-item>\r\n          <ion-label></ion-label>\r\n        </ion-item>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n\r\n</ion-app>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <ion-split-pane contentId=\"main-content\">\r\n    <ion-menu contentId=\"main-content\" type=\"overlay\">\r\n      <ion-content>\r\n        <ion-list id=\"inbox-list\">\r\n          <ion-list-header>SkiApp</ion-list-header>\r\n          <ion-note> </ion-note>\r\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages; let i = index\">\r\n            <ion-item (click)=\"selectedIndex = i\" routerDirection=\"root\" [routerLink]=\"[p.url]\" lines=\"none\"\r\n              detail=\"false\" [class.selected]=\"selectedIndex == i\">\r\n              <ion-icon slot=\"start\" [ios]=\"p.icon + '-outline'\" [md]=\"p.icon + '-sharp'\"></ion-icon>\r\n              <ion-label>{{ p.title }}</ion-label>\r\n            </ion-item>\r\n          </ion-menu-toggle>\r\n        </ion-list>\r\n      </ion-content>\r\n\r\n      <ion-footer>\r\n        <ion-item routerDirection=\"root\" [routerLink]=\"['/auth/logout']\" lines=\"none\" detail=\"false\">\r\n          <ion-icon slot=\"start\" [ios]=\"'power-outline'\" [md]=\"'power-sharp'\"></ion-icon>\r\n          <ion-label>Déconnection</ion-label>\r\n        </ion-item>\r\n      </ion-footer>\r\n    </ion-menu>\r\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\r\n  </ion-split-pane>\r\n\r\n</ion-app>");
 
 /***/ }),
 
@@ -451,7 +451,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"Connection\"></app-header>\r\n\r\n<ion-content center padding>\r\n  <form #form=\"ngForm\" (ngSubmit)=\"login(form)\">\r\n    <ion-grid>\r\n      <ion-row center color=\"primary\" justify-content-center>\r\n        <ion-col align-self-center size-md=\"6\" size-lg=\"5\" size-xs=\"12\">\r\n          <div padding>\r\n            <ion-item>\r\n              <ion-input name=\"numero\" type=\"password\" placeholder=\"Numéro Employé\" ngModel required></ion-input>\r\n            </ion-item>\r\n          </div>\r\n          <div padding>\r\n            <ion-button size=\"large\" type=\"submit\" [disabled]=\"form.invalid\" expand=\"block\">Connection</ion-button>\r\n          </div>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n  </form>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"Connection\"></app-header>\r\n\r\n<ion-content>\r\n  <ion-grid>\r\n    <ion-row color=\"primary\" justify-content-center>\r\n      <ion-col align-self-center size-md=\"6\" size-lg=\"5\" size-xs=\"12\">\r\n        <div>\r\n          <ion-item>\r\n            <ion-input\r\n              name=\"numero\"\r\n              pattern=\"[0-9]*\"\r\n              type=\"password\"\r\n              placeholder=\"Numéro Employé\"\r\n              ngModel\r\n              required\r\n            ></ion-input>\r\n            <p *ngIf=\"this.errorMSg != ''\" class=\"danger\" padding>\r\n              {{ errorMSg }}\r\n            </p>\r\n          </ion-item>\r\n        </div>\r\n        <div padding>\r\n          <ion-button\r\n            size=\"large\"\r\n            type=\"submit\"\r\n            [disabled]=\"form.invalid\"\r\n            expand=\"block\"\r\n          >\r\n            Connection\r\n          </ion-button>\r\n        </div>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -477,7 +477,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header text-center [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button auto-hide=\"false\"></ion-menu-button>\r\n      <ion-button icon=\"person\" (click)=\"back()\"></ion-button>\r\n    </ion-buttons>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button (click)=\"profileClick()\">\r\n        <ion-icon slot=\"icon-only\" ios=\"person\" md=\"person\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n\r\n    <ion-title class=\"ion-text-center\">{{title}}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header text-center [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-menu-button auto-hide=\"false\"></ion-menu-button>\r\n      <ion-button icon=\"person\" (click)=\"back()\"></ion-button>\r\n    </ion-buttons>\r\n    <ion-buttons slot=\"primary\">\r\n      <ion-button (click)=\"profileClick()\">\r\n        <ion-icon slot=\"icon-only\" ios=\"person\" md=\"person\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n\r\n    <ion-title class=\"ion-text-center\" >{{title}}</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>");
 
 /***/ }),
 
@@ -491,6 +491,58 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<ion-list>\r\n  <ion-item\r\n    text-center\r\n    *ngFor=\"let lvl of (levels | async)\"\r\n    routerLink=\"{{ lvl.id }}\"\r\n    routerLinkActive=\"active\"\r\n  >\r\n    <ion-label style=\"font-weight: bold;\" color=\"primary\">\r\n      {{ lvl.name }}\r\n    </ion-label>\r\n  </ion-item>\r\n</ion-list>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/evals/evals.page.html":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/evals/evals.page.html ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"{{title}}\"></app-header>\r\n<ion-content>\r\n  <app-level-list></app-level-list>\r\n</ion-content>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/evals/groups-list/groups-list.component.html":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/evals/groups-list/groups-list.component.html ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"{{ title }}\"></app-header>\r\n\r\n<ion-content padding>\r\n\r\n  <ion-item>\r\n    <ion-label *ngIf=\"listVisibility\">Cours courrants seulement</ion-label>\r\n    <ion-toggle\r\n      slot=\"end\"\r\n      (click)=\"updateList()\"\r\n      [(ngModel)]=\"onlyCurrent\"\r\n    ></ion-toggle>\r\n  </ion-item>\r\n\r\n  <ion-list *ngIf=\"listVisibility\">\r\n    <ion-item\r\n      text-center\r\n      routerLinkActive=\"active\"\r\n      routerLink=\"../group/{{ grp.id }}\"\r\n      *ngFor=\"let grp of getGroups()\"\r\n      class=\"list-item\">\r\n      <ion-label>\r\n        <h2>\r\n          <ion-badge color=\"primary\" slot=\"end\">{{ grp.Number }}</ion-badge>\r\n          {{ grp.Time.substr(0, 5) + \" \" + this.day[grp.day - 1] }}\r\n        </h2>\r\n        <h2>{{ grp.TeacherName }} Matei</h2>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/evals/student-list/popover-options/popover-options.component.html":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/evals/student-list/popover-options/popover-options.component.html ***!
+  \*************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-list>\r\n  <ion-item button>Changement Groupe</ion-item>\r\n  <ion-item button>Renvoyer</ion-item>\r\n  <ion-item lines=\"none\" detail=\"false\" button (click)=\"dismissPopover()\"\r\n    >Fermer</ion-item\r\n  >\r\n</ion-list>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/evals/student-list/student-list.component.html":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/evals/student-list/student-list.component.html ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"{{ title }}\"></app-header>\r\n\r\n<ion-content padding>\r\n  <ion-list>\r\n    <ion-card *ngFor=\"let sdnt of students\">\r\n      <ion-item>\r\n        <ion-label>{{ sdnt.Name }}</ion-label>\r\n        <!-- <ion-button slot=\"end\" (click)=\"openPopOver($event)\">\r\n          <ion-icon\r\n            slot=\"icon-only\"\r\n            ios=\"ellipsis-horizontal\"\r\n            md=\"ellipsis-vertical\"\r\n          ></ion-icon>\r\n        </ion-button> -->\r\n      </ion-item>\r\n\r\n      <ion-card-content>\r\n        <!-- <ion-segment value=\"{{ sdnt.Status }}\" (ionChange)=\"clickReset(sdnt, $event)\"\r\n          (dblclick)=\"statusChange(sdnt, $event)\">\r\n          <ion-segment-button fill=\"outline\" *ngFor=\"let status of getStatusList(); let i = index\" value=\"{{ i }}\">\r\n            <ion-label>{{ status }}</ion-label>\r\n          </ion-segment-button>\r\n        </ion-segment> -->\r\n        \r\n        <ion-select placeholder=\"Non évalué\" value=\"{{ sdnt.Status }}\" (ionChange)=\"statusChange(sdnt, $event)\"\r\n          okText=\"Ok\" cancelText=\"Fermer\">\r\n          <ion-select-option *ngFor=\"let status of getStatusList(); let i = index\" value=\"{{ i }}\">{{ status }}\r\n          </ion-select-option>\r\n        </ion-select>\r\n      </ion-card-content>\r\n    </ion-card>\r\n  </ion-list>\r\n</ion-content>");
 
 /***/ }),
 
@@ -542,46 +594,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"SkiApp\"></app-header>\r\n\r\n<ion-content class=\"ion-padding\">\r\n  <ion-text class=\"ion-text-center\">\r\n    <h1 >Accueil Temporaire</h1>\r\n  </ion-text>\r\n\r\n  <ion-input [(ngModel)]=\"allo\"></ion-input>\r\n\r\n  <h1>{{display}}</h1>\r\n</ion-content>");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/management/groups-list/groups-list.component.html":
-/*!*********************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/management/groups-list/groups-list.component.html ***!
-  \*********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"{{title}}\"></app-header>\r\n\r\n\r\n<ion-content padding>\r\n  <!-- <ion-item>\r\n    <ion-label>Cours courrants seulement</ion-label>\r\n    <ion-toggle\r\n      slot=\"end\"\r\n      (click)=\"updateList()\"\r\n      [(ngModel)]=\"onlyCurrent\"\r\n    ></ion-toggle>\r\n  </ion-item> -->\r\n\r\n  <ion-list *ngIf=\"listVisibility\">\r\n    <ion-item\r\n      text-center\r\n      routerLinkActive=\"active\"\r\n      *ngFor=\"let grp of getGroups()\"\r\n      class=\"list-item\"\r\n    >\r\n      <ion-label>\r\n        <h2>\r\n          <ion-badge color=\"primary\" slot=\"end\">{{ grp.Number }}</ion-badge>\r\n          {{ grp.Time.substr(0, 5) + \" \" + this.day[grp.day - 1] }}\r\n        </h2>\r\n        <h2>{{ grp.TeacherName }} Matei</h2>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/management/management.page.html":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/management/management.page.html ***!
-  \***************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"Home\"></app-header>\r\n<ion-content>\r\n  <app-level-list></app-level-list>\r\n</ion-content>\r\n");
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/student-list.component.html":
-/*!***********************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/student-list.component.html ***!
-  \***********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"{{title}}\"></app-header>\r\n\r\n<ion-content padding>\r\n\r\n  <ion-list>\r\n    <ion-item *ngFor=\"let sdnt of students\">\r\n\r\n      <ion-label>\r\n        <h2>{{ sdnt.Name }}</h2>\r\n      </ion-label>\r\n      <ion-input type=\"text\" text-wrap></ion-input>\r\n      <ion-select name=\"test\" value=\"{{sdnt.Status}}\"  interface=\"popover\" (ionChange)=\"statusChange(sdnt, $event)\">\r\n        <ion-select-option *ngFor=\"let status of getStatusList(); let i = index\" value=\"{{i}}\">\r\n          {{ status }} </ion-select-option>\r\n      </ion-select>\r\n\r\n\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header title=\"SkiApp\"></app-header>\r\n\r\n<ion-content class=\"ion-padding\">\r\n  <ion-card class=\"content-center\">\r\n    <img src=\"/assets/img/mascotes.jpg\" />\r\n    <ion-card-header>\r\n      <ion-card-title class=\"ion-text-center\">Fete de Skigolo</ion-card-title>\r\n    </ion-card-header>\r\n  </ion-card>\r\n</ion-content>");
 
 /***/ }),
 
@@ -877,8 +890,8 @@ const routes = [
         loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./home/home.module */ "./src/app/home/home.module.ts")).then(m => m.HomePageModule)
     },
     {
-        path: 'management',
-        loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./management/management.module */ "./src/app/management/management.module.ts")).then(m => m.ManagementPageModule)
+        path: 'evals',
+        loadChildren: () => Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./evals/evals.module */ "./src/app/evals/evals.module.ts")).then(m => m.ManagementPageModule)
     },
     {
         path: 'auth',
@@ -964,7 +977,7 @@ let AppComponent = class AppComponent {
             },
             {
                 title: "Gestion",
-                url: "/management/",
+                url: "/evals/",
                 icon: "clipboard"
             },
             {
@@ -989,7 +1002,6 @@ let AppComponent = class AppComponent {
         this.storage.get("User").then(val => {
             if (val != null) {
                 this.user = val.name;
-                console.log(this.user);
             }
         });
     }
@@ -1041,11 +1053,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./home/home.module */ "./src/app/home/home.module.ts");
 /* harmony import */ var _search_search_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./search/search.module */ "./src/app/search/search.module.ts");
 /* harmony import */ var _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./not-found/not-found.component */ "./src/app/not-found/not-found.component.ts");
-/* harmony import */ var _management_management_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./management/management.module */ "./src/app/management/management.module.ts");
+/* harmony import */ var _evals_evals_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./evals/evals.module */ "./src/app/evals/evals.module.ts");
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./services/auth.service */ "./src/app/services/auth.service.ts");
 /* harmony import */ var _auth_auth_module__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./auth/auth.module */ "./src/app/auth/auth.module.ts");
 /* harmony import */ var _services_ski_service__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./services/ski.service */ "./src/app/services/ski.service.ts");
 /* harmony import */ var _components_shared_module__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/shared.module */ "./src/app/components/shared.module.ts");
+/* harmony import */ var _evals_student_list_popover_options_popover_options_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./evals/student-list/popover-options/popover-options.component */ "./src/app/evals/student-list/popover-options/popover-options.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _ionic_native_push_ngx__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @ionic-native/push/ngx */ "./node_modules/@ionic-native/push/ngx/index.js");
 
 
 
@@ -1066,13 +1081,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-;
+
+
+
 let AppModule = class AppModule {
 };
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"], _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_14__["NotFoundComponent"]],
-        entryComponents: [],
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"], _not_found_not_found_component__WEBPACK_IMPORTED_MODULE_14__["NotFoundComponent"], _evals_student_list_popover_options_popover_options_component__WEBPACK_IMPORTED_MODULE_20__["PopoverOptionsComponent"]],
+        entryComponents: [_evals_student_list_popover_options_popover_options_component__WEBPACK_IMPORTED_MODULE_20__["PopoverOptionsComponent"]],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"].forRoot(),
@@ -1082,7 +1099,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _exercices_exercices_module__WEBPACK_IMPORTED_MODULE_11__["ExercicesPageModule"],
             _home_home_module__WEBPACK_IMPORTED_MODULE_12__["HomePageModule"],
             _search_search_module__WEBPACK_IMPORTED_MODULE_13__["SearchPageModule"],
-            _management_management_module__WEBPACK_IMPORTED_MODULE_15__["ManagementPageModule"],
+            _evals_evals_module__WEBPACK_IMPORTED_MODULE_15__["ManagementPageModule"],
             _auth_auth_module__WEBPACK_IMPORTED_MODULE_17__["AuthModule"],
             _components_shared_module__WEBPACK_IMPORTED_MODULE_19__["SharedModule"]
         ],
@@ -1090,7 +1107,9 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_7__["StatusBar"],
             _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_6__["SplashScreen"],
             _services_ski_service__WEBPACK_IMPORTED_MODULE_18__["SkiService"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_21__["FormBuilder"],
             _services_auth_service__WEBPACK_IMPORTED_MODULE_16__["AuthService"],
+            _ionic_native_push_ngx__WEBPACK_IMPORTED_MODULE_22__["Push"],
             { provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"], useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicRouteStrategy"] }
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
@@ -1185,17 +1204,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _ionic_Storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/Storage */ "./node_modules/@ionic/Storage/fesm2015/ionic-storage.js");
 /* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+
+
 
 
 
 
 
 let LoginComponent = class LoginComponent {
-    constructor(storage, authAPI, router) {
+    constructor(formBuilder, storage, toastController, authAPI, router) {
+        this.formBuilder = formBuilder;
         this.storage = storage;
+        this.toastController = toastController;
         this.authAPI = authAPI;
         this.router = router;
         this.title = "Login";
+        this.errorMSg = "";
+        this.form = this.formBuilder.group({
+            numero: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_5__["Validators"].required]
+        });
+        console.log(this.form.controls.numero);
     }
     ngOnInit() {
         if (this.authAPI.connected()) {
@@ -1203,11 +1233,32 @@ let LoginComponent = class LoginComponent {
         }
     }
     login(form) {
-        this.authAPI.login(form.value.numero);
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            if (isNaN(form.value.numero)) {
+            }
+            this.authAPI.login(form.value.numero).subscribe((resp) => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+                this.storage.set("User", resp.employe);
+                this.storage.set("Token", resp.token);
+                window.localStorage.setItem("Token", resp.token);
+                this.router.navigate(["/home"]);
+                const toast = yield this.toastController.create({
+                    message: 'Bienvenue ' + resp.employe.name + '!',
+                    duration: 2000
+                });
+                toast.present();
+            }), (error) => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+                if (error.error == "InexistentUser" || error.error == "InvalidLogin")
+                    this.errorMSg = "Code Invalide";
+                else
+                    console.log(error.error);
+            }));
+        });
     }
 };
 LoginComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"] },
     { type: _ionic_Storage__WEBPACK_IMPORTED_MODULE_3__["Storage"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ToastController"] },
     { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
 ];
@@ -1217,7 +1268,9 @@ LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/auth/login/login.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./login.component.scss */ "./src/app/auth/login/login.component.scss")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_Storage__WEBPACK_IMPORTED_MODULE_3__["Storage"],
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormBuilder"],
+        _ionic_Storage__WEBPACK_IMPORTED_MODULE_3__["Storage"],
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["ToastController"],
         src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],
         _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
 ], LoginComponent);
@@ -1465,6 +1518,477 @@ SharedModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         exports: [_level_list_level_list_component__WEBPACK_IMPORTED_MODULE_5__["LevelListComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_6__["HeaderComponent"]]
     })
 ], SharedModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/evals/evals-routing.module.ts":
+/*!***********************************************!*\
+  !*** ./src/app/evals/evals-routing.module.ts ***!
+  \***********************************************/
+/*! exports provided: ManagementPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManagementPageRoutingModule", function() { return ManagementPageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _evals_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./evals.page */ "./src/app/evals/evals.page.ts");
+/* harmony import */ var _groups_list_groups_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./groups-list/groups-list.component */ "./src/app/evals/groups-list/groups-list.component.ts");
+/* harmony import */ var _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./student-list/student-list.component */ "./src/app/evals/student-list/student-list.component.ts");
+
+
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _evals_page__WEBPACK_IMPORTED_MODULE_3__["EvalsPage"]
+    },
+    {
+        path: ':id',
+        component: _groups_list_groups_list_component__WEBPACK_IMPORTED_MODULE_4__["GroupsListComponent"]
+    },
+    {
+        path: 'group/:id',
+        component: _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_5__["StudentListComponent"]
+    }
+];
+let ManagementPageRoutingModule = class ManagementPageRoutingModule {
+};
+ManagementPageRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], ManagementPageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/evals/evals.module.ts":
+/*!***************************************!*\
+  !*** ./src/app/evals/evals.module.ts ***!
+  \***************************************/
+/*! exports provided: ManagementPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManagementPageModule", function() { return ManagementPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+/* harmony import */ var _evals_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./evals-routing.module */ "./src/app/evals/evals-routing.module.ts");
+/* harmony import */ var _evals_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./evals.page */ "./src/app/evals/evals.page.ts");
+/* harmony import */ var _groups_list_groups_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./groups-list/groups-list.component */ "./src/app/evals/groups-list/groups-list.component.ts");
+/* harmony import */ var _components_shared_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/shared.module */ "./src/app/components/shared.module.ts");
+/* harmony import */ var _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./student-list/student-list.component */ "./src/app/evals/student-list/student-list.component.ts");
+
+
+
+
+
+
+
+
+
+
+let ManagementPageModule = class ManagementPageModule {
+};
+ManagementPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _evals_routing_module__WEBPACK_IMPORTED_MODULE_5__["ManagementPageRoutingModule"],
+            _components_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"],
+        ],
+        declarations: [
+            _evals_page__WEBPACK_IMPORTED_MODULE_6__["EvalsPage"],
+            _groups_list_groups_list_component__WEBPACK_IMPORTED_MODULE_7__["GroupsListComponent"],
+            _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_9__["StudentListComponent"]
+        ]
+    })
+], ManagementPageModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/evals/evals.page.scss":
+/*!***************************************!*\
+  !*** ./src/app/evals/evals.page.scss ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2V2YWxzL2V2YWxzLnBhZ2Uuc2NzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/evals/evals.page.ts":
+/*!*************************************!*\
+  !*** ./src/app/evals/evals.page.ts ***!
+  \*************************************/
+/*! exports provided: EvalsPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EvalsPage", function() { return EvalsPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_ski_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/ski.service */ "./src/app/services/ski.service.ts");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/auth.service */ "./src/app/services/auth.service.ts");
+
+
+
+
+let EvalsPage = class EvalsPage {
+    constructor(skiService, authService) {
+        this.skiService = skiService;
+        this.authService = authService;
+        this.title = "Évaluations";
+        this.levels = skiService.getLevels();
+        this.authService.checkConnected();
+    }
+    ngOnInit() {
+        this.authService.checkConnected();
+    }
+};
+EvalsPage.ctorParameters = () => [
+    { type: _services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"] },
+    { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] }
+];
+EvalsPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-management',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./evals.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/evals/evals.page.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./evals.page.scss */ "./src/app/evals/evals.page.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"],
+        _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])
+], EvalsPage);
+
+
+
+/***/ }),
+
+/***/ "./src/app/evals/groups-list/groups-list.component.scss":
+/*!**************************************************************!*\
+  !*** ./src/app/evals/groups-list/groups-list.component.scss ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2V2YWxzL2dyb3Vwcy1saXN0L2dyb3Vwcy1saXN0LmNvbXBvbmVudC5zY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/evals/groups-list/groups-list.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/evals/groups-list/groups-list.component.ts ***!
+  \************************************************************/
+/*! exports provided: GroupsListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupsListComponent", function() { return GroupsListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/ski.service */ "./src/app/services/ski.service.ts");
+/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+
+
+
+
+
+let GroupsListComponent = class GroupsListComponent {
+    constructor(route, SkiAPI, authService) {
+        this.route = route;
+        this.SkiAPI = SkiAPI;
+        this.authService = authService;
+        this.title = "Groupes";
+        this.onlyCurrent = true;
+        this.listVisibility = true;
+        this.groups = [];
+        this.day = [
+            "Lundi",
+            "Mardi",
+            "Mercredi",
+            "Jeudi",
+            "Vendredi",
+            "Samedi",
+            "Dimanche"
+        ];
+        this.authService.checkConnected();
+        const levelID = this.route.snapshot.params.id;
+        this.SkiAPI.getGroups(levelID).subscribe(resp => {
+            this.groups = resp;
+            this.data = resp;
+            this.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"].levels[resp[0].Level];
+        });
+    }
+    ngOnInit() {
+    }
+    getGroups() {
+        this.data = [];
+        if (!this.onlyCurrent) {
+            this.data = this.groups;
+            return this.data;
+        }
+        else {
+            this.data = this.groups.filter(group => this.currentClass(group));
+        }
+        return this.data;
+    }
+    updateList() {
+        this.listVisibility = !this.listVisibility;
+        this.getGroups();
+        this.listVisibility = !this.listVisibility;
+    }
+    currentClass(inGroup) {
+        let classe = new Date();
+        let timeAr = inGroup.Time.split(":");
+        classe.setHours(timeAr[0], timeAr[1], timeAr[2]);
+        if (inGroup.Level < 3 &&
+            classe.getTime() < new Date().getTime() &&
+            new Date().getTime() < classe.setHours(classe.getHours() + 1) && ((new Date().getDay() == 0 && inGroup.day == new Date().getDay() + 7) || (new Date().getDay() != 0 && inGroup.day == new Date().getDay()))) {
+            return true;
+        }
+        else if (inGroup.Level >= 3 &&
+            classe.getTime() < new Date().getTime() &&
+            new Date().getTime() <
+                classe.setHours(classe.getHours() + 1, classe.getMinutes() + 30) &&
+            inGroup.day == new Date().getDay()) {
+            return true;
+        }
+    }
+};
+GroupsListComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+    { type: src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"] },
+    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] }
+];
+GroupsListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: "app-groups-list",
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./groups-list.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/evals/groups-list/groups-list.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./groups-list.component.scss */ "./src/app/evals/groups-list/groups-list.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+        src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"],
+        src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]])
+], GroupsListComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/evals/student-list/popover-options/popover-options.component.scss":
+/*!***********************************************************************************!*\
+  !*** ./src/app/evals/student-list/popover-options/popover-options.component.scss ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2V2YWxzL3N0dWRlbnQtbGlzdC9wb3BvdmVyLW9wdGlvbnMvcG9wb3Zlci1vcHRpb25zLmNvbXBvbmVudC5zY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/evals/student-list/popover-options/popover-options.component.ts":
+/*!*********************************************************************************!*\
+  !*** ./src/app/evals/student-list/popover-options/popover-options.component.ts ***!
+  \*********************************************************************************/
+/*! exports provided: PopoverOptionsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PopoverOptionsComponent", function() { return PopoverOptionsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+
+
+
+let PopoverOptionsComponent = class PopoverOptionsComponent {
+    constructor(popoverCtrl) {
+        this.popoverCtrl = popoverCtrl;
+    }
+    ngOnInit() { }
+    dismissPopover() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            try {
+                yield this.popoverCtrl.dismiss();
+            }
+            catch (e) {
+                //click more than one time popover throws error, so ignore...
+            }
+        });
+    }
+};
+PopoverOptionsComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["PopoverController"] }
+];
+PopoverOptionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: "app-popover-options",
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./popover-options.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/evals/student-list/popover-options/popover-options.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./popover-options.component.scss */ "./src/app/evals/student-list/popover-options/popover-options.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["PopoverController"]])
+], PopoverOptionsComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/evals/student-list/student-list.component.scss":
+/*!****************************************************************!*\
+  !*** ./src/app/evals/student-list/student-list.component.scss ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2V2YWxzL3N0dWRlbnQtbGlzdC9zdHVkZW50LWxpc3QuY29tcG9uZW50LnNjc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/evals/student-list/student-list.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/evals/student-list/student-list.component.ts ***!
+  \**************************************************************/
+/*! exports provided: StudentListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentListComponent", function() { return StudentListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/ski.service */ "./src/app/services/ski.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
+/* harmony import */ var _popover_options_popover_options_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./popover-options/popover-options.component */ "./src/app/evals/student-list/popover-options/popover-options.component.ts");
+
+
+
+
+
+
+
+let StudentListComponent = class StudentListComponent {
+    constructor(route, skiService, toastController, authService, popoverController) {
+        this.route = route;
+        this.skiService = skiService;
+        this.toastController = toastController;
+        this.authService = authService;
+        this.popoverController = popoverController;
+        this.title = "Student List";
+        this.groupID = this.route.snapshot.params.id;
+    }
+    ngOnInit() {
+        this.skiService.getGroup(this.groupID).subscribe(resp => {
+            this.group = resp;
+            console.table(resp);
+            this.students = this.group.Students;
+            this.title =
+                src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].levels[this.group.Level] +
+                    " " + this.group.Number +
+                    " " + this.group.Time.substring(0, 5) +
+                    " " + src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].days[this.group.day];
+        });
+    }
+    statusChange(student, $event) {
+        let old = student.Status;
+        student.Status = $event.detail.value;
+        var output = { "status": student.Status, "studentID": student.id, "groupID": this.groupID };
+        this.skiService.setStatus(output).subscribe(() => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            return;
+        }), (error) => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            if (error.error.text == "Ok") {
+                return;
+            }
+            if (error.error == "InvalidToken") {
+                this.authService.logout();
+                const toast = yield this.toastController.create({
+                    message: 'Veuillez vous reconnectez.',
+                    duration: 2000
+                });
+                toast.present();
+            }
+            else if (error.error == "NotAuthorized") {
+                student.Status = old;
+                const toast = yield this.toastController.create({
+                    message: 'Vous n\'avez pas les permissions pour cette action.',
+                    duration: 2000
+                });
+                toast.present();
+            }
+            else {
+                const toast = yield this.toastController.create({
+                    message: 'Une Erreur est survenue.',
+                    duration: 2000
+                });
+                toast.present();
+            }
+        }));
+    }
+    getStatusList() {
+        return src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].status;
+    }
+    openPopOver(ev) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            let popover = yield this.popoverController.create({
+                component: _popover_options_popover_options_component__WEBPACK_IMPORTED_MODULE_6__["PopoverOptionsComponent"],
+                event: ev,
+                translucent: true
+            });
+            return popover.present();
+        });
+    }
+};
+StudentListComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"] },
+    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["PopoverController"] }
+];
+StudentListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: "app-student-list",
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./student-list.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/evals/student-list/student-list.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./student-list.component.scss */ "./src/app/evals/student-list/student-list.component.scss")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+        src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"],
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"],
+        src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"],
+        _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["PopoverController"]])
+], StudentListComponent);
 
 
 
@@ -1837,393 +2361,70 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePage", function() { return HomePage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _ionic_native_push_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/push/ngx */ "./node_modules/@ionic-native/push/ngx/index.js");
+
+
 
 
 let HomePage = class HomePage {
-    constructor() { }
-    ngOnInit() {
+    constructor(http, push) {
+        this.http = http;
+        this.push = push;
     }
-    sync() {
-        window.localStorage.setItem("test", this.allo);
-        this.display = window.localStorage.getItem("test");
+    ngOnInit() {
+        // to check if we have permission
+        this.push.hasPermission()
+            .then((res) => {
+            if (res.isEnabled) {
+                console.log('We have permission to send push notifications');
+            }
+            else {
+                console.log('We do not have permission to send push notifications');
+            }
+        });
+        // Create a channel (Android O and above). You'll need to provide the id, description and importance properties.
+        this.push.createChannel({
+            id: "testchannel1",
+            description: "My first test channel",
+            // The importance property goes from 1 = Lowest, 2 = Low, 3 = Normal, 4 = High and 5 = Highest.
+            importance: 3
+        }).then(() => console.log('Channel created'));
+        // Delete a channel (Android O and above)
+        this.push.deleteChannel('testchannel1').then(() => console.log('Channel deleted'));
+        // Return a list of currently configured channels
+        this.push.listChannels().then((channels) => console.log('List of channels', channels));
+        // to initialize push notifications
+        const options = {
+            android: {},
+            ios: {
+                alert: 'true',
+                badge: true,
+                sound: 'false'
+            },
+            windows: {},
+            browser: {
+                pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+            }
+        };
+        const pushObject = this.push.init(options);
+        pushObject.on('notification').subscribe((notification) => console.log('Received a notification', notification));
+        pushObject.on('registration').subscribe((registration) => console.log('Device registered', registration));
+        pushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));
     }
 };
+HomePage.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+    { type: _ionic_native_push_ngx__WEBPACK_IMPORTED_MODULE_3__["Push"] }
+];
 HomePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: "app-home",
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./home.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.page.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./home.page.scss */ "./src/app/home/home.page.scss")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _ionic_native_push_ngx__WEBPACK_IMPORTED_MODULE_3__["Push"]])
 ], HomePage);
-
-
-
-/***/ }),
-
-/***/ "./src/app/management/groups-list/groups-list.component.scss":
-/*!*******************************************************************!*\
-  !*** ./src/app/management/groups-list/groups-list.component.scss ***!
-  \*******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hbmFnZW1lbnQvZ3JvdXBzLWxpc3QvZ3JvdXBzLWxpc3QuY29tcG9uZW50LnNjc3MifQ== */");
-
-/***/ }),
-
-/***/ "./src/app/management/groups-list/groups-list.component.ts":
-/*!*****************************************************************!*\
-  !*** ./src/app/management/groups-list/groups-list.component.ts ***!
-  \*****************************************************************/
-/*! exports provided: GroupsListComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupsListComponent", function() { return GroupsListComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/ski.service */ "./src/app/services/ski.service.ts");
-/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
-
-
-
-
-
-let GroupsListComponent = class GroupsListComponent {
-    constructor(route, SkiAPI, authService) {
-        this.route = route;
-        this.SkiAPI = SkiAPI;
-        this.authService = authService;
-        this.title = "Groupes";
-        this.listVisibility = true;
-        this.day = [
-            "Lundi",
-            "Mardi",
-            "Mercredi",
-            "Jeudi",
-            "Vendredi",
-            "Samedi",
-            "Dimanche"
-        ];
-        this.authService.checkConnected();
-        const levelID = this.route.snapshot.params.id;
-        this.SkiAPI.getGroups(levelID).subscribe(resp => {
-            this.groups = resp;
-            this.data = resp;
-            this.title = src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"].levels[resp[0].Level];
-        });
-    }
-    ngOnInit() { }
-    getGroups() {
-        this.data = [];
-        if (!this.onlyCurrent) {
-            this.data = this.groups;
-            return this.data;
-        }
-        else {
-            this.data = this.groups.filter(group => this.currentClass(group));
-            console.log(this.data);
-        }
-        return this.data;
-    }
-    updateList() {
-        this.listVisibility = !this.listVisibility;
-        this.getGroups();
-        this.listVisibility = !this.listVisibility;
-    }
-    currentClass(inGroup) {
-        let classe = new Date();
-        let timeAr = inGroup.Time.split(":");
-        classe.setHours(timeAr[0], timeAr[1], timeAr[2]);
-        let output = !(classe.getTime() > new Date().getTime() &&
-            new Date().getTime() < classe.setHours(classe.getHours() + 1));
-        console.log(output);
-        return output;
-    }
-};
-GroupsListComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
-    { type: src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"] },
-    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"] }
-];
-GroupsListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: "app-groups-list",
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./groups-list.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/management/groups-list/groups-list.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./groups-list.component.scss */ "./src/app/management/groups-list/groups-list.component.scss")).default]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_3__["SkiService"], src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]])
-], GroupsListComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/management/management-routing.module.ts":
-/*!*********************************************************!*\
-  !*** ./src/app/management/management-routing.module.ts ***!
-  \*********************************************************/
-/*! exports provided: ManagementPageRoutingModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManagementPageRoutingModule", function() { return ManagementPageRoutingModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _management_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./management.page */ "./src/app/management/management.page.ts");
-/* harmony import */ var _groups_list_groups_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./groups-list/groups-list.component */ "./src/app/management/groups-list/groups-list.component.ts");
-/* harmony import */ var _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./student-list/student-list.component */ "./src/app/management/student-list/student-list.component.ts");
-
-
-
-
-
-
-const routes = [
-    {
-        path: '',
-        component: _management_page__WEBPACK_IMPORTED_MODULE_3__["ManagementPage"]
-    },
-    {
-        path: ':id',
-        component: _groups_list_groups_list_component__WEBPACK_IMPORTED_MODULE_4__["GroupsListComponent"]
-    },
-    {
-        path: 'group/:id',
-        component: _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_5__["StudentListComponent"]
-    }
-];
-let ManagementPageRoutingModule = class ManagementPageRoutingModule {
-};
-ManagementPageRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
-        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
-    })
-], ManagementPageRoutingModule);
-
-
-
-/***/ }),
-
-/***/ "./src/app/management/management.module.ts":
-/*!*************************************************!*\
-  !*** ./src/app/management/management.module.ts ***!
-  \*************************************************/
-/*! exports provided: ManagementPageModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManagementPageModule", function() { return ManagementPageModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
-/* harmony import */ var _management_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./management-routing.module */ "./src/app/management/management-routing.module.ts");
-/* harmony import */ var _management_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./management.page */ "./src/app/management/management.page.ts");
-/* harmony import */ var _groups_list_groups_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./groups-list/groups-list.component */ "./src/app/management/groups-list/groups-list.component.ts");
-/* harmony import */ var _components_shared_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/shared.module */ "./src/app/components/shared.module.ts");
-/* harmony import */ var _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./student-list/student-list.component */ "./src/app/management/student-list/student-list.component.ts");
-
-
-
-
-
-
-
-
-
-
-let ManagementPageModule = class ManagementPageModule {
-};
-ManagementPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-        imports: [
-            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
-            _management_routing_module__WEBPACK_IMPORTED_MODULE_5__["ManagementPageRoutingModule"],
-            _components_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"]
-        ],
-        declarations: [
-            _management_page__WEBPACK_IMPORTED_MODULE_6__["ManagementPage"],
-            _groups_list_groups_list_component__WEBPACK_IMPORTED_MODULE_7__["GroupsListComponent"],
-            _student_list_student_list_component__WEBPACK_IMPORTED_MODULE_9__["StudentListComponent"]
-        ]
-    })
-], ManagementPageModule);
-
-
-
-/***/ }),
-
-/***/ "./src/app/management/management.page.scss":
-/*!*************************************************!*\
-  !*** ./src/app/management/management.page.scss ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hbmFnZW1lbnQvbWFuYWdlbWVudC5wYWdlLnNjc3MifQ== */");
-
-/***/ }),
-
-/***/ "./src/app/management/management.page.ts":
-/*!***********************************************!*\
-  !*** ./src/app/management/management.page.ts ***!
-  \***********************************************/
-/*! exports provided: ManagementPage */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ManagementPage", function() { return ManagementPage; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _services_ski_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/ski.service */ "./src/app/services/ski.service.ts");
-/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/auth.service */ "./src/app/services/auth.service.ts");
-
-
-
-
-let ManagementPage = class ManagementPage {
-    constructor(skiService, authService) {
-        this.skiService = skiService;
-        this.authService = authService;
-        this.title = "Gestion";
-        this.levels = skiService.getLevels();
-        this.authService.checkConnected();
-    }
-    ngOnInit() {
-        this.authService.checkConnected();
-    }
-};
-ManagementPage.ctorParameters = () => [
-    { type: _services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"] },
-    { type: _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"] }
-];
-ManagementPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-management',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./management.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/management/management.page.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./management.page.scss */ "./src/app/management/management.page.scss")).default]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"],
-        _services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]])
-], ManagementPage);
-
-
-
-/***/ }),
-
-/***/ "./src/app/management/student-list/student-list.component.scss":
-/*!*********************************************************************!*\
-  !*** ./src/app/management/student-list/student-list.component.scss ***!
-  \*********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hbmFnZW1lbnQvc3R1ZGVudC1saXN0L3N0dWRlbnQtbGlzdC5jb21wb25lbnQuc2NzcyJ9 */");
-
-/***/ }),
-
-/***/ "./src/app/management/student-list/student-list.component.ts":
-/*!*******************************************************************!*\
-  !*** ./src/app/management/student-list/student-list.component.ts ***!
-  \*******************************************************************/
-/*! exports provided: StudentListComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentListComponent", function() { return StudentListComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/ski.service */ "./src/app/services/ski.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
-/* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/auth.service */ "./src/app/services/auth.service.ts");
-
-
-
-
-
-
-let StudentListComponent = class StudentListComponent {
-    constructor(route, skiService, toastController, authService) {
-        this.route = route;
-        this.skiService = skiService;
-        this.toastController = toastController;
-        this.authService = authService;
-        this.title = "Student List";
-        this.groupID = this.route.snapshot.params.id;
-    }
-    ngOnInit() {
-        this.skiService.getGroup(this.groupID).subscribe(resp => {
-            this.group = resp;
-            this.students = this.group.Students;
-            this.title =
-                src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].levels[this.group.Level] +
-                    " " + this.group.Number +
-                    " " + this.group.Time.substring(0, 5) +
-                    " " + src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].days[this.group.day - 1];
-        });
-    }
-    statusChange(student, $event) {
-        student.Status = $event.detail.value;
-        var output = { "status": student.Status, "studentID": student.id };
-        this.skiService.setStatus(output).subscribe(success => { }, (error) => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            if (error.error == "InvalidToken") {
-                this.authService.logout();
-                const toast = yield this.toastController.create({
-                    message: 'Veuillez vous reconnectez.',
-                    duration: 2000
-                });
-                toast.present();
-            }
-            else {
-                const toast = yield this.toastController.create({
-                    message: 'Une Erreur est survenue.',
-                    duration: 2000
-                });
-                toast.present();
-            }
-        }));
-    }
-    getStatusList() {
-        return src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"].status;
-    }
-};
-StudentListComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
-    { type: src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"] },
-    { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"] }
-];
-StudentListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: "app-student-list",
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./student-list.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/management/student-list/student-list.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./student-list.component.scss */ "./src/app/management/student-list/student-list.component.scss")).default]
-    }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
-        src_app_services_ski_service__WEBPACK_IMPORTED_MODULE_2__["SkiService"],
-        _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"],
-        src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"]])
-], StudentListComponent);
 
 
 
@@ -2538,20 +2739,7 @@ let AuthService = class AuthService {
     }
     login(code) {
         let body = new _DTO__WEBPACK_IMPORTED_MODULE_3__["LoginRequest"](code);
-        this.http.post(_settings__WEBPACK_IMPORTED_MODULE_7__["Settings"].apiUrl + "login", body).subscribe((resp) => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            this.storage.set("User", resp.employe);
-            this.storage.set("Token", resp.token);
-            window.localStorage.setItem("Token", resp.token);
-            this.router.navigate(["/home"]);
-            const toast = yield this.toastController.create({
-                message: 'Bienvenue ' + resp.employe.name + '!',
-                duration: 2000
-            });
-            toast.present();
-            return resp;
-        }), error => {
-            console.log(error);
-        });
+        return this.http.post(_settings__WEBPACK_IMPORTED_MODULE_7__["Settings"].apiUrl + "login", body);
     }
     logout() {
         window.localStorage.removeItem("Token");
@@ -2662,7 +2850,6 @@ let SkiService = class SkiService {
                 "test": "placeholder"
             })
         };
-        this.storage.get("UserID").then(val => console.log(val));
         return this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl, httpOptions);
     }
     getLevels() {
@@ -2674,7 +2861,7 @@ let SkiService = class SkiService {
                 "UserToken": this.authStorage.getToken(),
             })
         };
-        var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "groups/" + id, httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(// Log the result or error
+        var tmp = this.http.get(_settings__WEBPACK_IMPORTED_MODULE_6__["Settings"].apiUrl + "levels/" + id + "/groups", httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(// Log the result or error
         // Log the result or error
         data => console.log("Yo", data), error => console.log("Yo", error)));
         return tmp;
@@ -2729,7 +2916,6 @@ SkiService.levels = [
     "Excellence"
 ];
 SkiService.status = [
-    "Non évalué",
     "Normal",
     "En retard",
     "Absent",
