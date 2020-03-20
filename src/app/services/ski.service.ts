@@ -43,7 +43,6 @@ export class SkiService {
     "Dimanche"
   ];
 
-
   constructor(public http: HttpClient,
     private storage: Storage,
     private authStorage: AuthService) {
