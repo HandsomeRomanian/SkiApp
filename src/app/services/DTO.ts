@@ -1,5 +1,4 @@
 export class Student{
-
     id;
     Name:string;
     Status:number;

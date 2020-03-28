@@ -17,22 +17,22 @@ export class AppComponent implements OnInit {
   public appPages = [
     {
       title: "Home",
-      url: "/",
+      url: "/home",
       icon: "home"
     },
     {
       title: "Exercices",
-      url: "/exercices/",
+      url: "/exercices",
       icon: "paper-plane"
     },
     {
       title: "Gestion",
-      url: "/evals/",
+      url: "/evals",
       icon: "clipboard"
     },
     {
       title: "Recherche",
-      url: "/search/",
+      url: "/search",
       icon: "search"
     }
   ];
@@ -54,15 +54,16 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const path = window.location.pathname.split("folder/")[1];
+    const path = window.location.pathname.replace("/", "");
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(
-        page => page.title.toLowerCase() === path.toLowerCase()
+        page => page.url.replace("/", "").toLowerCase() === path.toLowerCase()
       );
+      console.log(this.selectedIndex)
     }
 
-    this.storage.get("User").then(val =>{
-      if (val != null){
+    this.storage.get("User").then(val => {
+      if (val != null) {
         this.user = val.name;
       }
     });

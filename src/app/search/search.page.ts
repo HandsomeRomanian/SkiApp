@@ -5,6 +5,7 @@ import { AuthService } from '../services/auth.service';
 import { NavController, AlertController } from '@ionic/angular';
 import { Student } from '../services/DTO';
 import { RouterModule, Router } from '@angular/router';
+import { StudentService } from '../services/student.service';
 
 @Component({
   selector: 'app-search',
@@ -17,19 +18,18 @@ export class SearchPage implements OnInit {
   search: string = "";
   students: Observable<any>;
 
-  constructor(private skiAPI: SkiService,
+  constructor(
+    private studentService: StudentService,
     private authService: AuthService,
     private alertController: AlertController,
     private router: Router) {
     this.authService.checkConnected()
-    console.log(SkiService.days[1])
   }
 
   ngOnInit(): void {
   }
 
   async showInfoAlert(result: any) {
-    console.log(result)
     const alert = await this.alertController.create({
       header: 'Informations sur l\'étudiant',
       subHeader: result.student.Name + " : " + SkiService.status[result.student.Status],
@@ -61,7 +61,7 @@ export class SearchPage implements OnInit {
     this.search = $event.target.value.trim();
     if (this.search && this.search != "") {
       this.search.replace(" ", "_");
-      this.students = this.skiAPI.search(this.search);
+      this.students = this.studentService.search(this.search);
     }
   }
 

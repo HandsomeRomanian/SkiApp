@@ -7,10 +7,11 @@
       ion-item
       *ngFor="let ex of exercices | async"
       routerLink="info"
-      routerLinkActive="active"
-    >
+      routerLinkActive="active">
       <ion-label text-wrap>
-        <ion-badge color="primary" slot="end">H</ion-badge>
+        <ion-badge *ngIf="ex.type==3" color="primary" slot="end">MB</ion-badge>
+        <ion-badge *ngIf="ex.type==1" color="primary" slot="end">EX</ion-badge>
+        <ion-badge *ngIf="ex.type==2" color="primary" slot="end">H</ion-badge>
         {{ ex.description }}
       </ion-label>
     </ion-item>

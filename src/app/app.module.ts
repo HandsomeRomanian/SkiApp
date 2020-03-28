@@ -21,10 +21,11 @@ import { PopoverOptionsComponent } from './evals/student-list/popover-options/po
 import { FormBuilder } from '@angular/forms';
 import { Push } from '@ionic-native/push/ngx';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
+import { ChangeListComponent } from './evals/student-list/change-list/change-list.component';
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
-  entryComponents: [PopoverOptionsComponent],
+  entryComponents: [PopoverOptionsComponent, ChangeListComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

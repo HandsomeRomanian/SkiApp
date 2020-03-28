@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NavController, NavParams, LoadingController } from '@ionic/angular';
-import { SkiService } from 'src/app/services/ski.service';
+import { LevelService } from 'src/app/services/level.service';
 
 @Component({
   selector: 'app-level-list',
@@ -16,9 +16,9 @@ export class LevelListComponent implements OnInit {
   @Input() action: number;
 
 
-  constructor(public skiService: SkiService,public loadingCtrl: LoadingController, private nav: NavController) {
+  constructor(private levelService: LevelService,public loadingCtrl: LoadingController, private nav: NavController) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.levels = skiService.getLevels();
+    this.levels = this.levelService.getLevels();
     console.log("LevelList Loaded");
   
   }

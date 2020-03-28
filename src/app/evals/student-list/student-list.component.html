@@ -5,7 +5,7 @@
     <ion-card *ngFor="let sdnt of students">
       <ion-item>
         <ion-label>{{ sdnt.Name }}</ion-label>
-        <ion-button slot="end" (click)="openPopOver($event)">
+        <ion-button slot="end" (click)="openPopOver($event,sdnt.id)">
           <ion-icon
             slot="icon-only"
             ios="ellipsis-horizontal"

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SkiService } from '../services/ski.service';
 import { AuthService } from '../services/auth.service';
+import { LevelService } from '../services/level.service';
 
 @Component({
   selector: 'app-management',
@@ -13,9 +13,9 @@ export class EvalsPage implements OnInit {
   title: string = "Évaluations";
   levels: Observable<any>;
 
-  constructor(private skiService: SkiService,
+  constructor(private levelService: LevelService,
               private authService: AuthService) {
-    this.levels = skiService.getLevels();
+    this.levels = this.levelService.getLevels();
     this.authService.checkConnected();
    }
 

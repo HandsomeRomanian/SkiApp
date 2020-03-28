@@ -1,12 +1,14 @@
 import { async } from '@angular/core/testing';
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
-import { SkiService } from "src/app/services/ski.service";
 import { ActivatedRoute } from "@angular/router";
 import { Student } from 'src/app/services/DTO';
 import { ToastController, PopoverController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { PopoverOptionsComponent } from './popover-options/popover-options.component';
+import { StudentService } from 'src/app/services/student.service';
+import { GroupsService } from 'src/app/services/groups.service';
+import { SkiService } from 'src/app/services/ski.service';
 
 @Component({
   selector: "app-student-list",
@@ -21,8 +23,9 @@ export class StudentListComponent implements OnInit {
   observable: Observable<any>;
 
   constructor(private route: ActivatedRoute,
-    private skiService: SkiService,
     public toastController: ToastController,
+    private groupService: GroupsService,
+    private studentService: StudentService,
     private authService: AuthService,
     private popoverController: PopoverController
   ) {
@@ -30,9 +33,8 @@ export class StudentListComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.skiService.getGroup(this.groupID).subscribe(resp => {
+    this.groupService.getGroupByID(this.groupID).subscribe(resp => {
       this.group = resp;
-      console.table(resp)
       this.students = this.group.Students;
       this.title =
         SkiService.levels[this.group.Level] +
@@ -46,7 +48,7 @@ export class StudentListComponent implements OnInit {
     let old = student.Status;
     student.Status = $event.detail.value;
     var output = { "status": student.Status, "studentID": student.id, "groupID": this.groupID };
-    this.skiService.setStatus(output).subscribe(
+    this.studentService.setStatus(output).subscribe(
       async () => {
         return;
       },
@@ -86,11 +88,12 @@ export class StudentListComponent implements OnInit {
     return SkiService.status;
   }
 
-  async openPopOver(ev) {
+  async openPopOver(ev,studentID) {
     let popover = await this.popoverController.create({
       component: PopoverOptionsComponent,
       event: ev,
-      translucent: true
+      translucent: true,
+      componentProps: {groupID: this.groupID,studentID: studentID}
     });
     return popover.present();
   }

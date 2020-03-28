@@ -10,7 +10,7 @@ import { Settings } from './settings';
   providedIn: 'root'
 })
 export class SkiService {
-  public static levels = [
+  public static levels = [ //inbd
     "Test",
     "Ourson",
     "Kangourou",
@@ -26,13 +26,13 @@ export class SkiService {
     "Élite II",
     "Excellence"
   ];
-  public static status = [
+  public static status = [ //in bd
     "Normal",
     "En retard",
     "Absent",
     "Fort"
   ];
-  public static days = [
+  public static days = [ 
     "Erreur",
     "Lundi",
     "Mardi",

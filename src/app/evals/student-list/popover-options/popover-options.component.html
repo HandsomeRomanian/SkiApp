@@ -1,7 +1,8 @@
 <ion-list>
-  <ion-item button>Changement Groupe</ion-item>
+  <ion-item button (click)="getUpgrade()">Monter de niveau</ion-item>
+  <ion-item button (click)="getDowngrade()">Descendre de niveau</ion-item>
   <ion-item button>Renvoyer</ion-item>
-  <ion-item lines="none" detail="false" button (click)="dismissPopover()"
-    >Fermer</ion-item
+  <ion-item lines="none" detail="false" button (click)="dismissPopover()">
+    Fermer</ion-item
   >
 </ion-list>

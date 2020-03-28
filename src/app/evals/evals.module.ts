@@ -8,6 +8,7 @@ import { GroupsListComponent } from "./groups-list/groups-list.component";
 import { SharedModule } from '../components/shared.module';
 import { StudentListComponent } from './student-list/student-list.component'; 
 import { PopoverOptionsComponent } from './student-list/popover-options/popover-options.component';
+import { ChangeListComponent } from './student-list/change-list/change-list.component';
 
 @NgModule({
   imports: [
@@ -15,13 +16,14 @@ import { PopoverOptionsComponent } from './student-list/popover-options/popover-
     FormsModule,
     IonicModule,
     ManagementPageRoutingModule,
-    SharedModule,
+    SharedModule
   ],
   declarations: [
     EvalsPage, 
     GroupsListComponent,
     StudentListComponent,
-    PopoverOptionsComponent
-  ]
+    PopoverOptionsComponent,
+    ChangeListComponent
+  ],
 })
 export class EvalsPageModule {}

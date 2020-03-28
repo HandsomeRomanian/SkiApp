@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { SkiService } from "src/app/services/ski.service";
 import { Groupe } from "src/app/services/DTO";
 import { AuthService } from "src/app/services/auth.service";
+import { GroupsService } from 'src/app/services/groups.service';
+import { SkiService } from 'src/app/services/ski.service';
 
 @Component({
   selector: "app-groups-list",
@@ -16,24 +17,14 @@ export class GroupsListComponent implements OnInit {
   data: Groupe[];
   public groups: Groupe[] = [];
 
-  day = [
-    "Lundi",
-    "Mardi",
-    "Mercredi",
-    "Jeudi",
-    "Vendredi",
-    "Samedi",
-    "Dimanche"
-  ];
-
   constructor(
     private route: ActivatedRoute,
-    private SkiAPI: SkiService,
+    private groupService: GroupsService,
     private authService: AuthService
   ) {
     this.authService.checkConnected();
     const levelID = this.route.snapshot.params.id;
-    this.SkiAPI.getGroups(levelID).subscribe(resp => {
+    this.groupService.getGroupsByLevel(levelID).subscribe(resp => {
       this.groups = resp;
       this.data = resp;
       this.title = SkiService.levels[resp[0].Level];
