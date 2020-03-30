@@ -34,8 +34,8 @@ export class SearchPage implements OnInit {
       header: 'Informations sur l\'étudiant',
       subHeader: result.student.Name + " : " + SkiService.status[result.student.Status],
       //message: 'Groupe '+result.group.Number + " à " + result.group.Time + " le " + SkiService.days[result.group.day-1],
-      message: SkiService.days[result.group.day - 1] + " " + result.group.Time.substring(0, 5) + '\n Groupe: ' + result.group.Number + "\n"
-        + "Niveau: " + SkiService.levels[result.group.Level] + "\nMoniteur: " + result.group.TeacherName,
+      message: SkiService.days[result.group.day] + " " + result.group.Time.substring(0, 5) + '\n Groupe: ' + result.group.Number + "\n"
+        + "Niveau: " + SkiService.levels[result.group.Level] + " Moniteur:" + result.group.TeacherName,
       buttons: [
         {
           text: 'Cancel',
@@ -46,7 +46,7 @@ export class SearchPage implements OnInit {
         }, {
           text: 'Groupe',
           handler: () => {
-            this.router.navigate(['/management/group/' + result.group.id])
+            this.router.navigate(['/evals/group/' + result.group.id])
           }
         }
       ]
