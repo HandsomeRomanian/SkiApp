@@ -2,7 +2,7 @@ import { AuthService } from './auth.service';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Groupe } from './DTO';
-import { Storage } from '@ionic/Storage';
+import { Storage } from '@ionic/storage';
 import { tap } from 'rxjs/operators';
 import { Settings } from './settings';
 

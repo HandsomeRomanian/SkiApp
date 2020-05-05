@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
 import { LoginRequest, LoginResponse, Employe } from './DTO';
-import { Storage } from '@ionic/Storage';
+import { Storage } from '@ionic/storage';
 import { ToastController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { Settings } from './settings';

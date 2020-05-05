@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SkiService } from 'src/app/services/ski.service';
 import { Router } from '@angular/router';
-import { Storage } from "@ionic/Storage";
+import { Storage } from "@ionic/storage";
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
