@@ -12,11 +12,13 @@ import { Settings } from './settings';
 export class AuthService {
 
 
-  constructor(private http: HttpClient,
+  constructor(
+    private http: HttpClient,
     private storage: Storage,
     public toastController: ToastController,
     private router: Router,
-    private navCtrl: NavController) { }
+    private navCtrl: NavController
+  ) { }
 
   public login(code: number) {
     let body = new LoginRequest(code);
@@ -27,8 +29,6 @@ export class AuthService {
     window.localStorage.removeItem("Token");
     this.storage.remove("Token");
     this.storage.remove("User");
-    this.navCtrl.pop()
-    this.router.navigate(["/home"]);
   }
 
   public async checkConnected() {
@@ -40,6 +40,8 @@ export class AuthService {
       });
       toast.present();
       this.logout();
+      this.navCtrl.pop();
+      this.router.navigate(["/auth/login"]);
     }
     return true;
   }

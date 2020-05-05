@@ -1,10 +1,5 @@
 <ion-list>
-  <ion-item
-    text-center
-    *ngFor="let lvl of (levels | async)"
-    routerLink="{{ lvl.id }}"
-    routerLinkActive="active"
-  >
+  <ion-item text-center *ngFor="let lvl of levels" routerLink="{{ lvl.id }}" routerLinkActive="active">
     <ion-label style="font-weight: bold;" color="primary">
       {{ lvl.name }}
     </ion-label>

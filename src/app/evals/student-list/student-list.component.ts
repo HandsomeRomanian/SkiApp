@@ -9,6 +9,7 @@ import { PopoverOptionsComponent } from './popover-options/popover-options.compo
 import { StudentService } from 'src/app/services/student.service';
 import { GroupsService } from 'src/app/services/groups.service';
 import { SkiService } from 'src/app/services/ski.service';
+import { ErrorService } from 'src/app/services/error.service';
 
 @Component({
   selector: "app-student-list",
@@ -27,21 +28,28 @@ export class StudentListComponent implements OnInit {
     private groupService: GroupsService,
     private studentService: StudentService,
     private authService: AuthService,
-    private popoverController: PopoverController
+    private popoverController: PopoverController,
+    private errorService: ErrorService
   ) {
     this.groupID = this.route.snapshot.params.id;
   }
-  
+
   ngOnInit(): void {
-    this.groupService.getGroupByID(this.groupID).subscribe(resp => {
-      this.group = resp;
-      this.students = this.group.Students;
-      this.title =
-        SkiService.levels[this.group.Level] +
-        " " + this.group.Number +
-        " " + this.group.Time.substring(0, 5) +
-        " " + SkiService.days[this.group.day];
-    });
+    this.groupService.getGroupByID(this.groupID).subscribe(
+      resp => {
+        this.group = resp;
+        this.students = this.group.Students;
+        this.title =
+          SkiService.levels[this.group.Level] +
+          " " + this.group.Number +
+          " " + this.group.Time.substring(0, 5) +
+          " " + SkiService.days[this.group.day];
+      },
+      err => {
+        console.table(err)
+        //this.errorService.manageError(err)
+      }
+    );
   }
 
   statusChange(student: Student, $event) {
@@ -71,7 +79,6 @@ export class StudentListComponent implements OnInit {
             duration: 2000
           });
           toast.present();
-
         }
         else {
           const toast = await this.toastController.create({
@@ -88,12 +95,12 @@ export class StudentListComponent implements OnInit {
     return SkiService.status;
   }
 
-  async openPopOver(ev,studentID) {
+  async openPopOver(ev, studentID) {
     let popover = await this.popoverController.create({
       component: PopoverOptionsComponent,
       event: ev,
       translucent: true,
-      componentProps: {groupID: this.groupID,studentID: studentID}
+      componentProps: { groupID: this.groupID, studentID: studentID }
     });
     return popover.present();
   }

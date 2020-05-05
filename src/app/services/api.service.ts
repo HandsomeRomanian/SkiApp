@@ -17,10 +17,15 @@ export class ApiService {
    * @param path path of the request
    * @param params body params of the request
    */
-  public get(path, params):Observable<any> {
+  public get(path, params): Observable<any> {
+    let token = this.authStorage.getToken();
+    if (token == null) {
+      token = "0";
+    }
+
     const httpOptions = {
       headers: new HttpHeaders({
-        "UserToken": this.authStorage.getToken(),
+        "UserToken": token,
         "Content-Type": "application/json"
       }),
       params: params
@@ -33,7 +38,7 @@ export class ApiService {
    * @param path path of the request
    * @param params body params of the request
    */
-  public put(path, params):Observable<any> {
+  public put(path, params): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         "UserToken": this.authStorage.getToken(),
@@ -49,14 +54,14 @@ export class ApiService {
    * @param path path of the request
    * @param params body params of the request
    */
-  public post(path, params):Observable<any> {
+  public post(path, params): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         "UserToken": this.authStorage.getToken(),
         "Content-Type": "application/json"
       })
     };
-    return this.http.post(Settings.apiUrl + path,params, httpOptions);
+    return this.http.post(Settings.apiUrl + path, params, httpOptions);
   }
 
   /**
@@ -64,7 +69,7 @@ export class ApiService {
    * @param path path of the request
    * @param params body params of the request
    */
-  public delete(path, params):Observable<any> {
+  public delete(path, params): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         "UserToken": this.authStorage.getToken(),

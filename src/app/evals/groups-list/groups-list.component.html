@@ -4,19 +4,11 @@
 
   <ion-item>
     <ion-label *ngIf="listVisibility">Cours courrants seulement</ion-label>
-    <ion-toggle
-      slot="end"
-      (click)="updateList()"
-      [(ngModel)]="onlyCurrent"
-    ></ion-toggle>
+    <ion-toggle slot="end" (click)="updateList()" [(ngModel)]="onlyCurrent"></ion-toggle>
   </ion-item>
 
   <ion-list *ngIf="listVisibility">
-    <ion-item
-      text-center
-      routerLinkActive="active"
-      routerLink="../group/{{ grp.id }}"
-      *ngFor="let grp of getGroups()"
+    <ion-item text-center routerLinkActive="active" routerLink="../group/{{ grp.id }}" *ngFor="let grp of getGroups()"
       class="list-item">
       <ion-label>
         <h2>

@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NavController, NavParams, LoadingController } from '@ionic/angular';
+import { NavController, NavParams, LoadingController, ToastController } from '@ionic/angular';
 import { LevelService } from 'src/app/services/level.service';
+import { ErrorService } from 'src/app/services/error.service';
 
 @Component({
   selector: 'app-level-list',
@@ -11,30 +12,28 @@ import { LevelService } from 'src/app/services/level.service';
 export class LevelListComponent implements OnInit {
 
 
-  levels: Observable<any>;
+  levels;
   title: string = "Exercices"
   @Input() action: number;
 
 
-  constructor(private levelService: LevelService,public loadingCtrl: LoadingController, private nav: NavController) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.levels = this.levelService.getLevels();
-    console.log("LevelList Loaded");
-  
+  constructor(
+    private levelService: LevelService,
+    private errorService: ErrorService,
+    public loadingCtrl: LoadingController,
+  ) {
+    this.levelService.getLevels().subscribe(
+      resp => {
+        this.levels = resp;
+      },
+      err => {
+        this.errorService.manageError(err);
+      }
+    );
+
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  openPage(id){
-    switch (this.action) {
-      case 0:
-        this.nav.pop();
-        break;
-    
-      default:
-        break;
-    }
-    
-  }
 
 }
