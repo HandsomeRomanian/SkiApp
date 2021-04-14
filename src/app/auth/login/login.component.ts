@@ -27,7 +27,7 @@ export class LoginComponent {
   }
 
   login(form) {
-    this.authAPI.login(form.value.numero);
+    this.authAPI.login(form.value.numero, form.value.password);
   }
 
 

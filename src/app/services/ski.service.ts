@@ -1,11 +1,11 @@
 import { AuthService } from './auth.service';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Group, Level } from './DTO';
+import { Group, Level, Student } from './DTO';
 import { Storage } from '@ionic/storage';
 import { tap } from 'rxjs/operators';
-import { Settings } from './settings';
-import { Observable, Observer } from 'rxjs';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -28,9 +28,9 @@ export class SkiService {
     "Excellence"
   ];
   public static status = [
-    "Normal",
-    "En retard",
     "Absent",
+    "En retard",
+    "Normal",
     "Fort"
   ];
   public static days = [
@@ -54,75 +54,36 @@ export class SkiService {
 
   }
 
-  getTest() {
-    this.storage.set("UserID", "Test")
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Token": '114627',
-        "test": "placeholder"
-      })
-    };
-    return this.http.get(Settings.apiUrl, httpOptions);
-
-  }
-
   getLevels() {
-    return this.http.get<Level[]>(Settings.apiUrl + "levels");
+    return this.http.get<Level[]>(environment.apiUrl + "levels");
   }
 
-  getGroups(id: number) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "UserToken": this.authStorage.getToken(),
-      })
-    };
-
-    var tmp = this.http.get<Group[]>(Settings.apiUrl + "levels/" + id + "/groups", httpOptions).pipe(
-      tap( // Log the result or error
-        data => console.log("Yo", data),
-        error => console.log("Yo", error)
-      )
-    );
-
-    return tmp;
-  }
-
-  getGroup(groupID: number) {
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "UserToken": this.authStorage.getToken(),
-      })
-    };
-    var tmp = this.http.get<Group>(Settings.apiUrl + "group/" + groupID, httpOptions);
-    return tmp;
-  }
+  
 
   getLevelInfo(levelID: number): Observable<Level> {
-    return this.http.get<Level>(Settings.apiUrl + "levels/" + levelID);
+    return this.http.get<Level>(environment.apiUrl + "levels/" + levelID);
   }
 
-  setStatus(student: any) {
+  setStatus(student: Student) {
     const httpOptions = {
       headers: new HttpHeaders({
-        "UserToken": this.authStorage.getToken(),
+        "Authorization": "Bearer " + this.authStorage.getToken(),
         "Content-Type": "application/json"
       })
     };
 
-    return this.http.post(Settings.apiUrl + "status/", student, httpOptions)
+    return this.http.put(environment.apiUrl + "status/" + student.studentId, { status: student.status }, httpOptions)
   }
 
-  search(input) {
+  search(input): Observable<Group[] | Student[]> {
     input = input.trim().replace(" ", "_");
 
     const httpOptions = {
       headers: new HttpHeaders({
-        "UserToken": this.authStorage.getToken(),
+        "Authorization": "Bearer " + this.authStorage.getToken(),
       })
     };
-    var tmp = this.http.get(Settings.apiUrl + "search/" + input, httpOptions);
+    var tmp = this.http.get<Group[] | Student[]>(environment.apiUrl + "search/" + input, httpOptions);
     return tmp;
   }
 

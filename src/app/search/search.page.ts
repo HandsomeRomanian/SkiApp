@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { SkiService } from '../services/ski.service';
 import { AuthService } from '../services/auth.service';
 import { NavController, AlertController } from '@ionic/angular';
-import { Student } from '../services/DTO';
+import { Group, Student } from '../services/DTO';
 import { RouterModule, Router } from '@angular/router';
 
 @Component({
@@ -15,27 +15,29 @@ export class SearchPage implements OnInit {
 
   title: string = "Recherche";
   search: string = "";
-  students: Observable<any>;
+  list: Group[] | Student[] = [];
+  SkiService = SkiService;
 
-  constructor(private skiAPI: SkiService,
+
+  constructor(
+    private skiAPI: SkiService,
     private authService: AuthService,
     private alertController: AlertController,
     private router: Router) {
     this.authService.checkConnected()
-    console.log(SkiService.days[1])
   }
 
   ngOnInit(): void {
   }
 
-  async showInfoAlert(result: any) {
+  async showInfoAlert(result: Student) {
     console.log(result)
     const alert = await this.alertController.create({
       header: 'Informations sur l\'étudiant',
-      subHeader: result.student.Name + " : " + SkiService.status[result.student.Status],
+      subHeader: result.firstName + " : " + SkiService.status[result.status],
       //message: 'Groupe '+result.group.Number + " à " + result.group.Time + " le " + SkiService.days[result.group.day-1],
-      message: SkiService.days[result.group.day - 1] + " " + result.group.Time.substring(0, 5) + '\n Groupe: ' + result.group.Number + "\n"
-        + "Niveau: " + SkiService.levels[result.group.Level] + "\nMoniteur: " + result.group.TeacherName,
+      message: SkiService.days[result.group.day - 1] + " " + result.group.time.substring(0, 5) + '\n Groupe: ' + result.group.number + "\n"
+        + "Niveau: " + SkiService.levels[result.group.levelId] + "\nMoniteur: " + result.group.teacher.firstName,
       buttons: [
         {
           text: 'Cancel',
@@ -46,7 +48,7 @@ export class SearchPage implements OnInit {
         }, {
           text: 'Groupe',
           handler: () => {
-            this.router.navigate(['/management/group/' + result.group.id])
+            this.router.navigate(['/evals/group/' + result.group.groupId])
           }
         }
       ]
@@ -56,12 +58,18 @@ export class SearchPage implements OnInit {
   }
 
   onSearchChange($event) {
-
     this.authService.checkConnected()
     this.search = $event.target.value.trim();
     if (this.search && this.search != "") {
       this.search.replace(" ", "_");
-      this.students = this.skiAPI.search(this.search);
+      this.skiAPI.search(this.search).subscribe(
+        x => {
+          console.log(x);
+          if (x != null && x.length > 0) {
+              this.list = x;
+          }
+        }
+      );
     }
   }
 

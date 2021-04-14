@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { SkiService } from "src/app/services/ski.service";
 import { Group } from "src/app/services/DTO";
 import { AuthService } from "src/app/services/auth.service";
+import { GroupService } from "../services/group.service";
 
 @Component({
   selector: "app-groups-list",
@@ -29,21 +30,24 @@ export class GroupsListComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private SkiAPI: SkiService,
+    private groupService: GroupService,
     private authService: AuthService
   ) {
     this.authService.checkConnected();
     const levelID = this.route.snapshot.params.id;
-    this.SkiAPI.getGroups(levelID).subscribe(resp => {
+    this.groupService.getGroups(levelID).subscribe(resp => {
       this.groups = resp;
       this.data = resp;
-      this.title = SkiService.levels[resp[0].Level];
+      this.title = SkiService.levels[resp[0].levelId];
+      console.log(this.groups[0].teacher);
+
     });
   }
 
   ngOnInit() {
   }
 
-  getGroups() {
+  getGroups(): Group[] {
     this.data = [];
     if (!this.onlyCurrent) {
       this.data = this.groups;
@@ -62,23 +66,20 @@ export class GroupsListComponent implements OnInit {
 
   currentClass(inGroup: Group) {
     let classe = new Date();
-    let timeAr = inGroup.Time.split(":");
-    classe.setHours(timeAr[0], timeAr[1], timeAr[2]);
-
+    let timeAr = inGroup.time.split(":");
+    classe.setHours(Number.parseInt(timeAr[0]), Number.parseInt(timeAr[1]), Number.parseInt(timeAr[2]));
     if (
-      inGroup.Level < 3 &&
+      inGroup.levelId < 3 &&
       classe.getTime() < new Date().getTime() &&
       new Date().getTime() < classe.setHours(classe.getHours() + 1) && (
-      (new Date().getDay() == 0 && inGroup.day == new Date().getDay()+7)|| (new Date().getDay() != 0 && inGroup.day == new Date().getDay())) ) 
-    {
+        (new Date().getDay() == 0 && inGroup.day == new Date().getDay() + 7) || (new Date().getDay() != 0 && inGroup.day == new Date().getDay()))) {
       return true;
     } else if (
-      inGroup.Level >= 3 &&
+      inGroup.levelId >= 3 &&
       classe.getTime() < new Date().getTime() &&
       new Date().getTime() <
-        classe.setHours(classe.getHours() + 1, classe.getMinutes() + 30) &&
-      inGroup.day == new Date().getDay())
-    {
+      classe.setHours(classe.getHours() + 1, classe.getMinutes() + 30) &&
+      inGroup.day == new Date().getDay()) {
       return true;
     }
   }

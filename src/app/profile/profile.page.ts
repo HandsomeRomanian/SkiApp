@@ -14,9 +14,7 @@ export class ProfilePage implements OnInit {
   user = new Employe();
 
   constructor(private SkiAPI: SkiService,
-    public storage: Storage,
-    private authAPI: AuthService,
-    private router: Router) {
+    public storage: Storage) {
 
     this.storage.get("User").then(user => {
       this.user = user;

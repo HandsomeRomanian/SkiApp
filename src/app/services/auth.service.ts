@@ -4,7 +4,7 @@ import { LoginRequest, LoginResponse, Employe } from './DTO';
 import { Storage } from '@ionic/storage';
 import { ToastController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { Settings } from './settings';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +18,10 @@ export class AuthService {
     private router: Router,
     private navCtrl: NavController) { }
 
-  public login(code: number) {
-    let body = new LoginRequest(code);
-    this.http.post<LoginResponse>(Settings.apiUrl + "auth/login", body).subscribe(
+  public login(code: number, password: string) {
+    let body = new LoginRequest(code, password);
+    this.http.post<LoginResponse>(environment.apiUrl + "auth/login", body).subscribe(
       async resp => {
-        console.log(resp);
-
         this.storage.set("User", resp.employe);
         this.storage.set("Token", resp.token);
         window.localStorage.setItem("Token", resp.token);
@@ -45,7 +43,7 @@ export class AuthService {
     this.storage.remove("Token");
     this.storage.remove("User");
     this.navCtrl.pop()
-    this.router.navigate(["/home"]);
+    this.router.navigate(["/"]);
   }
 
   public async checkConnected() {

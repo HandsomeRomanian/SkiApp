@@ -21,13 +21,6 @@ export class ExerciceListComponent {
     this.skiService.getLevelInfo(this.levelID).subscribe(
       resp => {
         this.level = resp;
-        resp.exercices.map(x => {
-          console.log(x.type)
-          console.log(SkiService.shortType[x.type])
-        }
-        );
-
-
       }
     );
     this.title = SkiService.levels[this.levelID];

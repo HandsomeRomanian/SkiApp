@@ -9,13 +9,25 @@
     (ionChange)="onSearchChange($event)"
     [debounce]="100"
   ></ion-searchbar>
-  <ion-list>
-    <ion-item menuClose *ngFor="let sdnt of (students|async)" class="list-item" (click)="showInfoAlert(sdnt)">
-      <ion-label>
-        <h2>
-          {{sdnt.student.Name}}
-        </h2>
-      </ion-label>
+  <ion-list *ngIf="list.length > 0">
+    <ion-item menuClose *ngFor="let item of list" class="list-item" (click)="showInfoAlert(item)">
+      <div *ngIf="item.studentId != null">
+        <ion-label>
+          <h2>
+            {{item.firstName + " " + item.lastName}}
+          </h2>
+        </ion-label>
+      </div>
+      
+      <div *ngIf="item.studentId == null">
+        <ion-label>
+          <h2>
+            {{item.number + " " + item.time.substring(0,5) + " " + SkiService.days[item.day] + " ("+SkiService.levels[item.levelId]+")"}}
+          </h2>
+        </ion-label>
+      </div>
     </ion-item>
   </ion-list>
+  
+ 
 </ion-content>
