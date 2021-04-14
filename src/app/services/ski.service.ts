@@ -1,10 +1,11 @@
 import { AuthService } from './auth.service';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Groupe } from './DTO';
+import { Group, Level } from './DTO';
 import { Storage } from '@ionic/storage';
 import { tap } from 'rxjs/operators';
 import { Settings } from './settings';
+import { Observable, Observer } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -43,6 +44,9 @@ export class SkiService {
     "Dimanche"
   ];
 
+  public static shortType = ['MB', 'E', 'H'];
+
+  public static longType = ["Habilité", "Exercice", "Maneuvre de Base"];
 
   constructor(public http: HttpClient,
     private storage: Storage,
@@ -64,7 +68,7 @@ export class SkiService {
   }
 
   getLevels() {
-    return this.http.get(Settings.apiUrl + "levels");
+    return this.http.get<Level[]>(Settings.apiUrl + "levels");
   }
 
   getGroups(id: number) {
@@ -74,7 +78,7 @@ export class SkiService {
       })
     };
 
-    var tmp = this.http.get<Groupe[]>(Settings.apiUrl + "levels/" + id + "/groups", httpOptions).pipe(
+    var tmp = this.http.get<Group[]>(Settings.apiUrl + "levels/" + id + "/groups", httpOptions).pipe(
       tap( // Log the result or error
         data => console.log("Yo", data),
         error => console.log("Yo", error)
@@ -91,15 +95,12 @@ export class SkiService {
         "UserToken": this.authStorage.getToken(),
       })
     };
-    var tmp = this.http.get<Groupe>(Settings.apiUrl + "group/" + groupID, httpOptions);
+    var tmp = this.http.get<Group>(Settings.apiUrl + "group/" + groupID, httpOptions);
     return tmp;
   }
 
-  getExercices(levelID: number) {
-    var tmp = this.http.get(
-      Settings.apiUrl + "levels/" + levelID + "/exercices"
-    );
-    return tmp;
+  getLevelInfo(levelID: number): Observable<Level> {
+    return this.http.get<Level>(Settings.apiUrl + "levels/" + levelID);
   }
 
   setStatus(student: any) {

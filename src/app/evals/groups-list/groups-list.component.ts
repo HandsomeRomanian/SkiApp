@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { SkiService } from "src/app/services/ski.service";
-import { Groupe } from "src/app/services/DTO";
+import { Group } from "src/app/services/DTO";
 import { AuthService } from "src/app/services/auth.service";
 
 @Component({
@@ -13,8 +13,8 @@ export class GroupsListComponent implements OnInit {
   title: string = "Groupes";
   onlyCurrent = true;
   listVisibility = true;
-  data: Groupe[];
-  public groups: Groupe[] = [];
+  data: Group[];
+  public groups: Group[] = [];
 
   day = [
     "Lundi",
@@ -60,7 +60,7 @@ export class GroupsListComponent implements OnInit {
     this.listVisibility = !this.listVisibility;
   }
 
-  currentClass(inGroup: Groupe) {
+  currentClass(inGroup: Group) {
     let classe = new Date();
     let timeAr = inGroup.Time.split(":");
     classe.setHours(timeAr[0], timeAr[1], timeAr[2]);

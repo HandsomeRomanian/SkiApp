@@ -1,12 +1,31 @@
-export class Student{
+export class Student {
 
     id;
-    Name:string;
-    Status:number;
+    Name: string;
+    Status: number;
     Other;
 }
 
-export class Groupe{
+export class Exercices {
+
+    id;
+    description: string;
+    terrain: string;
+    type: number;
+    levelId: number;
+}
+
+export class Level {
+
+    levelId: number;
+    name: string;
+    description: string;
+    nextLevelId: number;
+    exercices: Exercices[] = [];
+}
+
+
+export class Group {
 
     id;
     Number;
@@ -18,12 +37,13 @@ export class Groupe{
 
 }
 
-export class LoginRequest{
+export class LoginRequest {
 
-    code: number;
-    ip: string;
-    constructor(code:number){
-        this.code = code;
+    userID: number;
+    password: string;
+    constructor(userID: number, password: string) {
+        this.userID = userID;
+        this.password = password;
     }
 
 }
@@ -31,23 +51,22 @@ export class LoginRequest{
 
 export class LoginResponse {
 
-    employe:Employe;
-    token;
-
-    public LoginResponse(Employe,Token){
-        this.employe = Employe;
-        this.token = Token;
-    }
+    employe: Employe;
+    token: string;
 
 }
 
 export class Employe {
-    id;
-    name;
-    permissions;
 
-    public Employe(id, Name){
-        this.name = Name;
-        this.id = id;
-    }
+    userId: number;
+
+    firstName: string;
+  
+    lastName: string;
+  
+    password: string;
+  
+    departementstaffs: any[];
+  
+    groups: Group[];
 }

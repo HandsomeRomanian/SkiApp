@@ -20,14 +20,16 @@ export class AuthService {
 
   public login(code: number) {
     let body = new LoginRequest(code);
-    this.http.post<LoginResponse>(Settings.apiUrl + "login", body).subscribe(
+    this.http.post<LoginResponse>(Settings.apiUrl + "auth/login", body).subscribe(
       async resp => {
+        console.log(resp);
+
         this.storage.set("User", resp.employe);
         this.storage.set("Token", resp.token);
         window.localStorage.setItem("Token", resp.token);
         this.router.navigate(["/home"]);
         const toast = await this.toastController.create({
-          message: 'Bienvenue ' + resp.employe.name + '!',
+          message: 'Bienvenue ' + resp.employe.firstName + '!',
           duration: 2000
         });
         toast.present();

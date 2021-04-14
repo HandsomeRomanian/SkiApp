@@ -9,28 +9,28 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'exercices',
-    loadChildren: () => import('./exercices/exercices.module').then( m => m.ExercicesPageModule)
+    path: 'exercices' || 'levels',
+    loadChildren: () => import('./exercices/exercices.module').then(m => m.ExercicesPageModule)
   },
   {
     path: 'search',
-    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+    loadChildren: () => import('./search/search.module').then(m => m.SearchPageModule)
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: 'evals',
-    loadChildren: () => import('./evals/evals.module').then( m => m.ManagementPageModule)
+    loadChildren: () => import('./evals/evals.module').then(m => m.ManagementPageModule)
   },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule)
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule)
   },
   {
     path: "**",
@@ -45,4 +45,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

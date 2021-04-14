@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NavController, NavParams, LoadingController } from '@ionic/angular';
 import { SkiService } from 'src/app/services/ski.service';
+import { Level } from 'src/app/services/DTO';
 
 @Component({
   selector: 'app-level-list',
@@ -11,7 +12,7 @@ import { SkiService } from 'src/app/services/ski.service';
 export class LevelListComponent implements OnInit {
 
 
-  levels: Observable<any>;
+  levels: Observable<Level[]>;
   title: string = "Exercices"
   @Input() action: number;
 
