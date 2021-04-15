@@ -13,7 +13,8 @@ import { Employe } from '../services/DTO';
 export class ProfilePage implements OnInit {
   user = new Employe();
 
-  constructor(private SkiAPI: SkiService,
+  constructor(
+    private SkiAPI: SkiService,
     public storage: Storage) {
 
     this.storage.get("User").then(user => {
@@ -21,6 +22,7 @@ export class ProfilePage implements OnInit {
       console.log(user)
     });
   }
+
   ngOnInit() {
   }
 

@@ -1,11 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
 import { SkiService } from "src/app/services/ski.service";
 import { ActivatedRoute } from "@angular/router";
 import { Group, Student } from 'src/app/services/DTO';
 import { ToastController, PopoverController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { PopoverOptionsComponent } from './popover-options/popover-options.component';
+import { GroupService } from "../services/group.service";
 
 @Component({
   selector: "app-student-list",
@@ -22,19 +22,20 @@ export class StudentListComponent implements OnInit {
     private skiService: SkiService,
     public toastController: ToastController,
     private authService: AuthService,
+    private groupService: GroupService,
     private popoverController: PopoverController
   ) {
     this.groupID = this.route.snapshot.params.id;
   }
   ngOnInit(): void {
-    this.skiService.getGroup(this.groupID).subscribe(resp => {
-      this.group = resp;
-      console.table(resp)
-      this.students = this.group.studentgroups;
+    this.groupService.getGroup(this.groupID).subscribe(resp => {
+      this.group = resp[0];
+      this.students = this.group.studentgroups.map(x => ({ ...x, ...x.student }));
+
       this.title =
         SkiService.levels[this.group.levelId] +
         " " + this.group.number +
-        " " + this.group.time.substring(0, 5) +
+        " " + this.group.time +
         " " + SkiService.days[this.group.day];
     });
   }

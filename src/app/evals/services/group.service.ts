@@ -13,32 +13,23 @@ export class GroupService {
 
   constructor(
     public http: HttpClient,
-    private storage: Storage,
-    private authStorage: AuthService) { }
+    private authService: AuthService) { }
 
-  getGroups(id: number): Observable<Group[]> {
+  public getGroupsByLevel(id: number): Observable<Group[]> {
     const httpOptions = {
       headers: new HttpHeaders({
-        "Authorization": "Bearer " + this.authStorage.getToken(),
+        "Authorization": "Bearer " + this.authService.getToken(),
       }),
       params: new HttpParams().append('levelId', id.toString())
     };
 
-    var tmp = this.http.get<Group[]>(environment.apiUrl + "groups", httpOptions).pipe(
-      tap( // Log the result or error
-        data => console.log("Yo", data),
-        error => console.log("Yo", error)
-      )
-    );
-
-    return tmp;
+    return this.http.get<Group[]>(environment.apiUrl + "groups", httpOptions);
   }
 
-  getGroup(groupID: number): Observable<Group> {
-
+  public getGroup(groupID: number): Observable<Group> {
     const httpOptions = {
       headers: new HttpHeaders({
-        "Authorization": "Bearer " + this.authStorage.getToken(),
+        "Authorization": "Bearer " + this.authService.getToken(),
       })
     };
     var tmp = this.http.get<Group>(environment.apiUrl + "groups/" + groupID, httpOptions);

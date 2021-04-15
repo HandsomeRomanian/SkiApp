@@ -11,13 +11,13 @@ import { GroupService } from "../services/group.service";
   styleUrls: ["./groups-list.component.scss"]
 })
 export class GroupsListComponent implements OnInit {
-  title: string = "Groupes";
-  onlyCurrent = true;
-  listVisibility = true;
-  data: Group[];
+  public title: string = "Groupes";
+  public onlyCurrent = true;
+  public listVisibility = true;
+  public data: Group[];
   public groups: Group[] = [];
 
-  day = [
+  public day = [
     "Lundi",
     "Mardi",
     "Mercredi",
@@ -29,13 +29,12 @@ export class GroupsListComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private SkiAPI: SkiService,
     private groupService: GroupService,
     private authService: AuthService
   ) {
     this.authService.checkConnected();
     const levelID = this.route.snapshot.params.id;
-    this.groupService.getGroups(levelID).subscribe(resp => {
+    this.groupService.getGroupsByLevel(levelID).subscribe(resp => {
       this.groups = resp;
       this.data = resp;
       this.title = SkiService.levels[resp[0].levelId];
