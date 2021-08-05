@@ -5,18 +5,18 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { SharedModule } from '../components/shared.module';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent
-  }, {
+    component: LoginComponent,
+  },
+  {
     path: 'logout',
-    component: LogoutComponent
-  }
+    component: LogoutComponent,
+  },
 ];
-
 
 @NgModule({
   declarations: [LoginComponent, LogoutComponent],
@@ -25,7 +25,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    SharedModule
-  ]
+    SharedModule,
+  ],
 })
-export class AuthModule { }
+export class AuthModule {}

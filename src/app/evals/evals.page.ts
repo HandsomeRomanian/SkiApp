@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SkiService } from '../services/ski.service';
-import { AuthService } from '../services/auth.service';
+import { SkiService } from '../shared/services/ski.service';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-management',
@@ -9,18 +9,18 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./evals.page.scss'],
 })
 export class EvalsPage implements OnInit {
-
-  title: string = "Évaluations";
+  title: string = 'Évaluations';
   levels: Observable<any>;
 
-  constructor(private skiService: SkiService,
-              private authService: AuthService) {
+  constructor(
+    private skiService: SkiService,
+    private authService: AuthService
+  ) {
     this.levels = skiService.getLevels();
     this.authService.checkConnected();
-   }
+  }
 
   ngOnInit() {
     this.authService.checkConnected();
   }
-
 }

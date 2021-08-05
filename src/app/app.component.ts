@@ -1,40 +1,39 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
 
-import { Platform } from "@ionic/angular";
-import { SplashScreen } from "@ionic-native/splash-screen/ngx";
-import { StatusBar } from "@ionic-native/status-bar/ngx";
-import { Employe } from "./services/DTO";
+import { Platform } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
-  selector: "app-root",
-  templateUrl: "app.component.html",
-  styleUrls: ["app.component.scss"]
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
-  public user = "Non connecté"
+  public user = 'Non connecté';
   public appPages = [
     {
-      title: "Home",
-      url: "/",
-      icon: "home"
+      title: 'Home',
+      url: '/',
+      icon: 'home',
     },
     {
-      title: "Exercices",
-      url: "/exercices/",
-      icon: "paper-plane"
+      title: 'Exercices',
+      url: '/levels/',
+      icon: 'paper-plane',
     },
     {
-      title: "Gestion",
-      url: "/evals/",
-      icon: "clipboard"
+      title: 'Gestion',
+      url: '/evals/',
+      icon: 'clipboard',
     },
     {
-      title: "Recherche",
-      url: "/search/",
-      icon: "search"
-    }
+      title: 'Recherche',
+      url: '/search/',
+      icon: 'search',
+    },
   ];
 
   constructor(
@@ -54,15 +53,15 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const path = window.location.pathname.split("/")[1];
+    const path = window.location.pathname.split('/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(
-        page => page.title.toLowerCase() === path.toLowerCase()
+        (page) => page.title.toLowerCase() === path.toLowerCase()
       );
     }
 
-    this.storage.get("User").then(val =>{
-      if (val != null){
+    this.storage.get('User').then((val) => {
+      if (val != null) {
         this.user = val.name;
       }
     });

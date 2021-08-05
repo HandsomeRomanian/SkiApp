@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
 import { NavController } from '@ionic/angular';
 import { AnimationOptions } from '@ionic/angular/providers/nav-controller';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,31 +10,29 @@ import { AnimationOptions } from '@ionic/angular/providers/nav-controller';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-
   @Input() title: string;
 
-  constructor(private router: Router,
-              private authService: AuthService,
-              private navCtrl: NavController) { }
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private navCtrl: NavController
+  ) {}
 
   ngOnInit() {}
 
-  profileClick() {
-    if (this.authService.connected()){
+  public profileClick() {
+    if (this.authService.connected()) {
       this.router.navigate(['/profile']);
-    }
-    else{
+    } else {
       this.router.navigate(['/auth/login']);
-
     }
   }
 
-  back(){
-    let animations:AnimationOptions={
+  public back() {
+    let animations: AnimationOptions = {
       animated: true,
-      animationDirection: "back"
-    }
-    this.navCtrl.back(animations)
+      animationDirection: 'back',
+    };
+    this.navCtrl.back(animations);
   }
-
 }

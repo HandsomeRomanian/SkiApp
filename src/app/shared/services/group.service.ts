@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { AuthService } from 'src/app/services/auth.service';
-import { Group } from 'src/app/services/DTO';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { Group } from 'src/app/shared/services/DTO';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

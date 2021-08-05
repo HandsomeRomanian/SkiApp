@@ -1,13 +1,14 @@
-import { NgModule } from "@angular/core";
-import { IonicModule } from "@ionic/angular";
-import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
-import { ExercicesPageRoutingModule } from "./exercices-routing.module";
-import { ExercicesPage } from "./exercices.page";
-import { HttpClientModule } from "@angular/common/http";
-import { ExerciceListComponent } from "./exercice-list/exercice-list.component";
-import { ExerciceInfoComponent } from "./exercice-info/exercice-info.component";
-import { SharedModule } from "../components/shared.module";
+import { NgModule } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { ExercicesPageRoutingModule } from './exercices-routing.module';
+import { ExercicesPage } from './exercices.page';
+import { ExerciceListComponent } from './exercice-list/exercice-list.component';
+import { ExerciceInfoComponent } from './exercice-info/exercice-info.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -16,8 +17,8 @@ import { SharedModule } from "../components/shared.module";
     IonicModule,
     ExercicesPageRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
   ],
-  declarations: [ExercicesPage, ExerciceListComponent, ExerciceInfoComponent]
+  declarations: [ExercicesPage, ExerciceListComponent, ExerciceInfoComponent],
 })
 export class ExercicesPageModule {}

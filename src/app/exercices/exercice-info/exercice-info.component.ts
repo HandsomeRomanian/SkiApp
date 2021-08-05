@@ -6,11 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exercice-info.component.scss'],
 })
 export class ExerciceInfoComponent implements OnInit {
+  title = 'Exercice Info';
 
-  title = "Exercice Info";
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
-
 }

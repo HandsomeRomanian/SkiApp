@@ -10,24 +10,27 @@
     [debounce]="100"
   ></ion-searchbar>
   <ion-list *ngIf="list.length > 0">
-    <ion-item menuClose *ngFor="let item of list" class="list-item" (click)="showInfoAlert(item)">
+    <ion-item
+      menuClose
+      *ngFor="let item of list"
+      class="list-item"
+      (click)="showInfoAlert(item)"
+    >
       <div *ngIf="item.studentId != null">
         <ion-label>
-          <h2>
-            {{item.firstName + " " + item.lastName}}
-          </h2>
+          <h2>{{item.firstName + " " + item.lastName}}</h2>
         </ion-label>
       </div>
-      
+
       <div *ngIf="item.studentId == null">
         <ion-label>
           <h2>
-            {{item.number + " " + item.time.substring(0,5) + " " + SkiService.days[item.day] + " ("+SkiService.levels[item.levelId]+")"}}
+            {{item.number + " " + item.time.substring(0,5) + " " +
+            SkiService.days[item.day] + "
+            ("+SkiService.levels[item.levelId]+")"}}
           </h2>
         </ion-label>
       </div>
     </ion-item>
   </ion-list>
-  
- 
 </ion-content>

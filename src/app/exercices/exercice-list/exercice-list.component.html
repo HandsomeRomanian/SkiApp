@@ -2,9 +2,16 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item menuClose ion-item *ngFor="let ex of level.exercices" routerLinkActive="active">
+    <ion-item
+      menuClose
+      ion-item
+      *ngFor="let ex of level.exercices"
+      routerLinkActive="active"
+    >
       <ion-label text-wrap>
-        <ion-badge color="primary" slot="end">{{shortType(ex.type)}}</ion-badge>
+        <ion-badge color="primary" slot="end">{{
+          shortType(ex.type)
+        }}</ion-badge>
         {{ ex.description }}
       </ion-label>
     </ion-item>

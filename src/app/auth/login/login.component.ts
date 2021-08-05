@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { SkiService } from 'src/app/services/ski.service';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Storage } from "@ionic/storage";
-import { AuthService } from 'src/app/services/auth.service';
+import { Storage } from '@ionic/storage';
+
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,25 +10,22 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-
-  title = "Login";
+  title = 'Login';
   empID: number;
-
 
   constructor(
     public storage: Storage,
     private authAPI: AuthService,
-    private router: Router) { }
+    private router: Router
+  ) {}
 
   ngOnInit() {
     if (this.authAPI.connected()) {
-      this.router.navigate(["/profile"])
+      this.router.navigate(['/profile']);
     }
   }
 
   login(form) {
     this.authAPI.login(form.value.numero, form.value.password);
   }
-
-
 }
